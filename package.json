@@ -23,7 +23,22 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "no-restricted-imports": [
+        "warn",
+        {
+          "paths": [
+            {
+              "name": "react",
+              "importNames": ["default"]
+            }
+          ]
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
