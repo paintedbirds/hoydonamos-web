@@ -2,15 +2,14 @@ import { Link } from 'react-router-dom';
 
 import Form from 'components/Form';
 
-import styles from './SignUp.module.scss';
+import styles from '../SingUp/SignUp.module.scss';
 
-const SignUp = () => (
+const SingIn = () => (
   <div className="w-full h-100">
     <h1 className="text-4xl md:text-2xl font-bold leading-tight mt-12 text-center uppercase">
-      Registro
+      Iniciar sesión
     </h1>
     <Form onSubmit={() => {}}>
-      <Form.Input name="name" label="Nombre" placeholder="Ingresa tu nombre" />
       <Form.Input
         name="email"
         label="Email"
@@ -28,12 +27,12 @@ const SignUp = () => (
     </Form>
 
     <p className="mt-8 text-center">
-      ¿Ya tienes una cuenta?{' '}
-      <Link to="/iniciar-sesion" className={styles.link}>
-        Iniciar sesión
+      ¿Aun no tienes una cuenta?{' '}
+      <Link to="/registro" className={styles.link}>
+        Registrarte
       </Link>
     </p>
   </div>
 );
 
-export default SignUp;
+export default SingIn;
