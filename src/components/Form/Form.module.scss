@@ -1,0 +1,31 @@
+@import '../../sass/variables.scss';
+
+.button {
+  @apply w-full block hover:opacity-90 text-white rounded-lg px-4 py-3 mt-9 sm:mt-16;
+
+  background-color: $primary;
+}
+
+.input-container {
+  @apply mt-6 sm:mt-9;
+
+  .label {
+    @apply block font-bold;
+
+    color: $black;
+  }
+
+  .input {
+    @apply w-full p-4 rounded-lg bg-white mt-2;
+
+    box-shadow: $shadow;
+
+    &::placeholder {
+      color: $complementary-1;
+    }
+
+    &:focus {
+      @apply outline-none;
+    }
+  }
+}
