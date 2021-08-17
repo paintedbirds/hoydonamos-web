@@ -1,13 +1,15 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import Loading from 'components/Loading';
+
 const SignUpPage = lazy(() => import('pages/SignUpPage'));
 const SignInPage = lazy(() => import('pages/SignInPage'));
 const HomePage = lazy(() => import('pages/HomePage'));
 
 const App = () => (
   <BrowserRouter>
-    <Suspense delayMs={500} fallback={<p>Loading...</p>}>
+    <Suspense delayMs={500} fallback={<Loading />}>
       <Switch>
         <Route path="/iniciar-sesion">
           <SignInPage />
