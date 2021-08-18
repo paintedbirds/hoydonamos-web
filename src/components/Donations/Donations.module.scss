@@ -1,0 +1,15 @@
+@import '../../sass/variables';
+
+.search {
+  &__input {
+    @apply bg-white h-10 pl-14 py-4 rounded-lg  w-full focus:outline-none h-full;
+
+    box-shadow: $shadow;
+  }
+
+  &__button {
+    @apply w-full sm:w-1/6 block hover:opacity-90 text-white rounded-lg py-3 bg-blue-600 mt-5 sm:mt-0 sm:ml-2;
+
+    background-color: $primary;
+  }
+}
