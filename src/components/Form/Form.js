@@ -1,13 +1,32 @@
+import { FormProvider } from 'react-hook-form';
 import PropTypes from 'prop-types';
 
 import FormButton from './Button';
 import FormInput from './Input';
 
-const Form = ({ children, onSubmit }) => (
-  <form className="mt-6" onSubmit={onSubmit}>
-    {children}
-  </form>
-);
+import styles from './Form.module.scss';
+
+const Form = ({ children, onSubmit, methods, ...leftOverProps }) => {
+  const {
+    formState: { errors },
+    handleSubmit,
+  } = methods;
+
+  return (
+    <FormProvider {...methods}>
+      <form
+        {...leftOverProps}
+        className="mt-6"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        {children}
+        {errors?.general && (
+          <p className={styles.error}>{errors.general.message}</p>
+        )}
+      </form>
+    </FormProvider>
+  );
+};
 
 Form.Input = FormInput;
 Form.Button = FormButton;
