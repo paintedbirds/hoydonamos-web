@@ -1,12 +1,36 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
+import { useForm } from 'react-hook-form';
+import { string, object } from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import Form from 'components/Form';
+import { handleErrors } from 'helpers/errors';
+import { useSignIn } from 'hooks/mutations/auth';
 
 const SignInForm = () => {
-  const onSubmit = useCallback(async (values) => console.log(values), []);
+  const { mutate, isLoading } = useSignIn();
+
+  const schema = useMemo(
+    () =>
+      object().shape({
+        email: string().email('Email invalido').required('Campo requerido'),
+        password: string().required('Campo requerido'),
+      }),
+    []
+  );
+
+  const methods = useForm({ resolver: yupResolver(schema) });
+
+  const onSubmit = useCallback(
+    async (values) =>
+      mutate(values, {
+        onError: (errors) => handleErrors(errors, methods.setError),
+      }),
+    [mutate, methods.setError]
+  );
 
   return (
-    <Form onSubmit={onSubmit} options={{}}>
+    <Form onSubmit={onSubmit} methods={methods}>
       <Form.Input
         name="email"
         label="Email"
@@ -20,7 +44,7 @@ const SignInForm = () => {
         type="password"
         autoComplete="on"
       />
-      <Form.Button>Iniciar sesión</Form.Button>
+      <Form.Button>{isLoading ? 'Cargando...' : 'Iniciar sesión'}</Form.Button>
     </Form>
   );
 };
