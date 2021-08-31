@@ -1,7 +1,7 @@
 export const applyInterceptors = (client, token, clearSession) => {
   const requestInterceptor = client.interceptors.request.use((request) => {
     if (token) {
-      Object.assign(request.headers.Authorization, `Bearer ${token}`);
+      request.headers.Authorization = `Bearer ${token}`;
     } else {
       Object.assign(request.params);
     }
