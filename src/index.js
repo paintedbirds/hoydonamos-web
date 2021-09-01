@@ -7,7 +7,13 @@ import { AuthProvider } from 'contexts/auth';
 import App from './App';
 import './index.css';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
