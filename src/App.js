@@ -1,32 +1,22 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import Loading from 'components/Loading';
+import { useAuth } from 'contexts/auth';
 
-const DonationsPage = lazy(() => import('pages/DonationsPage'));
-const HomePage = lazy(() => import('pages/HomePage'));
-const SignInPage = lazy(() => import('pages/SignInPage'));
-const SignUpPage = lazy(() => import('pages/SignUpPage'));
+const Authenticated = lazy(() => import('routers/Authenticated'));
+const Unauthenticated = lazy(() => import('routers/Unauthenticated'));
 
-const App = () => (
-  <BrowserRouter>
-    <Suspense delayMs={500} fallback={<Loading />}>
-      <Switch>
-        <Route exact path="/donaciones">
-          <DonationsPage />
-        </Route>
-        <Route exact path="/iniciar-sesion">
-          <SignInPage />
-        </Route>
-        <Route exact path="/registro">
-          <SignUpPage />
-        </Route>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-      </Switch>
-    </Suspense>
-  </BrowserRouter>
-);
+const App = () => {
+  const { isAuthenticated } = useAuth();
+
+  return (
+    <BrowserRouter>
+      <Suspense delayMs={500} fallback={<Loading />}>
+        {isAuthenticated ? <Authenticated /> : <Unauthenticated />}
+      </Suspense>
+    </BrowserRouter>
+  );
+};
 
 export default App;
