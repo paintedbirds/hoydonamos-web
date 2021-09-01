@@ -4,5 +4,5 @@ import { DonationService } from 'networking/services';
 
 const QUERY_KEY = 'donations';
 
-export const useDonations = () =>
-  useQuery([QUERY_KEY], DonationService.getDonations);
+export const useDonations = ({ query }) =>
+  useQuery([QUERY_KEY, query], () => DonationService.getDonations(query));
