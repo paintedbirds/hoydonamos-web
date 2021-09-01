@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import DonationCard from 'components/DonationCard';
 import Loading from 'components/Loading';
 import UnderlinedTitle from 'components/UnderlinedTitle';
@@ -5,11 +7,13 @@ import { useDonations } from 'hooks/queries/donation';
 import Search from './Search';
 
 const Donations = () => {
-  const { data, status } = useDonations();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const { data, status } = useDonations({ query: searchQuery });
 
   return (
     <section>
-      <Search />
+      <Search query={searchQuery} setQuery={setSearchQuery} />
       <div className="px-6">
         <div className="mt-11 text-4xl">
           <UnderlinedTitle>
@@ -33,6 +37,12 @@ const Donations = () => {
         {status === 'error' && (
           <p className="my-11 w-full flex justify-center items-center">
             Ha ocurrido un error al cargar las donaciones
+          </p>
+        )}
+
+        {status === 'success' && !(data.length > 0) && (
+          <p className="my-11 w-full flex justify-center items-center">
+            No se han encontrado donaciones para mostrar
           </p>
         )}
       </div>
