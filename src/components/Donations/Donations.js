@@ -28,8 +28,13 @@ const Donations = () => {
 
         {status === 'success' && (
           <section className="my-11 grid grid-cols-1 sm:grid-cols-2 gap-5 justify-center">
-            {data.map(({ id, name, description }) => (
-              <DonationCard key={id} title={name} description={description} />
+            {data.map(({ id, name, description, image }) => (
+              <DonationCard
+                key={id}
+                title={name}
+                description={description}
+                image={image}
+              />
             ))}
           </section>
         )}

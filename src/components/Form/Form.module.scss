@@ -4,6 +4,12 @@
   @apply w-full block hover:opacity-90 text-white rounded-lg px-4 py-3 mt-9 sm:mt-16;
 
   background-color: $primary;
+
+  &:disabled {
+    @apply opacity-90;
+
+    cursor: not-allowed;
+  }
 }
 
 .input-container {

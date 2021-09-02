@@ -44,7 +44,9 @@ const SignInForm = () => {
         type="password"
         autoComplete="on"
       />
-      <Form.Button>{isLoading ? 'Cargando...' : 'Iniciar sesión'}</Form.Button>
+      <Form.Button disabled={isLoading}>
+        {isLoading ? 'Cargando...' : 'Iniciar sesión'}
+      </Form.Button>
     </Form>
   );
 };

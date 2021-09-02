@@ -46,7 +46,9 @@ const SignUpForm = () => {
         type="password"
         autoComplete="on"
       />
-      <Form.Button>{isLoading ? 'Cargando...' : 'Registrarme'}</Form.Button>
+      <Form.Button disabled={isLoading}>
+        {isLoading ? 'Cargando...' : 'Registrarme'}
+      </Form.Button>
     </Form>
   );
 };
