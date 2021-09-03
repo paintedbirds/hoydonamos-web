@@ -1,11 +1,16 @@
 import httpClient from '../httpClient';
 
 export class DonationService {
-  static async getDonations(query) {
-    const endpoint = query ? `/donations/${query}` : '/donations';
+  static async getDonations({ page = 1, query }) {
+    const endpointWithQuery = query ? `/donations/${query}` : '/donations';
+    const endpointWithPage = `${endpointWithQuery}?page=${page}`;
 
-    const response = await httpClient.get(endpoint);
+    const response = await httpClient.get(endpointWithPage);
 
-    return response.data;
+    return {
+      data: response.data.data,
+      currentPage: response.data.current_page,
+      lastPage: response.data.last_page,
+    };
   }
 }

@@ -1,15 +1,31 @@
-import { useState } from 'react';
+import { Fragment, useRef, useState } from 'react';
 
 import DonationCard from 'components/DonationCard';
 import Loading from 'components/Loading';
 import UnderlinedTitle from 'components/UnderlinedTitle';
+import { useIntersectionObserver } from 'hooks/intersectionObserver';
 import { useDonations } from 'hooks/queries/donation';
 import Search from './Search';
+
+import styles from './Donations.module.scss';
 
 const Donations = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
-  const { data, status } = useDonations({ query: searchQuery });
+  const loadMoreRef = useRef();
+
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, status } =
+    useDonations({
+      query: searchQuery,
+    });
+
+  const handleLoadMore = () => fetchNextPage();
+
+  useIntersectionObserver({
+    elementRef: loadMoreRef,
+    enabled: hasNextPage,
+    onIntersect: fetchNextPage,
+  });
 
   return (
     <section>
@@ -20,23 +36,43 @@ const Donations = () => {
             <h3>Donaciones</h3>
           </UnderlinedTitle>
         </div>
-        {status === 'loading' && (
+
+        {status === 'success' && (
+          <>
+            <section className="my-11 grid grid-cols-1 sm:grid-cols-2 gap-5 justify-center">
+              {data.pages.map((page) => (
+                <Fragment key={page.currentPage}>
+                  {page.data.map(({ id, name, description, image }) => (
+                    <DonationCard
+                      key={id}
+                      title={name}
+                      description={description}
+                      image={image}
+                    />
+                  ))}
+                </Fragment>
+              ))}
+            </section>
+
+            {hasNextPage && !isFetchingNextPage && (
+              <div className="my-6 w-full flex justify-center items-center">
+                <button
+                  type="button"
+                  className={styles['load-more-button']}
+                  ref={loadMoreRef}
+                  onClick={handleLoadMore}
+                >
+                  Cargar mas
+                </button>
+              </div>
+            )}
+          </>
+        )}
+
+        {(status === 'loading' || isFetchingNextPage) && (
           <div className="my-11 w-full flex justify-center items-center">
             <Loading />
           </div>
-        )}
-
-        {status === 'success' && (
-          <section className="my-11 grid grid-cols-1 sm:grid-cols-2 gap-5 justify-center">
-            {data.map(({ id, name, description, image }) => (
-              <DonationCard
-                key={id}
-                title={name}
-                description={description}
-                image={image}
-              />
-            ))}
-          </section>
         )}
 
         {status === 'error' && (
@@ -45,7 +81,7 @@ const Donations = () => {
           </p>
         )}
 
-        {status === 'success' && !(data.length > 0) && (
+        {status === 'success' && !(data.pages[0].data.length > 0) && (
           <p className="my-11 w-full flex justify-center items-center">
             No se han encontrado donaciones para mostrar
           </p>
