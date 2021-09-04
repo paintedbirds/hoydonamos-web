@@ -7,7 +7,7 @@ import styles from './DonationCard.module.scss';
 const DonationCard = ({ title, description, image }) => (
   <div className={styles.container}>
     <div className="w-full rounded-lg mb-4">
-      <img alt="Donation" className={styles.image} src={image} />
+      <img alt="Donation" className={styles.image} src={image} load="lazy" />
     </div>
     <div className="flex justify-between justify-center">
       <h4 className={styles.title}>{title}</h4>

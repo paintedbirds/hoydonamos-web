@@ -1,8 +1,16 @@
-import { useQuery } from 'react-query';
+import { useInfiniteQuery } from 'react-query';
 
 import { DonationService } from 'networking/services';
 
 const QUERY_KEY = 'donations';
 
 export const useDonations = ({ query }) =>
-  useQuery([QUERY_KEY, query], () => DonationService.getDonations(query));
+  useInfiniteQuery(
+    [QUERY_KEY, query],
+    ({ pageParam = 1 }) =>
+      DonationService.getDonations({ query, page: pageParam }),
+    {
+      getNextPageParam: (state) =>
+        state.lastPage > state.currentPage ? state.currentPage + 1 : false,
+    }
+  );
