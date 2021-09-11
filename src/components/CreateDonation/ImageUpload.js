@@ -18,7 +18,7 @@ const ImageUpload = () => {
   return (
     <>
       <div
-        className={`sm:w-1/2 w-full lg:h-auto h-54 ${styles['image-upload']}`}
+        className={`sm:w-1/2 w-full md:h-auto h-54 ${styles['image-upload']}`}
       >
         <img
           className={styles['image-upload__image']}

@@ -13,4 +13,8 @@ export class DonationService {
       lastPage: response.data.last_page,
     };
   }
+
+  static createDonation({ donation }) {
+    return httpClient.post('/donations', donation);
+  }
 }
