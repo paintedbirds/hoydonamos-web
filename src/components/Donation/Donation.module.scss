@@ -1,0 +1,13 @@
+.image {
+  @apply w-full object-cover object-center rounded-2xl;
+
+  max-height: 380px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  padding-block: 5px;
+  width: 100%;
+}
