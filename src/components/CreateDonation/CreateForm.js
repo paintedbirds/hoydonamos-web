@@ -4,9 +4,13 @@ import { mixed, object, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import Form from 'components/Form';
+import { handleErrors } from 'helpers/errors';
+import { useCreateDonation } from 'hooks/mutations/donation';
 import ImageUpload from './ImageUpload';
 
 const CreateForm = () => {
+  const { mutate, isLoading } = useCreateDonation();
+
   const schema = useMemo(
     () =>
       object().shape({
@@ -19,7 +23,20 @@ const CreateForm = () => {
 
   const methods = useForm({ resolver: yupResolver(schema) });
 
-  const onSubmit = useCallback((values) => console.log(values), []);
+  const onSubmit = useCallback(
+    (values) => {
+      const formData = new FormData();
+
+      formData.append('name', values.name);
+      formData.append('description', values.description);
+      formData.append('image', values.image[0]);
+
+      mutate(formData, {
+        onError: (errors) => handleErrors(errors, methods.setError),
+      });
+    },
+    [methods.setError, mutate]
+  );
 
   return (
     <Form
@@ -41,7 +58,7 @@ const CreateForm = () => {
         />
 
         <div className="flex">
-          <Form.Button>Subir</Form.Button>
+          <Form.Button>{isLoading ? 'Cargando...' : 'Subir'}</Form.Button>
         </div>
       </div>
     </Form>
