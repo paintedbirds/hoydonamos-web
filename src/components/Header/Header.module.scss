@@ -11,3 +11,35 @@
     color: $black;
   }
 }
+
+.nav {
+  position: relative;
+
+  &__button {
+    @apply z-10;
+  }
+
+  &__dropdown {
+    @apply absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl z-20 py-3 px-2;
+
+    border: 1px solid $secondary;
+  }
+}
+
+.nav-link {
+  @apply block px-4 py-2 capitalize rounded mt-1;
+
+  color: $secondary;
+
+  &:hover {
+    @apply text-white;
+
+    background-color: $secondary;
+  }
+
+  &--active {
+    @apply text-white;
+
+    background-color: $secondary;
+  }
+}
