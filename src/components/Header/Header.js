@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as MenuIcon } from 'assets/menu.svg';
 import { ReactComponent as Logo } from 'assets/logo--secondary.svg';
+import Nav from './Nav';
 
 import styles from './Header.module.scss';
 
@@ -14,7 +14,7 @@ const Header = () => (
         </Link>
         <h1 className={styles.title}>Che, ¿hoy donamos?</h1>
       </div>
-      <MenuIcon className="h-6 w-6 lg:h-8 lg:w-8" />
+      <Nav />
     </div>
   </div>
 );
