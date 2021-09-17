@@ -1,4 +1,4 @@
-import { useInfiniteQuery } from 'react-query';
+import { useInfiniteQuery, useQuery } from 'react-query';
 
 import { DonationService } from 'networking/services';
 
@@ -14,3 +14,6 @@ export const useDonations = ({ query }) =>
         state.lastPage > state.currentPage ? state.currentPage + 1 : false,
     }
   );
+
+export const useDonation = ({ id }) =>
+  useQuery([QUERY_KEY, id], () => DonationService.getDonation({ id }));

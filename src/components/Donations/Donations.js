@@ -48,6 +48,7 @@ const Donations = () => {
                       title={name}
                       description={description}
                       image={image}
+                      id={id}
                     />
                   ))}
                 </Fragment>

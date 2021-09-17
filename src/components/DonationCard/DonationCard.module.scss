@@ -19,4 +19,14 @@
   .description {
     @apply mt-4;
   }
+
+  .heart {
+    @apply rounded-full;
+    padding-inline: 0.2rem;
+
+    &:hover {
+      box-shadow: $shadow;
+      cursor: pointer;
+    }
+  }
 }

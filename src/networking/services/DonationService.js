@@ -14,6 +14,12 @@ export class DonationService {
     };
   }
 
+  static async getDonation({ id }) {
+    const response = await httpClient.get(`/donation/${id}`);
+
+    return response.data;
+  }
+
   static createDonation({ donation }) {
     return httpClient.post('/donations', donation);
   }
