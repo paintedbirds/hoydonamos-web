@@ -22,6 +22,51 @@ React, ReactQuery, SASS + TailwindCSS
 
 ## Arquitectura
 
+### Estructura del proyecto
+
+```
+.
+├── docs/
+├── public/
+├── src
+│   ├── assets/
+│   ├── components/
+│   ├── contexts/
+│   ├── helpers/
+│   ├── hooks/
+│   ├── layouts/
+│   ├── networking/
+│   ├── pages/
+│   ├── routers/
+│   ├── sass/_variables.scss
+│   ├── App.js
+│   ├── index.js
+├── .env
+├── .gitignore
+├── .prettierrc
+├── craco.config.js
+├── jsconfig.json
+├── package-lock.json
+├── package.json
+├── README.md
+└── tailwind.config.js
+```
+
+### Estructura de un componente
+
+```
+├── MyComponent
+│ ├── index.js
+│ ├── MyComponent.js
+│ ├── MyComponent.module.scss
+```
+
+Cada componente usara clases de TailwindCSS para sus estilos, en el caso de que sea necesario agregar estilos especificos se creara un archivo con el siguiente formato `NombreDelComponente.module.scss`
+
+Si se quiere dividir el componente en partes mas pequeñas para mejorar la lectura del codigo, se pueden agregar en la carpeta del componente si es que no van a ser usado fuera del mismo.
+
+### Arquitectura de Networking
+
 ![Logo](docs/networking-architecture.png)
 
 Son los `Servicios` quienes gestionan la comunicación con la `API`, siendo los responsables de los métodos HTTP a usar en cada petición, serializar los datos para que sean semánticos y los encargados de proveer a la `API` los datos en el formato que los necesita (ej. JWT en la cabecera de las peticiones).
