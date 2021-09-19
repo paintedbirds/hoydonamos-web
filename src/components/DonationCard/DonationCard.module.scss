@@ -1,0 +1,32 @@
+@import '../../sass/variables';
+
+.container {
+  @apply p-6 rounded-lg;
+
+  box-shadow: $shadow;
+  max-width: 627px;
+
+  .image {
+    @apply object-cover rounded-lg w-full;
+
+    max-height: 200px;
+  }
+
+  .title {
+    @apply font-bold text-lg;
+  }
+
+  .description {
+    @apply mt-4;
+  }
+
+  .heart {
+    @apply rounded-full;
+    padding-inline: 0.2rem;
+
+    &:hover {
+      box-shadow: $shadow;
+      cursor: pointer;
+    }
+  }
+}
