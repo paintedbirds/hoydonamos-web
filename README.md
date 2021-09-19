@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+![Logo](src/assets/logo--secondary.svg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Che, ¿hoy donamos?
 
-## Available Scripts
+Cliente web de `Che, ¿hoy donamos?`, realizado en [ReactJS](https://reactjs.org/).
 
-In the project directory, you can run:
+## Colores
 
-### `npm start`
+| Color           | Hex                                                              |
+| --------------- | ---------------------------------------------------------------- |
+| Primary         | ![#ff2063](https://via.placeholder.com/10/ff2063?text=+) #ff2063 |
+| Secondary       | ![#73b8b2](https://via.placeholder.com/10/73b8b2?text=+) #73b8b2 |
+| Complementary 1 | ![#d79a9f](https://via.placeholder.com/10/d79a9f?text=+) #d79a9f |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Demo
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Insert gif or link to demo
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React, ReactQuery, SASS + TailwindCSS
 
-### `npm run build`
+## Arquitectura
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Levantar Servicio Localmente
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Clonar el repositorio
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+  git clone https://link-to-project
+```
 
-### `npm run eject`
+- Ir al directorio del proyecto
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+  cd my-project
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Crear un archivo `.env` donde esten las variables de entorno especificadas en el `.env.example`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Instalar las dependencias, utilizando npm
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+  npm install
+```
 
-## Learn More
+- Levantar el servidor
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Levantar Servicio Produción
 
-### Code Splitting
+- Clonar el repositorio
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  git clone https://link-to-project
+```
 
-### Analyzing the Bundle Size
+- Ir al directorio del proyecto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+  cd my-project
+```
 
-### Making a Progressive Web App
+- Crear un archivo `.env` donde esten las variables de entorno especificadas en el `.env.example`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Instalar las dependencias, utilizando npm
 
-### Advanced Configuration
+```bash
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Crear una version de producion en la carpeta `build`
 
-### Deployment
+```bash
+  npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Authors
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Alejandro Gonzalez](https://www.github.com/octokatherine)
+- [Lautaro Pardo](https://www.github.com/octokatherine)
+- [Facundo Correa](https://www.github.com/octokatherine)
+- [Nicolás Machado da Silva](https://www.github.com/octokatherine)
