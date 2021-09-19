@@ -1,70 +1,139 @@
-# Getting Started with Create React App
+![Logo](src/assets/logo--secondary.svg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Che, ¿hoy donamos?
 
-## Available Scripts
+Cliente web de `Che, ¿hoy donamos?`, realizado en [ReactJS](https://reactjs.org/).
 
-In the project directory, you can run:
+## Colores
 
-### `npm start`
+| Color           | Hex                                                              |
+| --------------- | ---------------------------------------------------------------- |
+| Primary         | ![#ff2063](https://via.placeholder.com/10/ff2063?text=+) #ff2063 |
+| Secondary       | ![#73b8b2](https://via.placeholder.com/10/73b8b2?text=+) #73b8b2 |
+| Complementary 1 | ![#d79a9f](https://via.placeholder.com/10/d79a9f?text=+) #d79a9f |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Demo
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Insert gif or link to demo
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React, ReactQuery, SASS + TailwindCSS
 
-### `npm run build`
+## Arquitectura
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Estructura del proyecto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+.
+├── docs/
+├── public/
+├── src
+│   ├── assets/
+│   ├── components/
+│   ├── contexts/
+│   ├── helpers/
+│   ├── hooks/
+│   ├── layouts/
+│   ├── networking/
+│   ├── pages/
+│   ├── routers/
+│   ├── sass/_variables.scss
+│   ├── App.js
+│   ├── index.js
+├── .env
+├── .gitignore
+├── .prettierrc
+├── craco.config.js
+├── jsconfig.json
+├── package-lock.json
+├── package.json
+├── README.md
+└── tailwind.config.js
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Estructura de un componente
 
-### `npm run eject`
+```
+├── MyComponent
+│ ├── index.js
+│ ├── MyComponent.js
+│ ├── MyComponent.module.scss
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Cada componente usara clases de TailwindCSS para sus estilos, en el caso de que sea necesario agregar estilos especificos se creara un archivo con el siguiente formato `NombreDelComponente.module.scss`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Si se quiere dividir el componente en partes mas pequeñas para mejorar la lectura del codigo, se pueden agregar en la carpeta del componente si es que no van a ser usado fuera del mismo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Arquitectura de Networking
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Logo](docs/networking-architecture.png)
 
-## Learn More
+Son los `Servicios` quienes gestionan la comunicación con la `API`, siendo los responsables de los métodos HTTP a usar en cada petición, serializar los datos para que sean semánticos y los encargados de proveer a la `API` los datos en el formato que los necesita (ej. JWT en la cabecera de las peticiones).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Le dimos la responsabilidad de gestionar el estado del servidor (API/Backend) del lado del cliente(Frontend) a React Query, y decidimos utilizarlo a través de `custom hooks` los cuales usan los `hooks` que nos provee React Query. Estos `hooks` se comunican con los `Servicios` y mantienen el estado de la aplicación actualizado y sincronizado con el estado del servidor.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Nuestros `componentes` se comunicaran con el servidor a través de los `hooks` quienes a su vez harán que nuestros componentes se actualicen para que los datos que mostramos en ellos estén sincronizados con el servidor y nos permitirán realizar cambios en el también.
 
-### Code Splitting
+## Levantar Servicio Localmente
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Clonar el repositorio
 
-### Analyzing the Bundle Size
+```bash
+  git clone https://link-to-project
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Ir al directorio del proyecto
 
-### Making a Progressive Web App
+```bash
+  cd my-project
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Crear un archivo `.env` donde esten las variables de entorno especificadas en el `.env.example`
 
-### Advanced Configuration
+- Instalar las dependencias, utilizando npm
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+  npm install
+```
 
-### Deployment
+- Levantar el servidor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+  npm start
+```
 
-### `npm run build` fails to minify
+## Levantar Servicio Produción
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Clonar el repositorio
+
+```bash
+  git clone https://link-to-project
+```
+
+- Ir al directorio del proyecto
+
+```bash
+  cd my-project
+```
+
+- Crear un archivo `.env` donde esten las variables de entorno especificadas en el `.env.example`
+
+- Instalar las dependencias, utilizando npm
+
+```bash
+  npm install
+```
+
+- Crear una version de producion en la carpeta `build`
+
+```bash
+  npm run build
+```
+
+## Authors
+
+- [Nicolás Machado da Silva](https://www.github.com/nicocadq)
+- [Alejandro Gonzalez](https://github.com/alejandroGonGon)
+- [Lautaro Pardo](https://github.com/LautaroPardo)
+- [Facundo Correa](https://github.com/facorrea700)
