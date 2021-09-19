@@ -133,7 +133,7 @@ Nuestros `componentes` se comunicaran con el servidor a través de los `hooks` q
 
 ## Authors
 
-- [Alejandro Gonzalez](https://www.github.com/octokatherine)
-- [Lautaro Pardo](https://www.github.com/octokatherine)
-- [Facundo Correa](https://www.github.com/octokatherine)
-- [Nicolás Machado da Silva](https://www.github.com/octokatherine)
+- [Nicolás Machado da Silva](https://www.github.com/nicocadq)
+- [Alejandro Gonzalez](https://github.com/alejandroGonGon)
+- [Lautaro Pardo](https://github.com/LautaroPardo)
+- [Facundo Correa](https://github.com/facorrea700)
