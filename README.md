@@ -110,13 +110,13 @@ Nuestros `componentes` se comunicaran con el servidor a través de los `hooks` q
 - Clonar el repositorio
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/Anima-Tec/2021_Proyecto_Integrador_Equipo_3-Frontend.git
 ```
 
 - Ir al directorio del proyecto
 
 ```bash
-  cd my-project
+  cd 2021_Proyecto_Integrador_Equipo_3-Frontend
 ```
 
 - Crear un archivo `.env` donde esten las variables de entorno especificadas en el `.env.example`
