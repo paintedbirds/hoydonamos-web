@@ -65,6 +65,8 @@ Cada componente usara clases de TailwindCSS para sus estilos, en el caso de que 
 
 Si se quiere dividir el componente en partes mas pequeñas para mejorar la lectura del codigo, se pueden agregar en la carpeta del componente si es que no van a ser usado fuera del mismo.
 
+El archivo `index.js` debería exportar `default` el componente reutilizable que va a ser consumido por otros recursos de la aplicación.
+
 ### Arquitectura de Networking
 
 ![Logo](docs/networking-architecture.png)
@@ -80,13 +82,13 @@ Nuestros `componentes` se comunicaran con el servidor a través de los `hooks` q
 - Clonar el repositorio
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/Anima-Tec/2021_Proyecto_Integrador_Equipo_3-Frontend.git
 ```
 
 - Ir al directorio del proyecto
 
 ```bash
-  cd my-project
+  cd 2021_Proyecto_Integrador_Equipo_3-Frontend
 ```
 
 - Crear un archivo `.env` donde esten las variables de entorno especificadas en el `.env.example`
