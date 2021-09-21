@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import FormButton from './Button';
 import FormEditableField from './EditableField';
 import FormInput from './Input';
+import FormTextarea from './Textarea';
 
 import styles from './Form.module.scss';
 
@@ -32,6 +33,7 @@ const Form = ({ children, onSubmit, methods, ...leftOverProps }) => {
 Form.Button = FormButton;
 Form.EditableField = FormEditableField;
 Form.Input = FormInput;
+Form.Textarea = FormTextarea;
 
 Form.propTypes = {
   children: PropTypes.oneOfType([
