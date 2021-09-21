@@ -1,7 +1,7 @@
 @import '../../sass/variables';
 
 .container {
-  @apply p-6 rounded-lg;
+  @apply p-6 rounded-lg bg-white;
 
   box-shadow: $shadow;
   max-width: 627px;

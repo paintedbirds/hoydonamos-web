@@ -10,19 +10,17 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  const onMenuClick = () => {
-    setIsOpen((previousState) => !previousState);
-  };
+  const onMenuClick = () => setIsOpen((previousState) => !previousState);
 
-  useClickAway(dropdownRef, onMenuClick);
+  useClickAway(dropdownRef, () => setIsOpen(false));
 
   return (
-    <div className={styles.nav}>
+    <div className={styles.nav} ref={dropdownRef}>
       <button onClick={onMenuClick} className={styles['nav__button']}>
         <MenuIcon className="h-6 w-6 lg:h-8 lg:w-8" />
       </button>
       {isOpen && (
-        <div ref={dropdownRef} className={styles['nav__dropdown']}>
+        <div className={styles['nav__dropdown']}>
           <NavLink to="/">Donaciones</NavLink>
           <NavLink to="/crear-donacion">Crear donaciones</NavLink>
           <NavLink to="/solicitudes">Solicitudes</NavLink>

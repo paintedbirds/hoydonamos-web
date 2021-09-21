@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import texture from 'assets/texture.svg';
+import texture from 'assets/texture.png';
 
 const OnboardingLayout = ({ children }) => (
   <main className="flex flex-col md:flex-row h-screen items-center w-full">
