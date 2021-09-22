@@ -62,7 +62,7 @@ const Donation = () => {
                 <Close onClick={onCloseModal} />
               </div>
               <div className={styles['form-container']}>
-                <RequestForm />
+                <RequestForm donationId={id} />
               </div>
             </Modal>
           )}

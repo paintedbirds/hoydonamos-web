@@ -23,4 +23,8 @@ export class DonationService {
   static createDonation({ donation }) {
     return httpClient.post('/donations', donation);
   }
+
+  static createDonationRequest({ donationId, reason }) {
+    return httpClient.post(`/donations/${donationId}/requests`, reason);
+  }
 }

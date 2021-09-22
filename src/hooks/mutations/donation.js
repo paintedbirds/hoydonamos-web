@@ -17,3 +17,19 @@ export const useCreateDonation = () => {
 
   return mutation;
 };
+
+export const useCreateDonationRequest = () => {
+  const history = useHistory();
+
+  const mutation = useMutation(
+    ({ donationId, reason }) =>
+      DonationService.createDonationRequest({ donationId, reason }),
+    {
+      onSuccess: (response) => {
+        history.push('/');
+      },
+    }
+  );
+
+  return mutation;
+};
