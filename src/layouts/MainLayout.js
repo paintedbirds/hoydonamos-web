@@ -7,7 +7,7 @@ const MainLayout = ({ children }) => (
   <div className="w-full mx-auto min-h-screen min-w-full">
     <ShapesBackground />
     <Header />
-    <div className="mt-8 max-w-screen-lg mx-auto relative">{children}</div>
+    <div className="my-8 max-w-screen-lg mx-auto relative">{children}</div>
   </div>
 );
 
