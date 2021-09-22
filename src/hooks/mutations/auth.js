@@ -1,5 +1,6 @@
 import { useMutation } from 'react-query';
 import { useHistory } from 'react-router';
+import toast from 'react-hot-toast';
 
 import { useAuth, initialState } from 'contexts/auth';
 import { clearToken, getToken, persistToken } from 'helpers/token';
@@ -20,6 +21,14 @@ export const useSignUp = () => {
       persistToken(response.data.token);
 
       history.push('/');
+
+      toast.success('Te has registrado correctamente', {
+        duration: 3500,
+        icon: '👏',
+        style: {
+          minWidth: '250px',
+        },
+      });
     },
   });
 
@@ -41,6 +50,14 @@ export const useSignIn = () => {
       persistToken(response.data.token);
 
       history.push('/');
+
+      toast.success('Has iniciado sesión correctamente', {
+        duration: 3500,
+        icon: '👏',
+        style: {
+          minWidth: '250px',
+        },
+      });
     },
   });
 
@@ -59,6 +76,14 @@ export const useSignOut = () => {
       clearToken();
 
       history.push('/');
+
+      toast.success('Has cerrado sesión correctamente', {
+        duration: 3500,
+        icon: '👋 ',
+        style: {
+          minWidth: '250px',
+        },
+      });
     },
   });
 

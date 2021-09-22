@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 import Loading from 'components/Loading';
 import { useAuth } from 'contexts/auth';
@@ -15,6 +16,7 @@ const App = () => {
       <Suspense delayMs={500} fallback={<Loading />}>
         {isAuthenticated ? <Authenticated /> : <Unauthenticated />}
       </Suspense>
+      <Toaster />
     </BrowserRouter>
   );
 };
