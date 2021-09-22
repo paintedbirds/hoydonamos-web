@@ -3,6 +3,7 @@ import { useState, useRef } from 'react';
 import { ReactComponent as MenuIcon } from 'assets/menu.svg';
 import { useClickAway } from 'hooks/events';
 import { NavLink } from './NavLink';
+import { SignOutLink } from './SignOutLink';
 
 import styles from './Header.module.scss';
 
@@ -26,7 +27,7 @@ const Nav = () => {
           <NavLink to="/solicitudes">Solicitudes</NavLink>
           <NavLink to="/crear-solicitud">Crear solicitud</NavLink>
           <NavLink to="/mi-cuenta">Mi cuenta</NavLink>
-          <NavLink to="/cerrar-sesion">Cerrar sesión</NavLink>
+          <SignOutLink />
         </div>
       )}
     </div>

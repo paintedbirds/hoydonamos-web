@@ -10,6 +10,6 @@ export class AuthService {
   }
 
   static signOut(user) {
-    return httpClient.delete('/logout', user);
+    return httpClient.post('/logout', user);
   }
 }

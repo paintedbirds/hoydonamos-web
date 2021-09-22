@@ -1,10 +1,9 @@
 import { useMutation } from 'react-query';
 import { useHistory } from 'react-router';
 
-import { useAuth } from 'contexts/auth';
+import { useAuth, initialState } from 'contexts/auth';
+import { clearToken, getToken, persistToken } from 'helpers/token';
 import { AuthService } from 'networking/services';
-
-const persistToken = (token) => localStorage.setItem('token', token);
 
 export const useSignUp = () => {
   const history = useHistory();
@@ -40,6 +39,24 @@ export const useSignIn = () => {
       }));
 
       persistToken(response.data.token);
+
+      history.push('/');
+    },
+  });
+
+  return mutation;
+};
+
+export const useSignOut = () => {
+  const history = useHistory();
+  const { setState } = useAuth();
+
+  const storedToken = getToken();
+
+  const mutation = useMutation(() => AuthService.signOut(storedToken), {
+    onSuccess: (response) => {
+      setState(initialState);
+      clearToken();
 
       history.push('/');
     },

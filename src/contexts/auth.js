@@ -6,13 +6,14 @@ import {
   useState,
 } from 'react';
 
+import { getToken } from 'helpers/token';
 import httpClient from 'networking/httpClient';
 import {
   applyInterceptors,
   clearInterceptors,
 } from 'networking/authMiddleware';
 
-const initialState = {
+export const initialState = {
   user: null,
   token: null,
   isAuthenticated: false,
@@ -21,7 +22,7 @@ const initialState = {
 export const AuthContext = createContext(initialState);
 
 const loadState = () => {
-  const storedToken = localStorage.getItem('token');
+  const storedToken = getToken();
 
   if (storedToken) {
     return { ...initialState, token: storedToken, isAuthenticated: true };
