@@ -4,6 +4,21 @@
   @apply w-full block hover:opacity-90 text-white rounded-lg px-4 py-3 mt-9 sm:mt-16;
 
   background-color: $primary;
+  border: solid 2px $primary;
+
+  &:disabled {
+    @apply opacity-90;
+
+    cursor: not-allowed;
+  }
+}
+
+.button--secondary {
+  @apply w-full block hover:opacity-90 bg-white rounded-lg px-4 py-3 mt-9 sm:mt-16;
+
+  color: $primary;
+  border: solid 2px $primary;
+  font-weight: 700;
 
   &:disabled {
     @apply opacity-90;
