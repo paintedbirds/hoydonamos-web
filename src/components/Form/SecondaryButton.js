@@ -2,17 +2,21 @@ import PropTypes from 'prop-types';
 
 import styles from './Form.module.scss';
 
-const Button = ({ children, ...leftOverProps }) => (
-  <button type="submit" className={styles.button} {...leftOverProps}>
+const SecondaryButton = ({ children, ...leftOverProps }) => (
+  <button
+    type="submit"
+    className={styles['button--secondary']}
+    {...leftOverProps}
+  >
     {children}
   </button>
 );
 
-Button.propTypes = {
+SecondaryButton.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
 };
 
-export default Button;
+export default SecondaryButton;
