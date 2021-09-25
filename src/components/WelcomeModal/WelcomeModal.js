@@ -43,9 +43,13 @@ const WelcomeModal = () => {
             Che, ¿hoy donamos?
           </h1>
           <p className="mt-6 px-6">
-            Both of these can be used to do basically the same thing, but they
-            have slightly different use cases. So here are some rules for you to
-            consider when deciding which React Hook to use.
+            <strong>¡Bienvenido!</strong> Somos una plataforma que busca
+            conectar a las personas dentro de la comunidad, para que puedan
+            ayudarse mutuamente. Nuestro objetivo es facilitarte el proceso de
+            concretar una donación a futuras personas{' '}
+            <strong>
+              ¡Esperamos que saques el mayor provecho de esta increíble red!
+            </strong>
           </p>
           <div className="flex flex-col sm:flex-row  gap-x-4">
             <Form.SecondaryButton onClick={onDonateClick}>
