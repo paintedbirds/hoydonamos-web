@@ -6,6 +6,7 @@ import WelcomeModal from 'components/WelcomeModal';
 const DonationsPage = lazy(() => import('pages/DonationsPage'));
 const CreateDonationPage = lazy(() => import('pages/CreateDonationPage'));
 const DonationPage = lazy(() => import('pages/DonationPage'));
+const UpdateUserPage = lazy(() => import('pages/UpdateUserPage'));
 
 const Authenticated = () => (
   <>
@@ -18,6 +19,9 @@ const Authenticated = () => (
       </Route>
       <Route exact path="/crear-donacion">
         <CreateDonationPage />
+      </Route>
+      <Route exact path="/editar-usuario">
+        <UpdateUserPage />
       </Route>
     </Switch>
     <WelcomeModal />

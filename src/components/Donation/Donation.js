@@ -43,7 +43,7 @@ const Donation = () => {
             </div>
             <div className="flex flex-wrap sm:my-16 mt-8">
               <div className="md:w-1/2 w-full md:h-auto">
-                <img alt="Donacion" src={data.image} className={styles.image} />
+                <img alt="Donación" src={data.image} className={styles.image} />
               </div>
               <div className="md:w-1/2 w-full lg:pl-10 lg:mt-0 mt-8">
                 <h1 className={styles.title}>{data.name}</h1>

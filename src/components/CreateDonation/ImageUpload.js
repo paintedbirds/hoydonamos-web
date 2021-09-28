@@ -23,7 +23,7 @@ const ImageUpload = () => {
         <img
           className={styles['image-upload__image']}
           src={!hasImage ? defaultImage : URL.createObjectURL(image[0])}
-          alt="Donation"
+          alt="Donación"
         />
         {!hasImage && (
           <div className={styles['image-upload__container']}>
