@@ -13,7 +13,7 @@ const DonationCard = ({ title, description, image, id }) => {
   return (
     <div className={styles.container} role="button" onClick={goTo}>
       <div className="w-full rounded-lg mb-4">
-        <img alt="Donation" className={styles.image} src={image} load="lazy" />
+        <img alt="Donación" className={styles.image} src={image} load="lazy" />
       </div>
       <div className="flex justify-between justify-center">
         <h4 className={styles.title}>{title}</h4>
