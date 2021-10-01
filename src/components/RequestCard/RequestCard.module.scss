@@ -1,0 +1,44 @@
+@import '../../sass/variables';
+
+.container {
+  @apply bg-white p-8 rounded-lg;
+
+  box-shadow: $shadow;
+  position: relative;
+
+  .image {
+    @apply rounded-full;
+
+    height: 6rem;
+    object-fit: cover;
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    width: 6rem;
+  }
+
+  .title {
+    @apply font-bold;
+
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .contact-info {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    .contact-item {
+      align-items: center;
+      display: flex;
+      gap: 0.3rem;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    .contact-info {
+      flex-direction: column;
+    }
+  }
+}
