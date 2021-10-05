@@ -60,3 +60,9 @@
     }
   }
 }
+
+.error {
+  @apply text-red-600;
+
+  text-align: center;
+}

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import toast from 'react-hot-toast';
 
 import { useAuth, initialState } from 'contexts/auth';
-import { clearToken, getToken, persistToken } from 'helpers/token';
+import { clearSession, getSession, persistSession } from 'helpers/session';
 import { AuthService } from 'networking/services';
 
 export const useSignUp = () => {
@@ -18,7 +18,7 @@ export const useSignUp = () => {
         isAuthenticated: true,
       }));
 
-      persistToken(response.data.token);
+      persistSession(response.data);
 
       history.push('/');
 
@@ -47,7 +47,7 @@ export const useSignIn = () => {
         isAuthenticated: true,
       }));
 
-      persistToken(response.data.token);
+      persistSession(response.data);
 
       history.push('/');
 
@@ -68,12 +68,12 @@ export const useSignOut = () => {
   const history = useHistory();
   const { setState } = useAuth();
 
-  const storedToken = getToken();
+  const storedSession = getSession();
 
-  const mutation = useMutation(() => AuthService.signOut(storedToken), {
+  const mutation = useMutation(() => AuthService.signOut(storedSession), {
     onSuccess: (response) => {
       setState(initialState);
-      clearToken();
+      clearSession();
 
       history.push('/');
 
@@ -86,6 +86,43 @@ export const useSignOut = () => {
       });
     },
   });
+
+  return mutation;
+};
+
+export const useUserUpdate = () => {
+  const history = useHistory();
+  const { setState, user } = useAuth();
+
+  const mutation = useMutation(
+    (updatedUser) => AuthService.update({ user: updatedUser, userId: user.id }),
+    {
+      onSuccess: (response) => {
+        setState((previousState) => {
+          const stateToSave = {
+            ...previousState,
+            user: {
+              ...response.data,
+            },
+          };
+
+          persistSession(stateToSave);
+
+          return stateToSave;
+        });
+
+        history.push('/');
+
+        toast.success('Tu usuario ha sido actualizado correctamente', {
+          duration: 3500,
+          icon: '👏',
+          style: {
+            minWidth: '250px',
+          },
+        });
+      },
+    }
+  );
 
   return mutation;
 };
