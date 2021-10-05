@@ -8,6 +8,7 @@ const CreateDonationPage = lazy(() => import('pages/CreateDonationPage'));
 const DonationPage = lazy(() => import('pages/DonationPage'));
 const UpdateUserPage = lazy(() => import('pages/UpdateUserPage'));
 const RequestsPage = lazy(() => import('pages/RequestsPage'));
+const CreatePetitionPage = lazy(() => import('pages/CreatePetitionPage'));
 
 const Authenticated = () => (
   <>
@@ -26,6 +27,9 @@ const Authenticated = () => (
       </Route>
       <Route exact path="/solicitudes">
         <RequestsPage />
+      </Route>
+      <Route exact path="/crear-solicitud">
+        <CreatePetitionPage />
       </Route>
     </Switch>
     <WelcomeModal />

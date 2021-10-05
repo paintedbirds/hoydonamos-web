@@ -23,7 +23,7 @@ const Nav = () => {
       {isOpen && (
         <div className={styles['nav__dropdown']}>
           <NavLink to="/">Donaciones</NavLink>
-          <NavLink to="/crear-donacion">Crear donaciones</NavLink>
+          <NavLink to="/crear-donacion">Crear donación</NavLink>
           <NavLink to="/solicitudes">Solicitudes</NavLink>
           <NavLink to="/crear-solicitud">Crear solicitud</NavLink>
           <NavLink to="/mi-cuenta">Mi cuenta</NavLink>
