@@ -12,4 +12,8 @@ export class AuthService {
   static signOut(user) {
     return httpClient.post('/logout', user);
   }
+
+  static update({ user, userId }) {
+    return httpClient.post(`/users/${userId}`, user);
+  }
 }

@@ -6,7 +6,7 @@ import {
   useState,
 } from 'react';
 
-import { getToken } from 'helpers/token';
+import { isStoredSession, getSession } from 'helpers/session';
 import httpClient from 'networking/httpClient';
 import {
   applyInterceptors,
@@ -22,10 +22,10 @@ export const initialState = {
 export const AuthContext = createContext(initialState);
 
 const loadState = () => {
-  const storedToken = getToken();
+  const storedSession = getSession();
 
-  if (storedToken) {
-    return { ...initialState, token: storedToken, isAuthenticated: true };
+  if (isStoredSession) {
+    return { ...initialState, ...storedSession, isAuthenticated: true };
   }
 
   return initialState;
