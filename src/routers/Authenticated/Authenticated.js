@@ -7,7 +7,7 @@ const DonationsPage = lazy(() => import('pages/DonationsPage'));
 const CreateDonationPage = lazy(() => import('pages/CreateDonationPage'));
 const DonationPage = lazy(() => import('pages/DonationPage'));
 const UpdateUserPage = lazy(() => import('pages/UpdateUserPage'));
-const RequestsPage = lazy(() => import('pages/RequestsPage'));
+const PetitionsPage = lazy(() => import('pages/PetitionsPage'));
 const CreatePetitionPage = lazy(() => import('pages/CreatePetitionPage'));
 
 const Authenticated = () => (
@@ -26,7 +26,7 @@ const Authenticated = () => (
         <UpdateUserPage />
       </Route>
       <Route exact path="/solicitudes">
-        <RequestsPage />
+        <PetitionsPage />
       </Route>
       <Route exact path="/crear-solicitud">
         <CreatePetitionPage />
