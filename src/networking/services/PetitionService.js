@@ -10,4 +10,8 @@ export class PetitionService {
       lastPage: response.data.last_page,
     };
   }
+
+  static createPetition({ petition }) {
+    return httpClient.post('/petitions', petition);
+  }
 }

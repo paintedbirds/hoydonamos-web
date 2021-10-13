@@ -1,12 +1,36 @@
+import { useCallback, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
+import { object, string } from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import Form from 'components/Form';
+import { handleErrors } from 'helpers/errors';
+import { useCreatePetition } from 'hooks/mutations/petition';
 
 const CreatePetitionForm = () => {
-  const methods = useForm();
+  const { mutate, isLoading } = useCreatePetition();
+
+  const schema = useMemo(
+    () =>
+      object().shape({
+        subject: string().required('Debes completar este campo'),
+        description: string().required('Debes completar este campo'),
+      }),
+    []
+  );
+
+  const methods = useForm({ resolver: yupResolver(schema) });
+
+  const onSubmit = useCallback(
+    async (values) =>
+      mutate(values, {
+        onError: (errors) => handleErrors(errors, methods.setError),
+      }),
+    [mutate, methods.setError]
+  );
 
   return (
-    <Form methods={methods}>
+    <Form methods={methods} onSubmit={onSubmit}>
       <Form.Input
         name="subject"
         label="Asunto"
@@ -19,7 +43,7 @@ const CreatePetitionForm = () => {
       />
       <div className="flex flex-col-reverse sm:flex-row gap-4">
         <Form.SecondaryButton>Cancelar</Form.SecondaryButton>
-        <Form.Button>Guardar</Form.Button>
+        <Form.Button>{isLoading ? 'Cargando...' : 'Guardar'}</Form.Button>
       </div>
     </Form>
   );
