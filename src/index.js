@@ -5,6 +5,8 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 import { AuthProvider } from 'contexts/auth';
 import App from './App';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
 import './index.css';
 
 const queryClient = new QueryClient({
@@ -26,3 +28,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+serviceWorkerRegistration.register();
