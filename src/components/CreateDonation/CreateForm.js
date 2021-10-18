@@ -49,12 +49,12 @@ const CreateForm = () => {
         <Form.EditableField
           name="name"
           type="title"
-          defaultValue="Has click aqui, para agregarle un titulo a tu donacion"
+          placeholder="Has click aqui, para agregarle un titulo a tu donacion"
         />
         <Form.EditableField
           name="description"
           type="paragraph"
-          defaultValue="Sube tu donacion con un titulo que llame la atencion! Trata de proveer al lector todos los datos noecesarios para acceder a esta donacion. Se lo mas claro posible"
+          placeholder="Sube tu donacion con un titulo que llame la atencion! Trata de proveer al lector todos los datos noecesarios para acceder a esta donacion. Se lo mas claro posible"
         />
 
         <div className="flex">

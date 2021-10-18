@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 import styles from './Form.module.scss';
 
-const EditableField = ({ defaultValue, name, type, ...leftOverProps }) => {
+const EditableField = ({ placeholder, name, type, ...leftOverProps }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [value, setValue] = useState(defaultValue);
+  const [value, setValue] = useState(placeholder);
 
   const {
     register,
@@ -30,7 +30,6 @@ const EditableField = ({ defaultValue, name, type, ...leftOverProps }) => {
     name: name,
     id: name,
     className: styles[`editable-field__type-${type}`],
-    defaultValue: defaultValue,
     autoFocus: true,
     ...register(name),
     ...leftOverProps,
