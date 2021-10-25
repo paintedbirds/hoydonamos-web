@@ -9,6 +9,7 @@ const DonationPage = lazy(() => import('pages/DonationPage'));
 const UpdateUserPage = lazy(() => import('pages/UpdateUserPage'));
 const PetitionsPage = lazy(() => import('pages/PetitionsPage'));
 const CreatePetitionPage = lazy(() => import('pages/CreatePetitionPage'));
+const AccountPage = lazy(() => import('pages/AccountPage'));
 
 const Authenticated = () => (
   <>
@@ -30,6 +31,9 @@ const Authenticated = () => (
       </Route>
       <Route exact path="/crear-solicitud">
         <CreatePetitionPage />
+      </Route>
+      <Route exact path="/mi-cuenta">
+        <AccountPage />
       </Route>
     </Switch>
     <WelcomeModal />

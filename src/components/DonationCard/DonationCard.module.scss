@@ -5,6 +5,36 @@
 
   box-shadow: $shadow;
   max-width: 627px;
+  position: relative;
+
+  .status {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: $shadow;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .approved {
+    @extend .status;
+
+    color: #5dc28e;
+  }
+
+  .rejected {
+    @extend .status;
+
+    color: #d22b2b;
+  }
+
+  .pending {
+    @extend .status;
+
+    color: #f8bb11;
+  }
 
   .image {
     @apply object-cover rounded-lg w-full;

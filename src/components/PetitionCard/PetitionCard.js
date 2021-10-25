@@ -2,11 +2,13 @@ import PropTypes from 'prop-types';
 
 import { ReactComponent as Phone } from 'assets/phone.svg';
 import { ReactComponent as Email } from 'assets/email.svg';
+import Status from './Status';
 
 import styles from './PetitionCard.module.scss';
 
-const PetitionCard = ({ petition }) => (
+const PetitionCard = ({ petition, showStatus }) => (
   <div className={styles.container}>
+    {showStatus && <Status status={petition.state} />}
     <img className={styles.image} alt="Usuario" src={petition.user.image} />
     <h4 className={styles.title}>
       {petition.user.name} - {petition.subject}
@@ -27,6 +29,10 @@ const PetitionCard = ({ petition }) => (
   </div>
 );
 
+PetitionCard.defaultProps = {
+  showStatus: false,
+};
+
 PetitionCard.propTypes = {
   petition: PropTypes.shape({
     description: PropTypes.string.isRequired,
@@ -38,6 +44,7 @@ PetitionCard.propTypes = {
       phone: PropTypes.string,
     }),
   }).isRequired,
+  showStatus: PropTypes.bool,
 };
 
 export default PetitionCard;
