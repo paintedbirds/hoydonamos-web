@@ -24,8 +24,7 @@ const Donations = ({ donations }) => (
           image={image}
           status={state}
           key={id}
-          showHeart={false}
-          showStatus
+          showOptions
         />
       ))}
     </section>

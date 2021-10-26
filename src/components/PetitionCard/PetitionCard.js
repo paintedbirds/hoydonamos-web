@@ -2,13 +2,19 @@ import PropTypes from 'prop-types';
 
 import { ReactComponent as Phone } from 'assets/phone.svg';
 import { ReactComponent as Email } from 'assets/email.svg';
+import DeleteIcon from 'components/DeleteIcon';
 import Status from './Status';
 
 import styles from './PetitionCard.module.scss';
 
-const PetitionCard = ({ petition, showStatus }) => (
+const PetitionCard = ({ petition, showOptions, onDelete }) => (
   <div className={styles.container}>
-    {showStatus && <Status status={petition.state} />}
+    {showOptions && (
+      <div className={styles.options}>
+        {<Status status={petition.state} />}
+        {<DeleteIcon onClick={onDelete} />}
+      </div>
+    )}
     <img className={styles.image} alt="Usuario" src={petition.user.image} />
     <h4 className={styles.title}>
       {petition.user.name} - {petition.subject}
@@ -30,7 +36,8 @@ const PetitionCard = ({ petition, showStatus }) => (
 );
 
 PetitionCard.defaultProps = {
-  showStatus: false,
+  onDelete: () => {},
+  showOptions: false,
 };
 
 PetitionCard.propTypes = {
@@ -44,7 +51,8 @@ PetitionCard.propTypes = {
       phone: PropTypes.string,
     }),
   }).isRequired,
-  showStatus: PropTypes.bool,
+  showOptions: PropTypes.bool,
+  onDelete: PropTypes.func,
 };
 
 export default PetitionCard;
