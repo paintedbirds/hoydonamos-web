@@ -16,4 +16,10 @@ export class AuthService {
   static update({ user, userId }) {
     return httpClient.post(`/users/${userId}`, user);
   }
+
+  static async getAccount({ userId }) {
+    const response = await httpClient.get(`/users/${userId}`);
+
+    return response.data;
+  }
 }

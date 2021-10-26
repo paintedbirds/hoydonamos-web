@@ -111,7 +111,7 @@ export const useUserUpdate = () => {
           return stateToSave;
         });
 
-        history.push('/');
+        history.push('/mi-cuenta');
 
         toast.success('Tu usuario ha sido actualizado correctamente', {
           duration: 3500,
