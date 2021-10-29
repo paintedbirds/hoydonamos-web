@@ -1,4 +1,5 @@
-import { Fragment, useRef, useState } from 'react';
+import { Fragment, useCallback, useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import DonationCard from 'components/DonationCard';
 import Loading from 'components/Loading';
@@ -10,6 +11,7 @@ import Search from './Search';
 import styles from './Donations.module.scss';
 
 const Donations = () => {
+  const history = useHistory();
   const [searchQuery, setSearchQuery] = useState('');
 
   const loadMoreRef = useRef();
@@ -20,6 +22,11 @@ const Donations = () => {
     });
 
   const handleLoadMore = () => fetchNextPage();
+
+  const onDonationClick = useCallback(
+    (id) => history.push(`/donacion/${id}`),
+    [history]
+  );
 
   useIntersectionObserver({
     elementRef: loadMoreRef,
@@ -48,6 +55,7 @@ const Donations = () => {
                       title={name}
                       description={description}
                       image={image}
+                      onClick={onDonationClick}
                       id={id}
                     />
                   ))}

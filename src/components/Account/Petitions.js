@@ -14,7 +14,7 @@ const Petitions = ({ petitions }) => (
     </div>
     <section className="my-20 mx-4 grid grid-cols-1 sm:grid-cols-2 gap-16 justify-center px-6">
       {petitions.map((petition) => (
-        <PetitionCard petition={petition} key={petition.id} showStatus />
+        <PetitionCard petition={petition} key={petition.id} showOptions />
       ))}
     </section>
   </>

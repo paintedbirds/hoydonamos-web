@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
 
 import { ReactComponent as Heart } from 'assets/heart.svg';
+import DeleteIcon from 'components/DeleteIcon';
 import Status from './Status';
 
 import styles from './DonationCard.module.scss';
@@ -12,31 +12,32 @@ const DonationCard = ({
   image,
   id,
   status,
-  showStatus,
-  showHeart,
-}) => {
-  const history = useHistory();
-
-  const goTo = () => history.push(`/donacion/${id}`);
-
-  return (
-    <div className={styles.container} role="button" onClick={goTo}>
-      {showStatus && <Status status={status} />}
-      <div className="w-full rounded-lg mb-4">
-        <img alt="Donación" className={styles.image} src={image} load="lazy" />
+  showOptions,
+  onDelete,
+  onClick,
+}) => (
+  <div className={styles.container} role="button" onClick={onClick}>
+    {showOptions && (
+      <div className={styles.options}>
+        {<Status status={status} />}
+        {<DeleteIcon onClick={onDelete} />}
       </div>
-      <div className="flex justify-between justify-center">
-        <h4 className={styles.title}>{title}</h4>
-        {showHeart && <Heart className={styles.heart} onClick={goTo} />}
-      </div>
-      <p className={styles.description}>{description}</p>
+    )}
+    <div className="w-full rounded-lg mb-4">
+      <img alt="Donación" className={styles.image} src={image} load="lazy" />
     </div>
-  );
-};
+    <div className="flex justify-between justify-center">
+      <h4 className={styles.title}>{title}</h4>
+      {!showOptions && <Heart className={styles.heart} onClick={onClick} />}
+    </div>
+    <p className={styles.description}>{description}</p>
+  </div>
+);
 
 DonationCard.defaultProps = {
-  showHeart: true,
-  showStatus: false,
+  onClick: () => {},
+  onDelete: () => {},
+  showOptions: false,
   status: '',
 };
 
@@ -45,8 +46,9 @@ DonationCard.propTypes = {
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  showHeart: PropTypes.bool,
-  showStatus: PropTypes.bool,
+  onClick: PropTypes.func,
+  onDelete: PropTypes.func,
+  showOptions: PropTypes.bool,
   status: PropTypes.string,
 };
 
