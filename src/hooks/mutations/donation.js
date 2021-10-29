@@ -1,8 +1,10 @@
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 import { useHistory } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
+import { useAuth } from 'contexts/auth';
 import { DonationService } from 'networking/services';
+import { QUERY_KEY as USER_KEY } from '../queries/user';
 
 export const useCreateDonation = () => {
   const history = useHistory();
@@ -50,6 +52,32 @@ export const useCreateDonationRequest = () => {
             },
           }
         );
+      },
+    }
+  );
+
+  return mutation;
+};
+
+export const useDeleteDonation = () => {
+  const queryClient = useQueryClient();
+  const {
+    user: { id: userId },
+  } = useAuth();
+
+  const mutation = useMutation(
+    ({ donationId }) => DonationService.deleteDonation({ donationId }),
+    {
+      onSuccess: async (response) => {
+        await queryClient.refetchQueries([USER_KEY, userId]);
+
+        toast.success('Tu donación ha sido eliminada', {
+          duration: 3500,
+          icon: '👏',
+          style: {
+            minWidth: '250px',
+          },
+        });
       },
     }
   );

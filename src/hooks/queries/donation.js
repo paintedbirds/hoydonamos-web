@@ -2,7 +2,7 @@ import { useInfiniteQuery, useQuery } from 'react-query';
 
 import { DonationService } from 'networking/services';
 
-const QUERY_KEY = 'donations';
+export const QUERY_KEY = 'donations';
 
 export const useDonations = ({ query }) =>
   useInfiniteQuery(

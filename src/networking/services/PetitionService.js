@@ -14,4 +14,8 @@ export class PetitionService {
   static createPetition({ petition }) {
     return httpClient.post('/petitions', petition);
   }
+
+  static deletePetition({ petitionId }) {
+    return httpClient.delete(`/petitions/${petitionId}`);
+  }
 }

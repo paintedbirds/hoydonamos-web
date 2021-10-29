@@ -27,4 +27,8 @@ export class DonationService {
   static createDonationRequest({ donationId, reason }) {
     return httpClient.post(`/donations/${donationId}/requests`, reason);
   }
+
+  static deleteDonation({ donationId }) {
+    return httpClient.delete(`/donations/${donationId}`);
+  }
 }
