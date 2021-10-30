@@ -28,3 +28,9 @@
     transition: all 0.2s ease-in;
   }
 }
+
+.emptyStateDonation {
+  @apply my-11 w-full flex justify-center items-center;
+  
+  height: 173px;
+}

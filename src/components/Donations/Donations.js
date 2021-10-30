@@ -2,6 +2,7 @@ import { Fragment, useRef, useState } from 'react';
 
 import DonationCard from 'components/DonationCard';
 import Loading from 'components/Loading';
+import { ReactComponent as EmptyStateDonation } from 'assets/empty-state-donation.svg';
 import UnderlinedTitle from 'components/UnderlinedTitle';
 import { useIntersectionObserver } from 'hooks/intersectionObserver';
 import { useDonations } from 'hooks/queries/donation';
@@ -83,9 +84,7 @@ const Donations = () => {
         )}
 
         {status === 'success' && !(data.pages[0].data.length > 0) && (
-          <p className="my-11 w-full flex justify-center items-center">
-            No se han encontrado donaciones para mostrar
-          </p>
+          <EmptyStateDonation className={styles.emptyStateDonation}/>
         )}
       </div>
     </section>
