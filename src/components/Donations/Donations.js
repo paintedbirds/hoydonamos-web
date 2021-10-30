@@ -84,7 +84,7 @@ const Donations = () => {
         )}
 
         {status === 'success' && !(data.pages[0].data.length > 0) && (
-          <EmptyStateDonation className={styles.emptyStateDonation}/>
+          <EmptyStateDonation className={styles.emptyState}/>
         )}
       </div>
     </section>
