@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { mixed, object, string } from 'yup';
+import { useHistory } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import Form from 'components/Form';
@@ -12,6 +13,7 @@ import ImageUpload from './ImageUpload';
 import styles from './UpdateUser.module.scss';
 
 const UpdateUser = () => {
+  const history = useHistory();
   const { mutate, isLoading } = useUserUpdate();
   const { user } = useAuth();
 
@@ -40,7 +42,11 @@ const UpdateUser = () => {
       formData.append('about_me', values.aboutMe);
       formData.append('phone', values.phone);
 
-      if (values.image.length > 0) formData.append('image', values.image[0]);
+      if (values.image.length > 0) {
+        formData.append('image', values.image[0]);
+      } else {
+        formData.delete('image');
+      }
 
       mutate(formData, {
         onError: (errors) => handleErrors(errors, methods.setError),
@@ -48,6 +54,10 @@ const UpdateUser = () => {
     },
     [mutate, methods.setError, user]
   );
+
+  const onCancelClick = useCallback(() => {
+    history.push('/mi-cuenta');
+  }, [history]);
 
   return (
     <div className={styles.container}>
@@ -72,7 +82,9 @@ const UpdateUser = () => {
           defaultValue={user.phone}
         />
         <div className="flex flex-col-reverse sm:flex-row gap-8">
-          <Form.SecondaryButton>Cancelar</Form.SecondaryButton>
+          <Form.SecondaryButton type="button" onClick={onCancelClick}>
+            Cancelar
+          </Form.SecondaryButton>
           <Form.Button>{isLoading ? 'Cargando...' : 'Guardar'}</Form.Button>
         </div>
       </Form>
