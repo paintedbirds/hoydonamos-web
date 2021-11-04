@@ -85,7 +85,7 @@ const Donations = () => {
         )}
 
         {status === 'success' && !(data.pages[0].data.length > 0) && (
-        <EmptyState icon={<EmptyStateDonation height="173px"/>} text="No se han encontrado donaciones" />
+        <EmptyState icon={<EmptyStateDonation height="10.813rem"/>} text="No se han encontrado donaciones" />
         )}
       </div>
     </section>
