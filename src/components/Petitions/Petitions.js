@@ -2,6 +2,7 @@ import { Fragment, useRef } from 'react';
 
 import PetitionCard from 'components/PetitionCard';
 import Loading from 'components/Loading';
+import  EmptyState  from "components/EmptyState";
 import UnderlinedTitle from 'components/UnderlinedTitle';
 import { useIntersectionObserver } from 'hooks/intersectionObserver';
 import { usePetitions } from 'hooks/queries/petitions';
@@ -68,10 +69,8 @@ const Petitions = () => {
         </p>
       )}
 
-      {status === 'success' && !(data.pages[0].data.length > 0) && (
-        <p className="my-11 w-full flex justify-center items-center">
-          <EmptyStatePetition className={styles.emptyState}/>
-        </p>
+      {status === 'success' && (data.pages[0].data.length > 0) && (
+        <EmptyState icon={<EmptyStatePetition height="173px"/>} text="No se han encontrado peticiones" />
       )}
     </div>
   );

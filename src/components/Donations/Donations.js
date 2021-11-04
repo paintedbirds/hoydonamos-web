@@ -2,6 +2,7 @@ import { Fragment, useRef, useState } from 'react';
 
 import DonationCard from 'components/DonationCard';
 import Loading from 'components/Loading';
+import  EmptyState  from "components/EmptyState";
 import { ReactComponent as EmptyStateDonation } from 'assets/empty-state-donation.svg';
 import UnderlinedTitle from 'components/UnderlinedTitle';
 import { useIntersectionObserver } from 'hooks/intersectionObserver';
@@ -84,7 +85,7 @@ const Donations = () => {
         )}
 
         {status === 'success' && !(data.pages[0].data.length > 0) && (
-          <EmptyStateDonation className={styles.emptyState}/>
+        <EmptyState icon={<EmptyStateDonation height="173px"/>} text="No se han encontrado donaciones" />
         )}
       </div>
     </section>
