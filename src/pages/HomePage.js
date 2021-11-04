@@ -1,10 +1,10 @@
 import Home from 'components/Home';
-import OnboardingLayout from 'layouts/OnboardingLayout';
+import MainLayout from 'layouts/MainLayout';
 
 const HomePage = () => (
-  <OnboardingLayout>
+  <MainLayout>
     <Home />
-  </OnboardingLayout>
+  </MainLayout>
 );
 
 export default HomePage;

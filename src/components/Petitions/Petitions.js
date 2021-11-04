@@ -42,6 +42,7 @@ const Petitions = () => {
               </Fragment>
             ))}
           </section>
+
           {hasNextPage && !isFetchingNextPage && (
             <div className="my-6 w-full flex justify-center items-center">
               <button
@@ -63,17 +64,17 @@ const Petitions = () => {
         </div>
       )}
 
-      {status === 'error' && (
-        <p className="my-11 w-full flex justify-center items-center">
-          Ha ocurrido un error al cargar las solicitudes
-        </p>
-      )}
-
       {status === 'success' && !(data.pages[0].data.length > 0) && (
         <EmptyState
           icon={<EmptyStatePetition />}
           text="No se han encontrado solicitudes para mostrar"
         />
+      )}
+
+      {status === 'error' && (
+        <p className="my-11 w-full flex justify-center items-center">
+          Ha ocurrido un error al cargar las solicitudes
+        </p>
       )}
     </div>
   );

@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import WelcomeModal from 'components/WelcomeModal';
 
+const HomePage = lazy(() => import('pages/HomePage'));
 const DonationsPage = lazy(() => import('pages/DonationsPage'));
 const CreateDonationPage = lazy(() => import('pages/CreateDonationPage'));
 const DonationPage = lazy(() => import('pages/DonationPage'));
@@ -15,6 +16,9 @@ const Authenticated = () => (
   <>
     <Switch>
       <Route exact path="/">
+        <HomePage />
+      </Route>
+      <Route exact path="/donaciones">
         <DonationsPage />
       </Route>
       <Route exact path="/donacion/:id">
