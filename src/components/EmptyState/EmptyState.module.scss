@@ -1,14 +1,13 @@
-
-.emptyState{
+.empty-state{
     @apply my-11 w-full grid justify-center items-center;
   
-    .emptyStateSvg {  
-      height: 173px;
+    svg {  
+      height: 10.813rem;
     }
     
-    p{
+    p {
       justify-self: center;
       color: #969696;
       font-weight: 350;
-      }
-  }
+     }
+ }
