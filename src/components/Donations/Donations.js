@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 import DonationCard from 'components/DonationCard';
 import Loading from 'components/Loading';
+import  EmptyState  from "components/EmptyState";
+import { ReactComponent as EmptyStateDonation } from 'assets/empty-state-donation.svg';
 import UnderlinedTitle from 'components/UnderlinedTitle';
 import { useIntersectionObserver } from 'hooks/intersectionObserver';
 import { useDonations } from 'hooks/queries/donation';
@@ -91,9 +93,7 @@ const Donations = () => {
         )}
 
         {status === 'success' && !(data.pages[0].data.length > 0) && (
-          <p className="my-11 w-full flex justify-center items-center">
-            No se han encontrado donaciones para mostrar
-          </p>
+        <EmptyState icon={<EmptyStateDonation />} text="No se han encontrado donaciones" />
         )}
       </div>
     </section>
