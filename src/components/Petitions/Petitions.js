@@ -70,7 +70,7 @@ const Petitions = () => {
       )}
 
       {status === 'success' && (data.pages[0].data.length > 0) && (
-        <EmptyState icon={<EmptyStatePetition height="10.813rem"/>} text="No se han encontrado peticiones" />
+        <EmptyState icon={<EmptyStatePetition />} text="No se han encontrado peticiones" />
       )}
     </div>
   );
