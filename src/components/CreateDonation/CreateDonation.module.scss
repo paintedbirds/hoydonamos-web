@@ -35,4 +35,8 @@
   &__input {
     display: none;
   }
+
+  .error {
+    @apply text-red-600;
+  }
 }
