@@ -1,25 +1,61 @@
 @import '../../sass/variables';
 
-.link {
-  @apply inline-flex py-4 w-full items-center justify-center rounded-lg hover:opacity-90;
-}
+.user-info {
+  @apply rounded-lg;
 
-.tabs {
-  @apply rounded-lg flex justify-center mt-12;
+  background-color: $primary;
+  display: flex;
+  align-items: center;
+  padding: 1.125rem 2rem;
 
-  box-shadow: $shadow;
+  .avatar {
+    margin-right: 1rem;
 
-  .sign_up_link {
-    @extend .link;
-
-    color: $primary;
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+      min-width: 5rem;
+      height: 5rem;
+    }
   }
 
-  .sign_in_link {
-    @extend .link;
+  .wrapper {
+    color: #fff;
 
-    @apply text-white;
+    .greeting {
+      @apply font-semibold;
 
-    background-color: $primary;
+      font-size: 1.125rem;
+    }
+
+    .edit-profile {
+      font-size: 0.8rem;
+
+      .link {
+        @apply font-semibold;
+
+        margin-left: 0.3rem;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.see-more {
+  color: $secondary;
+  font-size: 1.5rem;
+  height: 100%;
+  vertical-align: center;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: $breakpoint-mobile-large) {
+  .user-info {
+    flex-direction: column;
+
+    .wrapper {
+      margin-top: 1rem;
+      text-align: center;
+    }
   }
 }

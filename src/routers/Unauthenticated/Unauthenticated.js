@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-const HomePage = lazy(() => import('pages/HomePage'));
+const OnboardingPage = lazy(() => import('pages/OnboardingPage'));
 const SignInPage = lazy(() => import('pages/SignInPage'));
 const SignUpPage = lazy(() => import('pages/SignUpPage'));
 
@@ -14,7 +14,7 @@ const Unauthenticated = () => (
       <SignUpPage />
     </Route>
     <Route exact path="/">
-      <HomePage />
+      <OnboardingPage />
     </Route>
   </Switch>
 );
