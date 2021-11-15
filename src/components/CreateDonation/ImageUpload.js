@@ -40,8 +40,8 @@ const ImageUpload = () => {
             </label>
           </div>
         )}
+        {error && <p className={styles.error}>{error.message}</p>}
       </div>
-      {error && <p>{error.message}</p>}
     </>
   );
 };
