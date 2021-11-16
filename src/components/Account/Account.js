@@ -43,31 +43,16 @@ const Account = () => {
           </div>
         </div>
       </div>
+
       {status === 'loading' && (
         <div className="my-11 w-full flex justify-center items-center">
           <Loading />
         </div>
       )}
 
-      {status === 'success' && !(data.donations?.length > 0) && (
-        <p className="my-11 w-full flex justify-center items-center">
-          No se han encontrado donaciones para mostrar
-        </p>
-      )}
+      {status === 'success' && <Donations donations={data.donations} />}
 
-      {status === 'success' && data.donations?.length > 0 && (
-        <Donations donations={data.donations} />
-      )}
-
-      {status === 'success' && !(data.petitions?.length > 0) && (
-        <p className="my-11 w-full flex justify-center items-center">
-          No se han encontrado solicitudes para mostrar
-        </p>
-      )}
-
-      {status === 'success' && data.petitions?.length > 0 && (
-        <Petitions petitions={data.petitions} />
-      )}
+      {status === 'success' && <Petitions petitions={data.petitions} />}
     </div>
   );
 };

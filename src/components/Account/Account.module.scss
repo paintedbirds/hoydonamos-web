@@ -12,8 +12,10 @@
     img {
       @apply rounded-full;
 
+      background-color: #fff;
+      box-shadow: $shadow;
       height: 10rem;
-      width: 10rem;
+      min-width: 10rem;
       object-fit: cover;
     }
   }
