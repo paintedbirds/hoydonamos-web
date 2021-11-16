@@ -12,6 +12,8 @@ import ImageUpload from './ImageUpload';
 
 import styles from './UpdateUser.module.scss';
 
+export const cellphonePattern = /^[0-9]{9}$/;
+
 const UpdateUser = () => {
   const history = useHistory();
   const { mutate, isLoading } = useUserUpdate();
@@ -22,8 +24,13 @@ const UpdateUser = () => {
       object().shape({
         image: mixed(),
         name: string().required('Este campo es requerido'),
-        aboutMe: string(),
-        phone: string(),
+        aboutMe: string().nullable(),
+        phone: string()
+          .nullable()
+          .matches(
+            cellphonePattern,
+            'Este campo debe ser un numero de contacto'
+          ),
       }),
     []
   );
