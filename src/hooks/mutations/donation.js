@@ -13,7 +13,7 @@ export const useCreateDonation = () => {
     (donation) => DonationService.createDonation({ donation }),
     {
       onSuccess: (response) => {
-        history.push('/');
+        history.push('/mi-cuenta');
 
         toast.success(
           'Tu donación ha sido creada y esta siendo procesada por nuestro equipo',

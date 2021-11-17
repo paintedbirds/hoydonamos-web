@@ -12,7 +12,7 @@ const Donations = ({ data, status }) => {
   const history = useHistory();
 
   const onDonationClick = useCallback(
-    (id) => history.push(`/donacion/${id}`),
+    (id) => () => history.push(`/donacion/${id}`),
     [history]
   );
 

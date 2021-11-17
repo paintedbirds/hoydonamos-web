@@ -13,7 +13,7 @@ export const useCreatePetition = () => {
     (petition) => PetitionService.createPetition({ petition }),
     {
       onSuccess: (response) => {
-        history.push('/');
+        history.push('/mi-cuenta');
 
         toast.success('Tu solicitud ha sido creada exitosamente', {
           duration: 3500,
