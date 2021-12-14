@@ -22,7 +22,7 @@ const Donations = ({ donations }) => {
   return (
     <>
       <div className="mt-11 mb-8 text-2xl">
-        <div className="my-11 text-2xl flex gap-4">
+        <div className="my-11 text-2xl flex flex-col md:flex-row gap-4">
           <h4>Mis donaciones</h4>
           <Link className={styles.link} to="/crear-donacion">
             Crear donación

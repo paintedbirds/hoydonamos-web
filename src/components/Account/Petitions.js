@@ -20,7 +20,7 @@ const Petitions = ({ petitions }) => {
 
   return (
     <>
-      <div className="my-11 text-2xl flex gap-4">
+      <div className="my-11 text-2xl flex flex-col md:flex-row gap-4">
         <h4>Mis solicitudes</h4>
         <Link className={styles.link} to="/crear-solicitud">
           Crear solicitud

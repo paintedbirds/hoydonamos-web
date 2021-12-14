@@ -29,7 +29,7 @@ const UpdateUser = () => {
           .nullable()
           .matches(
             cellphonePattern,
-            'Este campo debe ser un numero de contacto, Ej. 093418251'
+            'Este campo debe ser un numero de contacto Ej. 093418251'
           ),
       }),
     []
