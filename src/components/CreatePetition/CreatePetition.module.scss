@@ -1,9 +1,0 @@
-@import '../../sass/variables';
-
-.container {
-  @apply sm:w-2/3 sm:m-auto mx-4 bg-white rounded-lg;
-
-  box-shadow: $shadow;
-  padding: 2rem;
-  margin-top: 3rem;
-}

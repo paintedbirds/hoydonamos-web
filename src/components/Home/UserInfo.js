@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { useAuth } from 'contexts/auth';
+import { useAuth } from 'features/auth';
 
 import styles from './Home.module.scss';
 
@@ -16,7 +16,7 @@ const UserInfo = () => {
         <p className={styles.greeting}>¡Bienvenido {user.name}!</p>
         <p className={styles['edit-profile']}>
           Configura tu perfil para que nuestro equipo conozca mas sobre ti
-          <Link to="/editar-usuario" className={styles.link}>
+          <Link to="/editar-cuenta" className={styles.link}>
             Editar mi perfil
           </Link>
         </p>

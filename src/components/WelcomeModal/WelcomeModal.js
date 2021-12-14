@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 
 import logo from 'assets/logo.svg';
-import Form from 'components/Form';
-import Modal from 'components/Modal';
+import { Form, Modal } from 'features/common';
 
 const KEY = 'modalShowed';
 

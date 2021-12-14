@@ -2,10 +2,8 @@ import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { ReactComponent as EmptyStateDonation } from 'assets/empty-state-donation.svg';
-import DonationCard from 'components/DonationCard';
-import EmptyState from 'components/EmptyState';
-import UnderlinedTitle from 'components/UnderlinedTitle';
-import Loading from 'components/Loading';
+import { EmptyState, Loading, UnderlinedTitle } from 'features/common';
+import { DonationCard } from 'features/donations';
 import SeeMoreLink from './SeeMoreLink';
 
 const Donations = ({ data, status }) => {

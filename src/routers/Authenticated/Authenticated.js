@@ -3,14 +3,14 @@ import { Route, Switch } from 'react-router-dom';
 
 import WelcomeModal from 'components/WelcomeModal';
 
-const HomePage = lazy(() => import('pages/HomePage'));
-const DonationsPage = lazy(() => import('pages/DonationsPage'));
-const CreateDonationPage = lazy(() => import('pages/CreateDonationPage'));
-const DonationPage = lazy(() => import('pages/DonationPage'));
-const UpdateUserPage = lazy(() => import('pages/UpdateUserPage'));
-const PetitionsPage = lazy(() => import('pages/PetitionsPage'));
-const CreatePetitionPage = lazy(() => import('pages/CreatePetitionPage'));
-const AccountPage = lazy(() => import('pages/AccountPage'));
+const HomePage = lazy(() => import('pages/Home'));
+const DonationsPage = lazy(() => import('pages/Donations'));
+const CreateDonationPage = lazy(() => import('pages/CreateDonation'));
+const DonationPage = lazy(() => import('pages/Donation'));
+const UpdateAccountPage = lazy(() => import('pages/UpdateAccount'));
+const PetitionsPage = lazy(() => import('pages/Petitions'));
+const CreatePetitionPage = lazy(() => import('pages/CreatePetition'));
+const AccountPage = lazy(() => import('pages/Account'));
 
 const Authenticated = () => (
   <>
@@ -27,8 +27,8 @@ const Authenticated = () => (
       <Route exact path="/crear-donacion">
         <CreateDonationPage />
       </Route>
-      <Route exact path="/editar-usuario">
-        <UpdateUserPage />
+      <Route exact path="/editar-cuenta">
+        <UpdateAccountPage />
       </Route>
       <Route exact path="/solicitudes">
         <PetitionsPage />

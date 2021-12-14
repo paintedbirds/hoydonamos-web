@@ -2,7 +2,7 @@ import { useMutation } from 'react-query';
 import { useHistory } from 'react-router';
 import toast from 'react-hot-toast';
 
-import { useAuth, initialState } from 'contexts/auth';
+import { useAuth, initialState } from 'features/auth';
 import { clearSession, getSession, persistSession } from 'helpers/session';
 import { AuthService } from 'networking/services';
 

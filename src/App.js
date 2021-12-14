@@ -2,8 +2,8 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
-import Loading from 'components/Loading';
-import { useAuth } from 'contexts/auth';
+import { Loading } from 'features/common';
+import { useAuth } from 'features/auth';
 
 const Authenticated = lazy(() => import('routers/Authenticated'));
 const Unauthenticated = lazy(() => import('routers/Unauthenticated'));
