@@ -1,0 +1,35 @@
+@import '../../../../sass/variables';
+
+.image {
+  @apply w-full object-cover object-center rounded-2xl;
+
+  max-height: 380px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  padding-block: 5px;
+  width: 100%;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  svg {
+    cursor: pointer;
+  }
+}
+
+.form-container {
+  padding-inline: 1rem;
+}
+
+@media screen and (max-width: $breakpoint-mobile-large) {
+  .form-container {
+    padding: 0;
+  }
+}

@@ -1,8 +1,6 @@
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
-import EmptyState from 'components/EmptyState';
-import PetitionCard from 'components/PetitionCard';
-import UnderlinedTitle from 'components/UnderlinedTitle';
-import Loading from 'components/Loading';
+import { EmptyState, Loading, UnderlinedTitle } from 'features/common';
+import { PetitionCard } from 'features/petitions';
 import SeeMoreLink from './SeeMoreLink';
 
 const Petitions = ({ data, status }) => (

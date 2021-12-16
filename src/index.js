@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
-import { AuthProvider } from 'contexts/auth';
+import { AuthProvider } from 'features/auth';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 

@@ -1,9 +1,9 @@
 import { lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-const OnboardingPage = lazy(() => import('pages/OnboardingPage'));
-const SignInPage = lazy(() => import('pages/SignInPage'));
-const SignUpPage = lazy(() => import('pages/SignUpPage'));
+const OnboardingPage = lazy(() => import('pages/Onboarding'));
+const SignInPage = lazy(() => import('pages/SignIn'));
+const SignUpPage = lazy(() => import('pages/SignUp'));
 
 const Unauthenticated = () => (
   <Switch>

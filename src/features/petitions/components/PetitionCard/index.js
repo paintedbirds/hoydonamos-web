@@ -1,0 +1,1 @@
+export { PetitionCard } from './PetitionCard';

@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import { useHistory } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
-import { useAuth } from 'contexts/auth';
+import { useAuth } from 'features/auth';
 import { PetitionService } from 'networking/services';
 import { QUERY_KEY as USER_KEY } from '../queries/user';
 
