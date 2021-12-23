@@ -5,3 +5,5 @@ export * from './Loading';
 export * from './Modal';
 export * from './ShapesBackground';
 export * from './UnderlinedTitle';
+export * from './NotFound';
+export * from './ComeBackButton';
