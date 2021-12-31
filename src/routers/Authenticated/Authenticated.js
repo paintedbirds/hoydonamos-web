@@ -1,6 +1,17 @@
 import { lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import {
+  ACCOUNT_PATH,
+  CREATE_DONATION_PATH,
+  CREATE_PETITION_PATH,
+  DONATION_PATH,
+  DONATIONS_PATH,
+  HOME_PATH,
+  PETITIONS_PATH,
+  UPDATE_ACCOUNT_PATH,
+} from 'utils/constants';
+
 import WelcomeModal from 'components/WelcomeModal';
 
 const HomePage = lazy(() => import('pages/Home'));
@@ -15,28 +26,28 @@ const AccountPage = lazy(() => import('pages/Account'));
 const Authenticated = () => (
   <>
     <Switch>
-      <Route exact path="/">
+      <Route exact path={HOME_PATH}>
         <HomePage />
       </Route>
-      <Route exact path="/donaciones">
-        <DonationsPage />
-      </Route>
-      <Route exact path="/donacion/:id">
+      <Route exact path={DONATION_PATH}>
         <DonationPage />
       </Route>
-      <Route exact path="/crear-donacion">
+      <Route exact path={DONATIONS_PATH}>
+        <DonationsPage />
+      </Route>
+      <Route exact path={CREATE_DONATION_PATH}>
         <CreateDonationPage />
       </Route>
-      <Route exact path="/editar-cuenta">
+      <Route exact path={UPDATE_ACCOUNT_PATH}>
         <UpdateAccountPage />
       </Route>
-      <Route exact path="/solicitudes">
+      <Route exact path={PETITIONS_PATH}>
         <PetitionsPage />
       </Route>
-      <Route exact path="/crear-solicitud">
+      <Route exact path={CREATE_PETITION_PATH}>
         <CreatePetitionPage />
       </Route>
-      <Route exact path="/mi-cuenta">
+      <Route exact path={ACCOUNT_PATH}>
         <AccountPage />
       </Route>
     </Switch>

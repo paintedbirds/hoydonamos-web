@@ -1,5 +1,5 @@
 import { useMutation } from 'react-query';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 import { useAuth, initialState } from 'features/auth';

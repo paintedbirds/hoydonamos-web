@@ -12,14 +12,14 @@ const Search = ({ query, setQuery }) => {
     setQueryValue(target.value.trim());
   };
 
-  const onSearch = (_event) => setQuery(queryValue);
+  const onSearch = () => setQuery(queryValue);
 
   return (
     <div className="mx-auto max-w-4xl flex items-center justify-center px-6 flex-col sm:flex-row mt-11">
       <div className="relative w-full sm:w-5/6 h-full">
         <input
           type="text"
-          className={styles['search__input']}
+          className={styles.search__input}
           placeholder="Buscar una donacion"
           value={queryValue}
           onChange={onChange}
@@ -28,7 +28,11 @@ const Search = ({ query, setQuery }) => {
           <SearchIcon className="h-4 w-4" />
         </div>
       </div>
-      <button className={styles['search__button']} onClick={onSearch}>
+      <button
+        className={styles.search__button}
+        type="button"
+        onClick={onSearch}
+      >
         Buscar
       </button>
     </div>

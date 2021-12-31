@@ -43,6 +43,18 @@ Form.propTypes = {
     PropTypes.node,
   ]).isRequired,
   onSubmit: PropTypes.func.isRequired,
+  methods: PropTypes.shape({
+    register: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    watch: PropTypes.func.isRequired,
+    formState: PropTypes.shape({
+      errors: PropTypes.shape({
+        general: PropTypes.shape({
+          message: PropTypes.string,
+        }),
+      }),
+    }),
+  }).isRequired,
 };
 
 export { Form };

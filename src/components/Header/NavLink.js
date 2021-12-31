@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './Header.module.scss';
 
@@ -12,5 +13,10 @@ const Link = ({ to, children }) => (
     {children}
   </NavLink>
 );
+
+Link.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export { Link as NavLink };

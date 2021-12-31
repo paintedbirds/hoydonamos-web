@@ -7,9 +7,9 @@ import { EmptyState } from 'features/common';
 import { DonationCard } from 'features/donations';
 import { useDeleteDonation } from 'hooks/mutations/donation';
 
-import styles from './Account.module.scss';
+import styles from '../AccountUserInfo/AccountUserInfo.module.scss';
 
-const Donations = ({ donations }) => {
+const UserDonations = ({ donations }) => {
   const { mutate } = useDeleteDonation();
 
   const onDelete = useCallback(
@@ -56,8 +56,8 @@ const Donations = ({ donations }) => {
   );
 };
 
-Donations.propTypes = {
+UserDonations.propTypes = {
   donations: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default Donations;
+export { UserDonations };

@@ -16,7 +16,7 @@ const DonationCard = ({
   onDelete,
   onClick,
 }) => (
-  <div className={styles.container} role="button" onClick={onClick}>
+  <button className={styles.container} type="button" onClick={onClick}>
     {showOptions && (
       <div className={styles.options}>
         {<Status status={status} />}
@@ -31,7 +31,7 @@ const DonationCard = ({
       {!showOptions && <Heart className={styles.heart} onClick={onClick} />}
     </div>
     <p className={styles.description}>{description}</p>
-  </div>
+  </button>
 );
 
 DonationCard.defaultProps = {

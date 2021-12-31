@@ -1,3 +1,5 @@
+// FIX: missing prop validation
+/* eslint-disable react/prop-types */
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
 import { EmptyState, Loading, UnderlinedTitle } from 'features/common';
 import { PetitionCard } from 'features/petitions';

@@ -80,7 +80,7 @@ const UpdateAccount = () => {
           name="aboutMe"
           label="Sobre mi"
           placeholder="Ingeniero en Sistemas, me encanta ayudar a los demas!"
-          defaultValue={user['about_me']}
+          defaultValue={user.about_me}
         />
         <Form.Input
           name="phone"

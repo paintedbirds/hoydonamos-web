@@ -1,3 +1,6 @@
+// FIX: restricted syntax and unused expressions
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-unused-expressions */
 import { useEffect, useRef } from 'react';
 
 const defaultEvents = ['mousedown', 'touchstart'];

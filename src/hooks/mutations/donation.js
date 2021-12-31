@@ -2,9 +2,8 @@ import { useMutation, useQueryClient } from 'react-query';
 import { useHistory } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
-import { useAuth } from 'features/auth';
+import { useAuth, QUERY_KEY as USER_KEY } from 'features/auth';
 import { DonationService } from 'networking/services';
-import { QUERY_KEY as USER_KEY } from '../queries/user';
 
 export const useCreateDonation = () => {
   const history = useHistory();
