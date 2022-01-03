@@ -3,7 +3,7 @@ import { useFormContext } from 'react-hook-form';
 import { useAuth } from 'features/auth';
 import edit from 'assets/edit.svg';
 
-import styles from './UpdateAccount.module.scss';
+import styles from './UpdateAccountForm.module.scss';
 
 const ImageUpload = () => {
   const {

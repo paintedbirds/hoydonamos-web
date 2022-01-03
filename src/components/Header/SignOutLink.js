@@ -1,4 +1,4 @@
-import { useSignOut } from 'hooks/mutations/auth';
+import { useSignOut } from 'features/auth';
 
 import styles from './Header.module.scss';
 

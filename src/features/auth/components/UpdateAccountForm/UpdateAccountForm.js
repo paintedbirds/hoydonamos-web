@@ -3,20 +3,19 @@ import { useForm } from 'react-hook-form';
 import { mixed, object, string } from 'yup';
 import { useHistory } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
+import PropTypes from 'prop-types';
 
-import { Form } from 'features/common';
 import { useAuth } from 'features/auth';
-import { handleErrors } from 'helpers/errors';
-import { useUserUpdate } from 'hooks/mutations/auth';
+import { Form } from 'features/common';
+import { ACCOUNT_PATH } from 'utils/constants';
 import ImageUpload from './ImageUpload';
 
-import styles from './UpdateAccount.module.scss';
+import styles from './UpdateAccountForm.module.scss';
 
 export const cellphonePattern = /^[0-9]{9}$/;
 
-const UpdateAccount = () => {
+const UpdateAccountForm = ({ onSubmit, isLoading }) => {
   const history = useHistory();
-  const { mutate, isLoading } = useUserUpdate();
   const { user } = useAuth();
 
   const schema = useMemo(
@@ -37,38 +36,15 @@ const UpdateAccount = () => {
 
   const methods = useForm({ resolver: yupResolver(schema) });
 
-  const onSubmit = useCallback(
-    (values) => {
-      const formData = new FormData();
-
-      Object.entries(user).forEach((entry) => {
-        formData.append(entry[0], entry[1]);
-      });
-
-      formData.append('name', values.name);
-      formData.append('about_me', values.aboutMe);
-      formData.append('phone', values.phone);
-
-      if (values.image.length > 0) {
-        formData.append('image', values.image[0]);
-      } else {
-        formData.delete('image');
-      }
-
-      mutate(formData, {
-        onError: (errors) => handleErrors(errors, methods.setError),
-      });
-    },
-    [mutate, methods.setError, user]
-  );
+  const onSubmitHandler = onSubmit(methods.setError);
 
   const onCancelClick = useCallback(() => {
-    history.push('/mi-cuenta');
+    history.push(ACCOUNT_PATH);
   }, [history]);
 
   return (
     <div className={styles.container}>
-      <Form methods={methods} onSubmit={onSubmit}>
+      <Form methods={methods} onSubmit={onSubmitHandler}>
         <ImageUpload />
         <Form.Input
           name="name"
@@ -99,4 +75,9 @@ const UpdateAccount = () => {
   );
 };
 
-export { UpdateAccount };
+UpdateAccountForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+};
+
+export { UpdateAccountForm };
