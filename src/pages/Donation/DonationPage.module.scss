@@ -1,0 +1,21 @@
+@import '../../sass/variables';
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  svg {
+    cursor: pointer;
+  }
+}
+
+.form-container {
+  padding-inline: 1rem;
+}
+
+@media screen and (max-width: $breakpoint-mobile-large) {
+  .form-container {
+    padding: 0;
+  }
+}

@@ -1,16 +1,13 @@
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { mixed, object, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import PropTypes from 'prop-types';
 
 import { Form } from 'features/common';
-import { handleErrors } from 'helpers/errors';
-import { useCreateDonation } from 'hooks/mutations/donation';
 import ImageUpload from './ImageUpload';
 
-const CreateForm = () => {
-  const { mutate, isLoading } = useCreateDonation();
-
+const CreateDonationForm = ({ onSubmit, isLoading }) => {
   const schema = useMemo(
     () =>
       object().shape({
@@ -23,25 +20,12 @@ const CreateForm = () => {
 
   const methods = useForm({ resolver: yupResolver(schema) });
 
-  const onSubmit = useCallback(
-    (values) => {
-      const formData = new FormData();
-
-      formData.append('name', values.name);
-      formData.append('description', values.description);
-      formData.append('image', values.image[0]);
-
-      mutate(formData, {
-        onError: (errors) => handleErrors(errors, methods.setError),
-      });
-    },
-    [methods.setError, mutate]
-  );
+  const onSubmitHandler = onSubmit(methods.setError);
 
   return (
     <Form
       methods={methods}
-      onSubmit={onSubmit}
+      onSubmit={onSubmitHandler}
       className="flex flex-col md:flex-row gap-1 sm:my-16 mt-8"
     >
       <ImageUpload />
@@ -65,4 +49,9 @@ const CreateForm = () => {
   );
 };
 
-export default CreateForm;
+CreateDonationForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+};
+
+export { CreateDonationForm };
