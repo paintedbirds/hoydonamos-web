@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 
 import logo from 'assets/logo.svg';
 import { Form, Modal } from 'features/common';
@@ -28,7 +28,7 @@ const WelcomeModal = () => {
   };
 
   useEffect(() => {
-    setShowModal(!Boolean(localStorage.getItem(KEY)));
+    setShowModal(!localStorage.getItem(KEY));
   }, []);
 
   return (

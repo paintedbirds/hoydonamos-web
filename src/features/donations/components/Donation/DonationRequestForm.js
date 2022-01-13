@@ -2,6 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { string, object } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import PropTypes from 'prop-types';
 
 import { Form } from 'features/common';
 import { handleErrors } from 'helpers/errors';
@@ -21,11 +22,12 @@ const DonationRequestForm = ({ donationId }) => {
   const methods = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = useCallback(
-    async (values) =>
+    async (values) => {
       await mutate(
         { donationId, reason: values },
         { onError: (error) => handleErrors(error) }
-      ),
+      );
+    },
     [donationId, mutate]
   );
 
@@ -41,6 +43,10 @@ const DonationRequestForm = ({ donationId }) => {
       </Form.Button>
     </Form>
   );
+};
+
+DonationRequestForm.propTypes = {
+  donationId: PropTypes.string.isRequired,
 };
 
 export default DonationRequestForm;

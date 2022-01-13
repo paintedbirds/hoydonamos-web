@@ -50,6 +50,7 @@ PetitionCard.propTypes = {
       name: PropTypes.string.isRequired,
       phone: PropTypes.string,
     }),
+    state: PropTypes.string.isRequired,
   }).isRequired,
   showOptions: PropTypes.bool,
   onDelete: PropTypes.func,

@@ -17,11 +17,15 @@ const Nav = () => {
 
   return (
     <div className={styles.nav} ref={dropdownRef}>
-      <button onClick={onMenuClick} className={styles['nav__button']}>
+      <button
+        onClick={onMenuClick}
+        className={styles.nav__button}
+        type="button"
+      >
         <MenuIcon className="h-6 w-6 lg:h-8 lg:w-8" />
       </button>
       {isOpen && (
-        <div className={styles['nav__dropdown']}>
+        <div className={styles.nav__dropdown}>
           <NavLink to="/donaciones">Donaciones</NavLink>
           <NavLink to="/crear-donacion">Crear donación</NavLink>
           <NavLink to="/solicitudes">Solicitudes</NavLink>

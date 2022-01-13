@@ -1,14 +1,15 @@
 import { useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
 import { EmptyState } from 'features/common';
 import { PetitionCard } from 'features/petitions';
 import { useDeletePetition } from 'hooks/mutations/petition';
 
-import styles from './Account.module.scss';
+import styles from '../AccountUserInfo/AccountUserInfo.module.scss';
 
-const Petitions = ({ petitions }) => {
+const UserPetitions = ({ petitions }) => {
   const { mutate } = useDeletePetition();
 
   const onDelete = useCallback(
@@ -49,4 +50,12 @@ const Petitions = ({ petitions }) => {
   );
 };
 
-export default Petitions;
+UserPetitions.propTypes = {
+  petitions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
+export { UserPetitions };

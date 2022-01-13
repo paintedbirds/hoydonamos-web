@@ -18,4 +18,4 @@ MainLayout.propTypes = {
   ]).isRequired,
 };
 
-export default MainLayout;
+export { MainLayout };

@@ -5,9 +5,9 @@ import { ReactComponent as Delete } from 'assets/delete.svg';
 import styles from './DeleteIcon.module.scss';
 
 const DeleteIcon = ({ onClick }) => (
-  <div className={styles.container} onClick={onClick}>
+  <button className={styles.container} onClick={onClick} type="button">
     <Delete />
-  </div>
+  </button>
 );
 
 DeleteIcon.propTypes = {

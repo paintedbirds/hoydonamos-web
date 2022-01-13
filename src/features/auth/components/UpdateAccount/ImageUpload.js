@@ -33,17 +33,17 @@ const ImageUpload = () => {
           }
           alt="Usuario"
         />
-        <div className={styles['edit']}>
-          <label className={styles['edit__label']}>
+        <div className={styles.edit}>
+          <label className={styles.edit__label} htmlFor="image">
             <input
               name="image"
               id="image"
               type="file"
               accept="image/*"
-              className={styles['edit__input']}
+              className={styles.edit__input}
               {...register('image')}
             />
-            <img className={styles['edit__icon']} src={edit} alt="Editar" />
+            <img className={styles.edit__icon} src={edit} alt="Editar" />
           </label>
         </div>
       </div>

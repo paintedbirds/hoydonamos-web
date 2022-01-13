@@ -5,6 +5,7 @@ import {
   useEffect,
   useState,
 } from 'react';
+import PropTypes from 'prop-types';
 
 import { isStoredSession, getSession } from 'helpers/session';
 import httpClient from 'networking/httpClient';
@@ -51,6 +52,13 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
+};
+
+AuthProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };
 
 export const useAuth = () => useContext(AuthContext);

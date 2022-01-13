@@ -11,10 +11,10 @@ const Onboarding = () => (
     </div>
     <h1 className="text-3xl text-center mt-6 font-bold">Che, ¿hoy donamos?</h1>
     <div className={styles.tabs}>
-      <Link to="/registro" className={styles['sign_up_link']}>
+      <Link to="/registro" className={styles.sign_up_link}>
         Registrarme
       </Link>
-      <Link to="/iniciar-sesion" className={styles['sign_in_link']}>
+      <Link to="/iniciar-sesion" className={styles.sign_in_link}>
         Iniciar sesión
       </Link>
     </div>

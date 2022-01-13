@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "node-sass": "^6.0.1",
+    "prop-types": "^15.8.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.13.0",
@@ -36,30 +37,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "rules": {
-      "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off",
-      "no-restricted-imports": [
-        "warn",
-        {
-          "paths": [
-            {
-              "name": "react",
-              "importNames": [
-                "default"
-              ]
-            }
-          ]
-        }
-      ]
-    }
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
   },
   "browserslist": {
     "production": [
@@ -75,10 +54,19 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
-    "eslint-config-airbnb": "^18.2.1",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint-config-airbnb": "^19.0.2",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest-dom": "^3.9.2",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-testing-library": "^5.0.1",
     "postcss": "^7.0.36",
-    "prettier": "2.3.2",
+    "prettier": "^2.5.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
   }
 }
