@@ -1,15 +1,12 @@
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { string, object } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import PropTypes from 'prop-types';
 
 import { Form } from 'features/common';
-import { handleErrors } from 'helpers/errors';
-import { useSignUp } from 'hooks/mutations/auth';
 
-const SignUpForm = () => {
-  const { mutate, isLoading } = useSignUp();
-
+const SignUpForm = ({ onSubmit, isLoading }) => {
   const schema = useMemo(
     () =>
       object().shape({
@@ -22,16 +19,10 @@ const SignUpForm = () => {
 
   const methods = useForm({ resolver: yupResolver(schema) });
 
-  const onSubmit = useCallback(
-    async (values) =>
-      mutate(values, {
-        onError: (errors) => handleErrors(errors, methods.setError),
-      }),
-    [mutate, methods.setError]
-  );
+  const onSubmitHandler = onSubmit(methods.handleSubmit);
 
   return (
-    <Form onSubmit={onSubmit} methods={methods}>
+    <Form onSubmit={onSubmitHandler} methods={methods}>
       <Form.Input name="name" label="Nombre" placeholder="Ingresa tu nombre" />
       <Form.Input
         name="email"
@@ -53,4 +44,9 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+SignUpForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+};
+
+export { SignUpForm };
