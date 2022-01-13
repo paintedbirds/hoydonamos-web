@@ -11,6 +11,7 @@ const UpdateAccountPage = lazy(() => import('pages/UpdateAccount'));
 const PetitionsPage = lazy(() => import('pages/Petitions'));
 const CreatePetitionPage = lazy(() => import('pages/CreatePetition'));
 const AccountPage = lazy(() => import('pages/Account'));
+const NotMatchPage = lazy(() => import('pages/NotMatch'));
 
 const Authenticated = () => (
   <>
@@ -38,6 +39,9 @@ const Authenticated = () => (
       </Route>
       <Route exact path="/mi-cuenta">
         <AccountPage />
+      </Route>
+      <Route>
+        <NotMatchPage />
       </Route>
     </Switch>
     <WelcomeModal />

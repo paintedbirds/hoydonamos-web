@@ -1,0 +1,30 @@
+@import '../../../../sass/variables';
+
+.container {
+  display: flex;
+  align-items: center;
+
+  .not-found {
+    color: $primary;
+    font-size: 15rem;
+    font-weight: bold;
+  }
+
+  .caption {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: $breakpoint-mobile-large) {
+    flex-direction: column;
+
+    .not-found {
+      font-size: 8rem;
+    }
+
+    .caption {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+  }
+}
