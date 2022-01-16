@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { ReactComponent as EmptyStateDonation } from 'assets/empty-state-donation.svg';
 import { EmptyState } from 'features/common';
-import { DonationCard } from 'features/donations';
-import { useDeleteDonation } from 'hooks/mutations/donation';
+import { DonationCard, useDeleteDonation } from 'features/donations';
 
 import styles from '../AccountUserInfo/AccountUserInfo.module.scss';
 

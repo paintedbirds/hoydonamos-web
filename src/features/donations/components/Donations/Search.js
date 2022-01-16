@@ -44,4 +44,4 @@ Search.propTypes = {
   setQuery: PropTypes.func.isRequired,
 };
 
-export default Search;
+export { Search };

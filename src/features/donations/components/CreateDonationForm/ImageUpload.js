@@ -2,7 +2,7 @@ import { useFormContext } from 'react-hook-form';
 
 import defaultImage from 'assets/default-donation.svg';
 
-import styles from './CreateDonation.module.scss';
+import styles from './CreateDonationForm.module.scss';
 
 const ImageUpload = () => {
   const {

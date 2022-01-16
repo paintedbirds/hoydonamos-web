@@ -17,9 +17,13 @@ const EditableField = ({ placeholder, name, type, ...leftOverProps }) => {
   const error = errors[name];
   const formValue = watch(name, value);
 
-  const onBlur = () => setIsEditing(false);
+  const onBlur = () => {
+    setIsEditing(false);
+  };
 
-  const onClick = () => setIsEditing(true);
+  const onClick = () => {
+    setIsEditing(true);
+  };
 
   const elements = {
     title: <h1 className={styles['editable-field__type-title']}>{value}</h1>,
@@ -45,16 +49,14 @@ const EditableField = ({ placeholder, name, type, ...leftOverProps }) => {
   }, [formValue]);
 
   return (
-    <button onBlur={onBlur} onClick={onClick} type="button">
-      {isEditing && inputElements[type]}
-      {!isEditing && elements[type]}
+    <div onClick={onClick} onBlur={onBlur} aria-hidden="true" role="button">
+      {isEditing ? inputElements[type] : elements[type]}
       {error && <p className={styles.error}>{error?.message}</p>}
-    </button>
+    </div>
   );
 };
 
 EditableField.propTypes = {
-  defaultValue: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['title', 'paragraph']).isRequired,
   placeholder: PropTypes.string.isRequired,
