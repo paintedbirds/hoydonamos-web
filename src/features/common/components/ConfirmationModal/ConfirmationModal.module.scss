@@ -1,0 +1,45 @@
+@import '../../../../sass/variables';
+
+.container {
+  .close {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    svg:hover {
+      cursor: pointer;
+    }
+  }
+
+  .title {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+
+  .content {
+    margin-top: 1.3rem;
+  }
+
+  .buttons-container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    width: 100%;
+
+    .cancel {
+      align-self: center;
+      color: $primary;
+      height: 100%;
+      width: 50%;
+    }
+
+    .confirm-button-container {
+      width: 50%;
+
+      * {
+        margin-top: 0;
+      }
+    }
+  }
+}
