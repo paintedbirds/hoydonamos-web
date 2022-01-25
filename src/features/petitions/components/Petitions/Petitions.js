@@ -1,18 +1,21 @@
 import { Fragment, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
-import { EmptyState, Loading, UnderlinedTitle } from 'features/common';
+import { EmptyState, Loading } from 'features/common';
 import { PetitionCard } from 'features/petitions';
 import { useIntersectionObserver } from 'hooks/intersectionObserver';
-import { usePetitions } from 'hooks/queries/petitions';
 
 import styles from 'features/donations/components/Donations/Donations.module.scss';
 
-const Petitions = () => {
+const Petitions = ({
+  data,
+  fetchNextPage,
+  hasNextPage,
+  isFetchingNextPage,
+  status,
+}) => {
   const loadMoreRef = useRef();
-
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, status } =
-    usePetitions();
 
   const handleLoadMore = () => fetchNextPage();
 
@@ -23,12 +26,7 @@ const Petitions = () => {
   });
 
   return (
-    <div className="px-6">
-      <div className="mt-11 text-4xl">
-        <UnderlinedTitle>
-          <h3>Solicitudes</h3>
-        </UnderlinedTitle>
-      </div>
+    <>
       {status === 'success' && (
         <>
           <section className="my-20 mx-4 grid grid-cols-1 sm:grid-cols-2 gap-16 justify-center">
@@ -74,8 +72,34 @@ const Petitions = () => {
           Ha ocurrido un error al cargar las solicitudes
         </p>
       )}
-    </div>
+    </>
   );
+};
+
+Petitions.defaultProps = {
+  data: null,
+};
+
+Petitions.propTypes = {
+  data: PropTypes.shape({
+    pages: PropTypes.arrayOf(
+      PropTypes.shape({
+        currentPage: PropTypes.number.isRequired,
+        data: PropTypes.arrayOf(
+          PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            image: PropTypes.string.isRequired,
+          }).isRequired
+        ).isRequired,
+      })
+    ).isRequired,
+  }),
+  fetchNextPage: PropTypes.func.isRequired,
+  hasNextPage: PropTypes.bool.isRequired,
+  isFetchingNextPage: PropTypes.bool.isRequired,
+  status: PropTypes.string.isRequired,
 };
 
 export { Petitions };

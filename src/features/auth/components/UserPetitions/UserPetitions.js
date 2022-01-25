@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
 import { EmptyState } from 'features/common';
-import { PetitionCard } from 'features/petitions';
-import { useDeletePetition } from 'hooks/mutations/petition';
+import { PetitionCard, useDeletePetition } from 'features/petitions';
 
 import styles from '../AccountUserInfo/AccountUserInfo.module.scss';
 
