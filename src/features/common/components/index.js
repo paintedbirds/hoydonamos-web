@@ -7,3 +7,4 @@ export * from './ShapesBackground';
 export * from './UnderlinedTitle';
 export * from './NotFound';
 export * from './ComeBackButton';
+export * from './ConfirmationModal';
