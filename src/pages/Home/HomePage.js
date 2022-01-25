@@ -1,6 +1,4 @@
-// TODO: move to right path
-import Home from 'components/Home';
-import MainLayout from 'layouts/MainLayout';
+import { MainLayout, Home } from 'features/common';
 
 const HomePage = () => (
   <MainLayout>

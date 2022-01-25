@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { Header } from 'components/Header';
-import { ShapesBackground } from 'features/common';
+import { Header, ShapesBackground } from 'features/common';
 
 const MainLayout = ({ children }) => (
   <div className="w-full mx-auto min-h-screen min-w-full">

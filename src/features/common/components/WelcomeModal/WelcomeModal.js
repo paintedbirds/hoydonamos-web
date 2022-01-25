@@ -62,4 +62,4 @@ const WelcomeModal = () => {
   );
 };
 
-export default WelcomeModal;
+export { WelcomeModal };

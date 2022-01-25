@@ -8,3 +8,6 @@ export * from './UnderlinedTitle';
 export * from './NotFound';
 export * from './ComeBackButton';
 export * from './ConfirmationModal';
+export * from './WelcomeModal';
+export * from './Header';
+export * from './Home';
