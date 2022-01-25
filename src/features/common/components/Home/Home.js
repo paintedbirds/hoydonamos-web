@@ -1,4 +1,4 @@
-import { useDonationsAndPetitions } from 'hooks/queries/home';
+import { useDonationsAndPetitions } from 'features/common';
 import UserInfo from './UserInfo';
 import Donations from './Donations';
 import Petitions from './Petitions';

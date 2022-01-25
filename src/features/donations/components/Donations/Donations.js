@@ -3,10 +3,9 @@ import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { ReactComponent as EmptyStateDonation } from 'assets/empty-state-donation.svg';
-import { EmptyState, Loading } from 'features/common';
+import { EmptyState, Loading, useIntersectionObserver } from 'features/common';
 import { DonationCard } from 'features/donations';
 import { generateDonationPath } from 'utils/constants';
-import { useIntersectionObserver } from 'hooks/intersectionObserver';
 
 import styles from './Donations.module.scss';
 
