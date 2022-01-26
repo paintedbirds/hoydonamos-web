@@ -1,7 +1,6 @@
-// FIX: missing prop validation
-/* eslint-disable react/prop-types */
 import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { ReactComponent as EmptyStateDonation } from 'assets/empty-state-donation.svg';
 import { EmptyState, Loading, UnderlinedTitle } from 'features/common';
@@ -58,6 +57,11 @@ const Donations = ({ data, status }) => {
       )}
     </>
   );
+};
+
+Donations.propTypes = {
+  data: PropTypes.array.isRequired,
+  status: PropTypes.string.isRequired,
 };
 
 export default Donations;

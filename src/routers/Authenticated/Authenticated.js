@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import { WelcomeModal } from 'features/common';
 import {
   ACCOUNT_PATH,
   CREATE_DONATION_PATH,
@@ -11,8 +12,6 @@ import {
   PETITIONS_PATH,
   UPDATE_ACCOUNT_PATH,
 } from 'utils/constants';
-
-import WelcomeModal from 'components/WelcomeModal';
 
 const HomePage = lazy(() => import('pages/Home'));
 const DonationsPage = lazy(() => import('pages/Donations'));

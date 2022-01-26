@@ -1,6 +1,5 @@
-// FIX: missing prop validation
-/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './Home.module.scss';
 
@@ -9,5 +8,10 @@ const SeeMoreLink = ({ children, to }) => (
     {children}
   </Link>
 );
+
+SeeMoreLink.propTypes = {
+  children: PropTypes.node.isRequired,
+  to: PropTypes.string.isRequired,
+};
 
 export default SeeMoreLink;

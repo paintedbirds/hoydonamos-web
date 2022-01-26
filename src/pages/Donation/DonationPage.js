@@ -2,7 +2,7 @@ import { useCallback, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { ReactComponent as Close } from 'assets/close.svg';
-import { Loading, Modal } from 'features/common';
+import { Loading, Modal, useClickAway } from 'features/common';
 import {
   Donation,
   DonationRequestForm,
@@ -10,7 +10,6 @@ import {
   useCreateDonationRequest,
 } from 'features/donations';
 import { handleErrors } from 'helpers/errors';
-import { useClickAway } from 'hooks/events';
 import MainLayout from 'layouts/MainLayout';
 
 import styles from './DonationPage.module.scss';

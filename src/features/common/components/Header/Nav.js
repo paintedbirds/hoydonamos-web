@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 
 import { ReactComponent as MenuIcon } from 'assets/menu.svg';
-import { useClickAway } from 'hooks/events';
+import { useClickAway } from 'features/common';
 import { NavLink } from './NavLink';
 import { SignOutLink } from './SignOutLink';
 

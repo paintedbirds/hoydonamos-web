@@ -1,5 +1,5 @@
-// FIX: missing prop validation
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
 import { EmptyState, Loading, UnderlinedTitle } from 'features/common';
 import { PetitionCard } from 'features/petitions';
@@ -40,5 +40,10 @@ const Petitions = ({ data, status }) => (
     )}
   </>
 );
+
+Petitions.propTypes = {
+  data: PropTypes.array.isRequired,
+  status: PropTypes.string.isRequired,
+};
 
 export default Petitions;

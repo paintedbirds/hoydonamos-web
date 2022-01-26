@@ -2,9 +2,8 @@ import { Fragment, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
-import { EmptyState, Loading } from 'features/common';
+import { EmptyState, Loading, useIntersectionObserver } from 'features/common';
 import { PetitionCard } from 'features/petitions';
-import { useIntersectionObserver } from 'hooks/intersectionObserver';
 
 import styles from 'features/donations/components/Donations/Donations.module.scss';
 
