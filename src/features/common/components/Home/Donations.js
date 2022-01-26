@@ -8,6 +8,8 @@ import { DonationCard } from 'features/donations';
 import { generateDonationPath } from 'utils/constants';
 import SeeMoreLink from './SeeMoreLink';
 
+import styles from './Home.module.scss';
+
 const Donations = ({ data, status }) => {
   const history = useHistory();
 
@@ -31,7 +33,7 @@ const Donations = ({ data, status }) => {
         </div>
       )}
       {status === 'success' && data.length > 0 && (
-        <section className="my-11 grid grid-cols-1 sm:grid-cols-2 gap-5 justify-center">
+        <section className={styles['scrollable-container']}>
           {data?.map(({ id, name, description, image }) => (
             <DonationCard
               key={id}
