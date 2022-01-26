@@ -15,29 +15,29 @@ import { ReactComponent as RedditIcon } from 'assets/reddit_icon.svg';
 import { ReactComponent as EmailIcon } from 'assets/email_icon.svg';
 import ShareButton from './ShareButton';
 
-const ShareDonation = () => {
+const ShareDonationLinks = () => {
   const currentURL = window.location.href;
   const description =
-    "Hola! hecha un vistazo de lo que estan donando en 'Che, ¿hoy donamos?'";
+    "Hola! hecha un vistazo a esta donación en 'Che, ¿hoy donamos?'";
 
   return (
     <div className="flex mt-2">
-      <ShareButton className="share-button__whatsapp">
+      <ShareButton type="whatsapp">
         <WhatsappShareButton title={description} url={currentURL}>
           <WhatsappIcon />
         </WhatsappShareButton>
       </ShareButton>
-      <ShareButton className="share-button__telegram">
+      <ShareButton type="telegram">
         <TelegramShareButton title={description} url={currentURL}>
           <TelegramIcon />
         </TelegramShareButton>
       </ShareButton>
-      <ShareButton className="share-button__twitter">
+      <ShareButton type="twitter">
         <TwitterShareButton title={description} url={currentURL}>
           <TwitterIcon />
         </TwitterShareButton>
       </ShareButton>
-      <ShareButton className="share-button__reddit">
+      <ShareButton type="reddit">
         <RedditShareButton
           title={description}
           url={currentURL}
@@ -47,7 +47,7 @@ const ShareDonation = () => {
           <RedditIcon />
         </RedditShareButton>
       </ShareButton>
-      <ShareButton className="share-button__email">
+      <ShareButton type="email">
         <EmailShareButton
           url={currentURL}
           subject="Mira esto"
@@ -56,7 +56,7 @@ const ShareDonation = () => {
           <EmailIcon />
         </EmailShareButton>
       </ShareButton>
-      <ShareButton className="share-button__facebook">
+      <ShareButton type="facebook">
         <FacebookShareButton
           url={currentURL}
           quote={description}
@@ -69,4 +69,4 @@ const ShareDonation = () => {
   );
 };
 
-export default ShareDonation;
+export default ShareDonationLinks;

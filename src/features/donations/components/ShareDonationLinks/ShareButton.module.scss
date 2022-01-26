@@ -1,11 +1,13 @@
+@import '../../../../sass/variables';
+
 .share-button {
   border: 1px solid #fff;
   border-radius: 5px;
 }
 
 .share-button button {
-  width: 57px;
-  height: 47px;
+  width: 3.5rem;
+  height: 2.9rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,27 +16,27 @@
 .share-button__whatsapp {
   &:hover {
     svg path {
-      fill: #25d366;
+      fill: $whatsapp;
     }
   }
 
   &:active {
-    border: 1px solid #25d366;
+    border: 1px solid $whatsapp;
   }
 }
 
 .share-button__facebook {
   &:hover {
     svg path {
-      fill: #3b5998;
+      fill: $facebook;
     }
   }
 
   &:active {
-    border: 1px solid #5c6d93;
+    border: 1px solid $facebook--active;
 
     svg path {
-      fill: #5c6d93;
+      fill: $facebook--active;
     }
   }
 }
@@ -42,47 +44,63 @@
 .share-button__telegram {
   &:hover {
     svg path {
-      fill: #3ea8e2;
+      fill: $telegram;
     }
   }
 
   &:active {
-    border: 1px solid #72bce4;
+    border: 1px solid $telegram--active;
+
+    svg path {
+      fill: $telegram--active;
+    }
   }
 }
 
 .share-button__twitter {
   &:hover {
     svg path {
-      fill: #1c93e4;
+      fill: $twitter;
     }
   }
 
   &:active {
-    border: 1px solid #56a5da;
+    border: 1px solid $twitter--active;
+
+    svg path {
+      fill: $twitter--active;
+    }
   }
 }
 
 .share-button__email {
   &:hover {
     svg path {
-      fill: #d24538;
+      fill: $email;
     }
   }
 
   &:active {
-    border: 1px solid #d48179;
+    border: 1px solid $email--active;
+
+    svg path {
+      fill: $email--active;
+    }
   }
 }
 
 .share-button__reddit {
   &:hover {
     svg path {
-      fill: #f24100;
+      fill: $reddit;
     }
   }
 
   &:active {
-    border: 1px solid #f28259;
+    border: 1px solid $reddit--active;
+
+    svg path {
+      fill: $reddit--active;
+    }
   }
 }
