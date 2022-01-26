@@ -5,6 +5,8 @@ import { EmptyState, Loading, UnderlinedTitle } from 'features/common';
 import { PetitionCard } from 'features/petitions';
 import SeeMoreLink from './SeeMoreLink';
 
+import styles from './Home.module.scss';
+
 const Petitions = ({ data, status }) => (
   <>
     <div className="mt-11 text-4xl flex gap-4 items-center">
@@ -20,7 +22,7 @@ const Petitions = ({ data, status }) => (
       </div>
     )}
     {status === 'success' && data.length > 0 && (
-      <section className="my-20 mx-4 grid grid-cols-1 sm:grid-cols-2 gap-16 justify-center">
+      <section className={styles['petitions-container']}>
         {data?.map((petition) => (
           <PetitionCard key={petition.id} petition={petition} />
         ))}
