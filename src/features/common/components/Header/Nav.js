@@ -1,39 +1,25 @@
-import { useState, useRef } from 'react';
-
-import { ReactComponent as MenuIcon } from 'assets/menu.svg';
-import { useClickAway } from 'features/common';
-import { NavLink } from './NavLink';
-import { SignOutLink } from './SignOutLink';
+import { useAuth } from 'features/auth';
+import SubNav from './SubNav';
 
 import styles from './Header.module.scss';
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef(null);
-
-  const onMenuClick = () => setIsOpen((previousState) => !previousState);
-
-  useClickAway(dropdownRef, () => setIsOpen(false));
+  const { user } = useAuth();
 
   return (
-    <div className={styles.nav} ref={dropdownRef}>
-      <button
-        onClick={onMenuClick}
-        className={styles.nav__button}
-        type="button"
-      >
-        <MenuIcon className="h-6 w-6 lg:h-8 lg:w-8" />
-      </button>
-      {isOpen && (
-        <div className={styles.nav__dropdown}>
-          <NavLink to="/donaciones">Donaciones</NavLink>
-          <NavLink to="/crear-donacion">Crear donación</NavLink>
-          <NavLink to="/solicitudes">Solicitudes</NavLink>
-          <NavLink to="/crear-solicitud">Crear solicitud</NavLink>
-          <NavLink to="/mi-cuenta">Mi cuenta</NavLink>
-          <SignOutLink />
-        </div>
-      )}
+    <div className={styles['nav']}>
+      <div className={styles['nav_donation-request']}>
+        <SubNav title="Donaciones" type="donation" />
+        <SubNav title="Solicitudes" type="request" />
+      </div>
+      <SubNav title={user.name} type="user" />
+      <img
+        src={user.image}
+        width="50px"
+        height="50px"
+        alt="user"
+        style={{ borderRadius: '50%' }}
+      />{' '}
     </div>
   );
 };

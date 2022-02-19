@@ -1,4 +1,5 @@
 import { useSignOut } from 'features/auth';
+import { ReactComponent as SignOut } from 'assets/sign_out.svg';
 
 import styles from './Header.module.scss';
 
@@ -10,8 +11,13 @@ const SignOutLink = () => {
   };
 
   return (
-    <button type="button" className={styles['nav-link']} onClick={onClick}>
+    <button
+      type="button"
+      className={`${styles['nav-link']} ${styles['nav-link_sign-out']}`}
+      onClick={onClick}
+    >
       Cerrar sesión
+      <SignOut />
     </button>
   );
 };
