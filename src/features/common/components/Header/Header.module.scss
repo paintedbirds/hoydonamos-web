@@ -1,48 +1,270 @@
 @import '../../../../sass/variables';
 
-.container {
-  @apply p-4 lg:p-7 bg-white;
-
+.header {
+  height: 80px;
+  width: 100%;
   box-shadow: 0px 4px 11px 0px #73b8b233;
   position: sticky;
   top: 0;
   z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+
+  .header_content,
+  .header_logo a,
+  .nav,
+  .nav_donation-request,
+  .nav-account {
+    display: flex;
+    align-items: center;
+  }
+
+  .header_content {
+    padding: 0 1rem 0 1rem;
+  }
+
+  .nav_donation-request {
+    margin-right: 200px;
+  }
+
+  .header_logo {
+    width: 400px;
+  }
+
+  .nav_donation-request {
+    width: 250px;
+    justify-content: space-between;
+  }
 
   .title {
-    @apply lg:text-2xl font-bold;
-
+    display: flex;
+    align-items: baseline;
+    font-size: 17px;
     color: $black;
+    font-weight: 600;
+  }
+
+  .title-main {
+    font-size: 20px;
+  }
+
+  img {
+    margin-left: 10px;
+  }
+
+  .title svg {
+    margin-left: 6px;
   }
 }
 
-.nav {
+button {
+  display: flex;
+  align-items: center;
+}
+
+.sub-nav {
   position: relative;
+}
 
-  &__button {
-    @apply z-10;
-  }
-
-  &__dropdown {
-    @apply absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl z-20 py-3 px-2;
-
-    border: 1px solid $secondary;
-  }
+.nav__dropdown {
+  position: absolute;
+  background-color: $white;
+  border-radius: 14px;
+  flex-direction: column;
+  margin-top: 15px;
+  padding: 10px;
+  right: 0;
+  box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
-  @apply block px-4 py-2 capitalize rounded mt-1 w-full text-left;
+  display: flex;
+  align-items: center;
+  padding: 10px 21px 10px 21px;
+  border-radius: 5px;
+  text-transform: capitalize;
+  width: 200px;
+  justify-content: flex-end;
+}
 
-  color: $secondary;
+.donation {
+  border: 1px solid $donation;
+  color: $donation;
 
-  &:hover {
-    @apply text-white;
-
-    background-color: $secondary;
+  .nav-link:hover {
+    color: $white;
+    background-color: $donation;
   }
 
-  &--active {
-    @apply text-white;
+  .nav-link--active {
+    background-color: $donation;
+  }
+}
 
-    background-color: $secondary;
+.request {
+  border: 1px solid $request;
+  color: $request;
+
+  .nav-link:hover {
+    color: $white;
+    background-color: $request;
+  }
+
+  .nav-link--active {
+    background-color: $request;
+  }
+}
+
+.user {
+  border: 1px solid $user;
+  color: $user;
+
+  svg {
+    margin-left: 10px;
+    width: 25px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .nav-link:hover {
+    color: $white;
+    background-color: $user;
+    svg path {
+      fill: $white;
+    }
+
+    svg {
+      width: 25px;
+    }
+  }
+
+  .nav-link_sign-out:hover {
+    background-color: $sign--out;
+  }
+
+  .nav-link--active {
+    background-color: $user;
+  }
+}
+
+.nav-link--active {
+  color: white;
+  margin-block: 3px;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    @apply p-4 lg:p-7 bg-white;
+
+    box-shadow: 0px 4px 11px 0px #73b8b233;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+
+    .header_content {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .title {
+      @apply lg:text-2xl font-bold;
+
+      color: $black;
+    }
+  }
+
+  .mobile-menu {
+    display: flex;
+    position: relative;
+
+    &__button {
+      @apply z-10;
+    }
+
+    &__dropdown {
+      @apply absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl z-20 py-5 px-2;
+
+      margin-top: 30px;
+      border: 1px solid $black;
+    }
+  }
+
+  .mobile-menu .nav-link {
+    @apply block px-4 py-2 rounded mt-1 w-full text-left;
+
+    color: $black;
+  }
+
+  .nav-link:hover {
+    color: $white;
+  }
+
+  .donation:hover {
+    color: $white;
+    background-color: $donation;
+  }
+
+  .donation {
+    &--active {
+      color: white;
+      background-color: $donation;
+    }
+  }
+
+  .request:hover {
+    color: $white;
+    background-color: $request;
+  }
+
+  .request {
+    &--active {
+      background-color: $request;
+    }
+  }
+
+  .user,
+  .donation,
+  .request {
+    border: none;
+  }
+
+  .user:hover {
+    background-color: $user;
+  }
+
+  .user {
+    &--active {
+      background-color: $user;
+    }
+  }
+
+  .nav-link_sign-out:hover {
+    background-color: $sign--out;
+  }
+
+  .nav-link {
+    &--active {
+      color: $white !important;
+    }
+  }
+
+  .header .nav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .title-main {
+    font-size: 10px !important;
   }
 }
