@@ -12,29 +12,42 @@
   justify-content: center;
   background-color: $white;
 
+  .header_content,
   .header_logo a,
   .nav,
-  .nav_donation-request {
+  .nav_donation-request,
+  .nav-account {
     display: flex;
     align-items: center;
   }
 
-  .header_logo,
+  .header_content {
+    padding: 0 1rem 0 1rem;
+  }
+
   .nav_donation-request {
     margin-right: 200px;
   }
 
+  .header_logo {
+    width: 400px;
+  }
+
   .nav_donation-request {
-    width: 360px;
+    width: 250px;
     justify-content: space-between;
   }
 
   .title {
     display: flex;
-    align-items: center;
-    font-size: 20px;
+    align-items: baseline;
+    font-size: 17px;
     color: $black;
     font-weight: 600;
+  }
+
+  .title-main {
+    font-size: 20px;
   }
 
   img {
@@ -43,7 +56,6 @@
 
   .title svg {
     margin-left: 6px;
-    margin-top: 12px;
   }
 }
 
@@ -58,26 +70,27 @@ button {
 
 .nav__dropdown {
   position: absolute;
-  background-color: #fff;
+  background-color: $white;
   border-radius: 14px;
   flex-direction: column;
   margin-top: 15px;
+  padding: 10px;
   right: 0;
+  box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
   display: flex;
   align-items: center;
-  padding: 20px 31px 20px 31px;
-  margin: 10px;
+  padding: 10px 21px 10px 21px;
   border-radius: 5px;
   text-transform: capitalize;
-  width: 322px;
+  width: 200px;
   justify-content: flex-end;
 }
 
 .donation {
-  border: 3px solid $donation;
+  border: 1px solid $donation;
   color: $donation;
 
   .nav-link:hover {
@@ -87,7 +100,7 @@ button {
 }
 
 .request {
-  border: 3px solid $request;
+  border: 1px solid $request;
   color: $request;
 
   .nav-link:hover {
@@ -97,27 +110,27 @@ button {
 }
 
 .user {
-  border: 3px solid $user;
+  border: 1px solid $user;
   color: $user;
 
   svg {
     margin-left: 10px;
+    width: 25px;
   }
 
   button {
     width: 100%;
   }
 
-  .nav-link {
-    width: 257px;
-  }
-
   .nav-link:hover {
     color: $white;
     background-color: $user;
-
     svg path {
       fill: $white;
+    }
+
+    svg {
+      width: 25px;
     }
   }
 
