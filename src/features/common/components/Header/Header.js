@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 
 import { ReactComponent as Logo } from 'assets/logo--secondary.svg';
-
-import styles from './Header.module.scss';
 import Nav from './Nav';
 import MobileMenu from './MobileMenu';
 
+import styles from './Header.module.scss';
+
 const Header = () => (
-  <div className={styles['header']}>
+  <div className={styles.header}>
     <div className={styles['header_content']}>
       <div className={styles['header_logo']}>
         <Link to="/">
