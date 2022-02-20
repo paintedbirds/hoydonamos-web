@@ -97,6 +97,10 @@ button {
     color: $white;
     background-color: $donation;
   }
+
+  .nav-link--active {
+    background-color: $donation;
+  }
 }
 
 .request {
@@ -105,6 +109,10 @@ button {
 
   .nav-link:hover {
     color: $white;
+    background-color: $request;
+  }
+
+  .nav-link--active {
     background-color: $request;
   }
 }
@@ -136,5 +144,127 @@ button {
 
   .nav-link_sign-out:hover {
     background-color: $sign--out;
+  }
+
+  .nav-link--active {
+    background-color: $user;
+  }
+}
+
+.nav-link--active {
+  color: white;
+  margin-block: 3px;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    @apply p-4 lg:p-7 bg-white;
+
+    box-shadow: 0px 4px 11px 0px #73b8b233;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+
+    .header_content {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .title {
+      @apply lg:text-2xl font-bold;
+
+      color: $black;
+    }
+  }
+
+  .mobile-menu {
+    display: flex;
+    position: relative;
+
+    &__button {
+      @apply z-10;
+    }
+
+    &__dropdown {
+      @apply absolute right-0 mt-2 w-48 bg-white rounded-md shadow-xl z-20 py-5 px-2;
+
+      margin-top: 30px;
+      border: 1px solid $black;
+    }
+  }
+
+  .mobile-menu .nav-link {
+    @apply block px-4 py-2 rounded mt-1 w-full text-left;
+
+    color: $black;
+  }
+
+  .nav-link:hover {
+    color: $white;
+  }
+
+  .donation:hover {
+    color: $white;
+    background-color: $donation;
+  }
+
+  .donation {
+    &--active {
+      color: white;
+      background-color: $donation;
+    }
+  }
+
+  .request:hover {
+    color: $white;
+    background-color: $request;
+  }
+
+  .request {
+    &--active {
+      background-color: $request;
+    }
+  }
+
+  .user,
+  .donation,
+  .request {
+    border: none;
+  }
+
+  .user:hover {
+    background-color: $user;
+  }
+
+  .user {
+    &--active {
+      background-color: $user;
+    }
+  }
+
+  .nav-link_sign-out:hover {
+    background-color: $sign--out;
+  }
+
+  .nav-link {
+    &--active {
+      color: $white !important;
+    }
+  }
+
+  .header .nav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .title-main {
+    font-size: 10px !important;
   }
 }

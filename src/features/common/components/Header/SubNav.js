@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
-/* eslint-disable react/prop-types */
 import { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 import { ReactComponent as ArrowDown } from 'assets/arrow_down.svg';
 import { ReactComponent as Account } from 'assets/account.svg';
@@ -49,6 +49,11 @@ const SubNav = ({ title, type }) => {
       )}
     </div>
   );
+};
+
+SubNav.propTypes = {
+  title: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default SubNav;

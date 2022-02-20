@@ -1,9 +1,11 @@
+import PropTypes from 'prop-types';
+
 import { useSignOut } from 'features/auth';
 import { ReactComponent as SignOut } from 'assets/sign_out.svg';
 
 import styles from './Header.module.scss';
 
-const SignOutLink = () => {
+const SignOutLink = ({ type }) => {
   const { mutate } = useSignOut();
 
   const onClick = async () => {
@@ -17,9 +19,17 @@ const SignOutLink = () => {
       onClick={onClick}
     >
       Cerrar sesión
-      <SignOut />
+      {type !== 'mobile' && <SignOut />}
     </button>
   );
+};
+
+SignOutLink.propTypes = {
+  type: PropTypes.string,
+};
+
+SignOutLink.defaultProps = {
+  type: 'desktop',
 };
 
 export { SignOutLink };

@@ -4,6 +4,7 @@ import { ReactComponent as Logo } from 'assets/logo--secondary.svg';
 
 import styles from './Header.module.scss';
 import Nav from './Nav';
+import MobileMenu from './MobileMenu';
 
 const Header = () => (
   <div className={styles['header']}>
@@ -17,6 +18,7 @@ const Header = () => (
         </Link>
       </div>
       <Nav />
+      <MobileMenu />
     </div>
   </div>
 );
