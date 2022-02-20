@@ -15,7 +15,7 @@ const Search = ({ query, setQuery }) => {
   const onSearch = () => setQuery(queryValue);
 
   return (
-    <div className="mx-auto max-w-4xl flex items-center justify-center px-6 flex-col sm:flex-row mt-11">
+    <div className="mx-auto flex items-center justify-center flex-col sm:flex-row mt-11">
       <div className="relative w-full sm:w-5/6 h-full">
         <input
           type="text"

@@ -15,13 +15,13 @@ const DonationsPage = () => {
   return (
     <MainLayout>
       <section>
-        <Search query={searchQuery} setQuery={setSearchQuery} />
         <div className="px-6">
           <div className="mt-11 text-4xl">
             <UnderlinedTitle>
               <h3>Donaciones</h3>
             </UnderlinedTitle>
           </div>
+          <Search query={searchQuery} setQuery={setSearchQuery} />
           <Donations
             data={data}
             fetchNextPage={fetchNextPage}
