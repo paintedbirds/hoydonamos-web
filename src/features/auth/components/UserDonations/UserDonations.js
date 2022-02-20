@@ -32,6 +32,7 @@ const UserDonations = ({ donations }) => {
         <section className="my-11 grid grid-cols-1 sm:grid-cols-2 gap-5 justify-center">
           {donations.map(({ name, description, image, id, state }) => (
             <DonationCard
+              donationId={id}
               title={name}
               description={description}
               image={image}

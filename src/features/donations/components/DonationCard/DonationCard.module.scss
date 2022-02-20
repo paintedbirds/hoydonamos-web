@@ -56,13 +56,20 @@
     @apply mt-4;
   }
 
-  .heart {
-    @apply rounded-full;
-    padding-inline: 0.2rem;
+  .see-more-container {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: flex-end;
 
-    &:hover {
-      box-shadow: $shadow;
-      cursor: pointer;
+    .see-more {
+      align-self: flex-end;
+      align-items: center;
+      background-color: #ea3e66;
+      border-radius: 8px;
+      color: #fff;
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.4rem 1.8rem;
     }
   }
 }
