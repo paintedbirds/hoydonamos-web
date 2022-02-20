@@ -1,0 +1,147 @@
+@import 'sass/variables';
+
+.container {
+  padding-inline: 2rem;
+}
+
+.cta-section {
+  align-items: center;
+  display: flex;
+  height: 80vh;
+
+  .caption {
+    width: 60%;
+  }
+
+  .title {
+    color: $primary;
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 50px;
+  }
+
+  .description {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-top: 1rem;
+  }
+
+  .image {
+    width: 40%;
+  }
+
+  @media (max-width: $breakpoint-mobile-large) {
+    .caption {
+      width: 100%;
+    }
+
+    .image {
+      display: none;
+    }
+  }
+
+  .cta-button-container {
+    width: 12rem;
+
+    button {
+      text-transform: uppercase;
+      margin-top: 2rem;
+    }
+  }
+}
+
+.section {
+  align-items: center;
+  display: flex;
+  font-size: 1.3rem;
+  gap: 4rem;
+  height: 50vh;
+  line-height: 40px;
+  margin-bottom: 5rem;
+
+  &.reverse {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .description {
+    width: 70%;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+
+  .highlight {
+    color: $primary;
+
+    &.secondary {
+      color: $secondary;
+      font-weight: 700;
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    height: auto;
+    margin-top: 1.5rem;
+
+    &.reverse {
+      flex-direction: column;
+    }
+
+    .description {
+      width: 100%;
+    }
+  }
+}
+
+.banner {
+  background-color: $primary;
+  border-radius: 18px;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding-block: 2rem;
+  text-align: center;
+
+  &.secondary {
+    background-color: $secondary;
+  }
+
+  &.tertiary {
+    background-color: $black;
+  }
+
+  &.gradient {
+    background: linear-gradient(89.82deg, #ea3e66 0.13%, #73b8b2 99.85%);
+  }
+
+  @media (max-width: $breakpoint-mobile-large) {
+    font-size: 1.3rem;
+    padding-inline: 0.5rem;
+  }
+}
+
+.get-started {
+  p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 50px;
+
+    @media (max-width: $breakpoint-mobile-large) {
+      line-height: 30px;
+    }
+  }
+
+  button {
+    background: #fff;
+    border-color: #fff;
+    color: $primary;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 1rem auto;
+    text-transform: uppercase;
+    width: 15rem;
+  }
+}
