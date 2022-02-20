@@ -68,6 +68,11 @@
     }
   }
 
+  .description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   @media screen and (max-width: $breakpoint-tablet) {
     .contact-info {
       flex-direction: column;
