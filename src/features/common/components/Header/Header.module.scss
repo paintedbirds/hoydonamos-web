@@ -1,4 +1,4 @@
-@import '../../../../sass/variables';
+@import 'sass/variables';
 
 .header {
   height: 80px;
@@ -22,7 +22,12 @@
   }
 
   .header_content {
+    align-items: center;
+    display: flex;
+    max-width: $max-width;
+    justify-content: space-between;
     padding: 0 1rem 0 1rem;
+    width: 100%;
   }
 
   .nav_donation-request {
@@ -44,10 +49,6 @@
     font-size: 17px;
     color: $black;
     font-weight: 600;
-  }
-
-  .title-main {
-    font-size: 20px;
   }
 
   img {
@@ -133,6 +134,7 @@ button {
   .nav-link:hover {
     color: $white;
     background-color: $user;
+
     svg path {
       fill: $white;
     }
@@ -263,8 +265,21 @@ button {
   }
 }
 
-@media only screen and (max-width: 320px) {
-  .title-main {
-    font-size: 10px !important;
+.unauthenticated-nav {
+  display: flex;
+  gap: 1rem;
+
+  button {
+    border: unset !important;
+    margin-top: 0;
+    width: 12rem;
+  }
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
   }
 }
