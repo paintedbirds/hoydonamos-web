@@ -43,6 +43,7 @@ const Donations = ({
                 {page.data.map(({ id, name, description, image }) => (
                   <DonationCard
                     key={id}
+                    donationId={id}
                     title={name}
                     description={description}
                     image={image}

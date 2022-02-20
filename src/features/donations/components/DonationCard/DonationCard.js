@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { ReactComponent as Heart } from 'assets/heart.svg';
 import { ConfirmationModal, DeleteIcon } from 'features/common';
+import { generateDonationPath } from 'utils/constants';
+import SeeMoreButton from './SeeMoreButton';
 import Status from './Status';
 
 import styles from './DonationCard.module.scss';
 
 const DonationCard = ({
+  donationId,
   title,
   description,
   image,
@@ -62,11 +64,11 @@ const DonationCard = ({
             load="lazy"
           />
         </div>
-        <div className="flex justify-between justify-center">
-          <h4 className={styles.title}>{title}</h4>
-          {!showOptions && <Heart className={styles.heart} onClick={onClick} />}
-        </div>
+        <h4 className={styles.title}>{title}</h4>
         <p className={styles.description}>{description}</p>
+        {!showOptions && (
+          <SeeMoreButton to={generateDonationPath(donationId)} />
+        )}
       </div>
     </>
   );
@@ -80,6 +82,7 @@ DonationCard.defaultProps = {
 };
 
 DonationCard.propTypes = {
+  donationId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
