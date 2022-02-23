@@ -40,7 +40,7 @@ const LandingPage = () => (
         </div>
         <p className={styles.description}>
           <span className={styles.bold}>
-            ¿Tienes algo para donar pero no sabes como hacerlo?
+            ¿Tienes algo para donar pero no sabes cómo hacerlo?
           </span>{' '}
           <span className={styles.highlight}>simplificamos</span> el proceso,{' '}
           <span className={styles.highlight}>voluntarios</span> analizarán tu
