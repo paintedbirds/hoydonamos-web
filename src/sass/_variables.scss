@@ -1,13 +1,13 @@
 // Colors
-$primary: #ff2063;
+$primary: #ea3e66;
 $secondary: #73b8b2;
 $black: #484242;
 $complementary-1: #d79a9f;
 $white: #fff;
-$donation: #EA3E66;
-$request: #73B8B2;
+$donation: #ea3e66;
+$request: #73b8b2;
 $user: #000000;
-$sign--out: #F2083F;
+$sign--out: #f2083f;
 $whatsapp: #25d366;
 $whatsapp--active: #25d366;
 $facebook: #3b5998;
@@ -28,3 +28,7 @@ $shadow: 0px 4px 11px 0px #0000002e;
 $breakpoint-tablet: 768px;
 $breakpoint-mobile-large: 425px;
 $breakpoint-mobile-small: 425px;
+
+// Utilities
+$header-height: 80px;
+$max-width: 1080px;

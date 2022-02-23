@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import { SIGN_IN_PATH, SIGN_UP_PATH, HOME_PATH } from 'utils/constants';
 
-const OnboardingPage = lazy(() => import('pages/Onboarding'));
+const LandingPage = lazy(() => import('pages/Landing'));
 const SignInPage = lazy(() => import('pages/SignIn'));
 const SignUpPage = lazy(() => import('pages/SignUp'));
 
@@ -16,7 +16,7 @@ const Unauthenticated = () => (
       <SignUpPage />
     </Route>
     <Route exact path={HOME_PATH}>
-      <OnboardingPage />
+      <LandingPage />
     </Route>
   </Switch>
 );

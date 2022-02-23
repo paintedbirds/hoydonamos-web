@@ -1,13 +1,25 @@
 import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 import { ReactComponent as MenuIcon } from 'assets/menu.svg';
-import { useClickAway } from 'features/common';
+import { useAuth } from 'features/auth';
+import { Form, useClickAway } from 'features/common';
+import {
+  ACCOUNT_PATH,
+  CREATE_DONATION_PATH,
+  CREATE_PETITION_PATH,
+  DONATIONS_PATH,
+  PETITIONS_PATH,
+  SIGN_IN_PATH,
+  SIGN_UP_PATH,
+} from 'utils/constants';
 import { NavLink } from './NavLink';
 import { SignOutLink } from './SignOutLink';
 
 import styles from './Header.module.scss';
 
 const MobileMenu = () => {
+  const { isAuthenticated } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -26,22 +38,35 @@ const MobileMenu = () => {
       </button>
       {isOpen && (
         <div className={styles['mobile-menu__dropdown']}>
-          <NavLink to="/donaciones" type="donation">
-            Ver donaciones
-          </NavLink>
-          <NavLink to="/crear-donacion" type="donation">
-            Crear donación
-          </NavLink>
-          <NavLink to="/solicitudes" type="request">
-            Ver solicitudes
-          </NavLink>
-          <NavLink to="/crear-solicitud" type="request">
-            Crear solicitud
-          </NavLink>
-          <NavLink to="/mi-cuenta" type="user">
-            Mi cuenta
-          </NavLink>
-          <SignOutLink type="mobile" />
+          {isAuthenticated ? (
+            <>
+              <NavLink to={DONATIONS_PATH} type="donation">
+                Ver donaciones
+              </NavLink>
+              <NavLink to={CREATE_DONATION_PATH} type="donation">
+                Crear donación
+              </NavLink>
+              <NavLink to={PETITIONS_PATH} type="request">
+                Ver solicitudes
+              </NavLink>
+              <NavLink to={CREATE_PETITION_PATH} type="request">
+                Crear solicitud
+              </NavLink>
+              <NavLink to={ACCOUNT_PATH} type="user">
+                Mi cuenta
+              </NavLink>
+              <SignOutLink type="generic" />
+            </>
+          ) : (
+            <div className={styles['unauthenticated-nav']}>
+              <Link to={SIGN_UP_PATH}>
+                <Form.SecondaryButton>Registrarme</Form.SecondaryButton>
+              </Link>
+              <Link to={SIGN_IN_PATH}>
+                <Form.Button>Iniciar Sesión</Form.Button>
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </div>
