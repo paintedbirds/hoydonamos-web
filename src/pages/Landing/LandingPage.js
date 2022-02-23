@@ -87,7 +87,7 @@ const LandingPage = () => (
           ' '
         )}
       >
-        <h1>¿Que tal te parece nuestra propuesta?</h1>
+        <h1>¿Qué tal te parece nuestra propuesta?</h1>
         <p>Te invitamos a ser parte de esta grandiosa comunidad.</p>
         <div className={styles['cta-button-container']}>
           <Link to={SIGN_UP_PATH}>
