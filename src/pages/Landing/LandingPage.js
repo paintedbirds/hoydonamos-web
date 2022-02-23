@@ -65,7 +65,7 @@ const LandingPage = () => (
         </p>
       </section>
       <section className={[styles.banner, styles.tertiary].join(' ')}>
-        <p>¿Como hago para mejorar mi perfil?</p>
+        <p>¿Cómo hago para mejorar mi perfil?</p>
       </section>
       <section className={styles.section}>
         <div>
