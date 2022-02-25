@@ -37,7 +37,7 @@ const DonationCard = ({
     <>
       {showDeleteModal && (
         <ConfirmationModal
-          title="Eliminar Donación"
+          title="Eliminar donación"
           content="¿Estás seguro que quieres eliminar esta donación? Una vez eliminada no podrás recuperar esta donación."
           confirmContent="Eliminar"
           onCancel={onDeleteCancel}

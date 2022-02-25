@@ -55,7 +55,7 @@ const MobileMenu = () => {
               <NavLink to={ACCOUNT_PATH} type="user">
                 Mi cuenta
               </NavLink>
-              <SignOutLink type="generic" />
+              <SignOutLink type="mobile" />
             </>
           ) : (
             <div className={styles['unauthenticated-nav']}>
