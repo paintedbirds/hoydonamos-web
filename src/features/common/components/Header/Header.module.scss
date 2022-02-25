@@ -19,6 +19,13 @@
   .nav-account {
     display: flex;
     align-items: center;
+
+    .avatar {
+      border-radius: 9999px;
+      height: 3.5rem;
+      object-fit: cover;
+      width: 3.5rem;
+    }
   }
 
   .header_content {
