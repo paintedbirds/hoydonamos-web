@@ -26,7 +26,7 @@ const SignInPage = () => {
         </h1>
         <SignInForm onSubmit={onSubmit} isLoading={isLoading} />
         <p className="mt-8 text-center">
-          ¿Aun no tienes una cuenta?{' '}
+          ¿Aún no tienes una cuenta?{' '}
           <Link to="/registro" className={styles.link}>
             Registrarte
           </Link>

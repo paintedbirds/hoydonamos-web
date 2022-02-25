@@ -33,12 +33,12 @@ const CreateDonationForm = ({ onSubmit, isLoading }) => {
         <Form.EditableField
           name="name"
           type="title"
-          placeholder="Has click aqui, para agregarle un titulo a tu donacion"
+          placeholder="Has click aquí, para agregarle un título a tu donación"
         />
         <Form.EditableField
           name="description"
           type="paragraph"
-          placeholder="Sube tu donacion con un titulo que llame la atencion! Trata de proveer al lector todos los datos noecesarios para acceder a esta donacion. Se lo mas claro posible"
+          placeholder="¡Sube tu donación con un título que llame la atención! Trata de proveer al lector todos los datos necesarios para acceder a esta donación. Se lo mas claro posible."
         />
 
         <div className="flex">

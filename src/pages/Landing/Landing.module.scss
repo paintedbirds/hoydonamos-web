@@ -7,7 +7,7 @@
 .cta-section {
   align-items: center;
   display: flex;
-  height: 80vh;
+  height: 60vh;
 
   .caption {
     width: 60%;
@@ -31,6 +31,8 @@
   }
 
   @media (max-width: $breakpoint-mobile-large) {
+    height: 80vh;
+
     .caption {
       width: 100%;
     }
