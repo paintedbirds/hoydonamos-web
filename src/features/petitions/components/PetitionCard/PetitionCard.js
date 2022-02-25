@@ -28,7 +28,7 @@ const PetitionCard = ({ petition, showOptions, onDelete }) => {
     <>
       {showDeleteModal && (
         <ConfirmationModal
-          title="Eliminar Petición"
+          title="Eliminar petición"
           content="¿Estás seguro que quieres eliminar esta petición? Una vez eliminada no podrás recuperar esta petición."
           confirmContent="Eliminar"
           onCancel={onDeleteCancel}
