@@ -20,7 +20,7 @@ const Search = ({ query, setQuery }) => {
         <input
           type="text"
           className={styles.search__input}
-          placeholder="Buscar una donacion"
+          placeholder="Buscar una donación"
           value={queryValue}
           onChange={onChange}
         />

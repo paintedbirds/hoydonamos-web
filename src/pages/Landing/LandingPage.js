@@ -18,7 +18,7 @@ const LandingPage = () => (
             ¡Somos el cambio que necesitas para donar!
           </h1>
           <p className={styles.description}>
-            Somos una comunidad que busca generalizar y humanizar el proceso de
+            En esta comunidad buscamos generalizar y humanizar el proceso de
             donaciones online.
           </p>
           <div className={styles['cta-button-container']}>
@@ -42,7 +42,7 @@ const LandingPage = () => (
           <span className={styles.bold}>
             ¿Tienes algo para donar pero no sabes cómo hacerlo?
           </span>{' '}
-          <span className={styles.highlight}>simplificamos</span> el proceso,{' '}
+          <span className={styles.highlight}>Simplificamos</span> el proceso,{' '}
           <span className={styles.highlight}>voluntarios</span> analizarán tu
           donación, la cual será publicada en la plataforma una vez aprobada.
         </p>
@@ -59,25 +59,22 @@ const LandingPage = () => (
           <span className={[styles.highlight, styles.secondary].join(' ')}>
             Solicitudes
           </span>{' '}
-          donde podrás plantear tus necesidades y estas serán visibles por todos
+          donde podrás plantear tus necesidades. Estas mismas serán visibles por
           los usuarios, teniendo todos los datos necesarios para contactarse
           contigo.
         </p>
       </section>
       <section className={[styles.banner, styles.tertiary].join(' ')}>
-        <p>¿Cómo hago para mejorar mi perfil?</p>
+        <p>Mejora tu perfil para agilizar el proceso de donación</p>
       </section>
       <section className={styles.section}>
         <div>
           <img src={IPadTabletMock} alt="Vista Desktop Web" />
         </div>
         <p className={styles.description}>
-          <span className={styles.bold}>¿Dónde veo mi información?</span> En la
-          sección <span className={styles.highlight}>Mi Cuenta</span> podrás
-          encontrar toda tu información personal en el cual recomendamos{' '}
-          <span className={styles.highlight}>
-            siempre mantenerla actualizada
-          </span>
+          En la sección <span className={styles.highlight}>Mi Cuenta</span>{' '}
+          podrás encontrar toda tu información personal la cual recomendamos{' '}
+          <span className={styles.highlight}>siempre mantener actualizada</span>
           , para que los voluntarios puedan entenderte mejor a la hora de
           evaluar tus necesidades.
         </p>
