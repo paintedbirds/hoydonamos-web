@@ -20,13 +20,7 @@ const Nav = () => {
           </div>
           <div className={styles['nav-account']}>
             <SubNav title={user.name} type="user" />
-            <img
-              src={user.image}
-              width="50px"
-              height="50px"
-              alt="user"
-              style={{ borderRadius: '50%' }}
-            />{' '}
+            <img src={user.image} className={styles.avatar} alt="user" />
           </div>
         </>
       ) : (
