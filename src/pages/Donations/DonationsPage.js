@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
 import { Donations, useDonations, Search } from 'features/donations';
-import { UnderlinedTitle } from 'features/common';
-import MainLayout from 'layouts/MainLayout';
+import { MainLayout, UnderlinedTitle } from 'features/common';
 
 const DonationsPage = () => {
   const [searchQuery, setSearchQuery] = useState('');

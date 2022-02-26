@@ -1,10 +1,9 @@
 import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { UnderlinedTitle } from 'features/common';
+import { MainLayout, UnderlinedTitle } from 'features/common';
 import { CreatePetitionForm, useCreatePetition } from 'features/petitions';
 import { handleErrors } from 'helpers/errors';
-import MainLayout from 'layouts/MainLayout';
 
 const CreatePetitionPage = () => {
   const history = useHistory();

@@ -4,9 +4,6 @@
   background-color: #353434;
   color: #bcbcbc;
   font-size: 14px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
 }
 
 .container {
@@ -79,7 +76,6 @@
   }
 }
 
-
 @media only screen and (max-width: 425px) {
   .footer {
     height: 300px;
@@ -91,7 +87,7 @@
 
   .copyright,
   .contact__us,
-  .powered, 
+  .powered,
   .logo {
     width: 200px;
     text-align: center;

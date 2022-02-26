@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
 
-import { Header, ShapesBackground } from 'features/common';
-import Footer from 'features/common/components/Footer/Footer';
+import { Footer, Header, ShapesBackground } from 'features/common';
 
 const MainLayout = ({ children }) => (
-  <div className="w-full mx-auto min-h-screen min-w-full">
+  <>
     <ShapesBackground />
     <Header />
-    <div className="my-8 max-w-screen-lg mx-auto relative">{children}</div>
+    <main className="my-8 max-w-screen-lg relative">{children}</main>
     <Footer />
-  </div>
+  </>
 );
 
 MainLayout.propTypes = {

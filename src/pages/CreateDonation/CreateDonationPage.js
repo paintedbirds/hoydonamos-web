@@ -1,9 +1,8 @@
 import { useCallback } from 'react';
 
 import { CreateDonationForm, useCreateDonation } from 'features/donations';
-import { UnderlinedTitle } from 'features/common';
+import { MainLayout, UnderlinedTitle } from 'features/common';
 import { handleErrors } from 'helpers/errors';
-import MainLayout from 'layouts/MainLayout';
 
 const CreateDonationPage = () => {
   const { mutate, isLoading } = useCreateDonation();
