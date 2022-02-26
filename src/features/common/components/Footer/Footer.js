@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import { ReactComponent as Logo } from 'assets/logo--secondary.svg';
 import { ReactComponent as InstagramIcon } from 'assets/instagram_icon.svg';
 import { ReactComponent as GmailIcon } from 'assets/gmail_icon.svg';
@@ -10,7 +8,6 @@ import styles from './Footer.module.scss';
 const Footer = () => {
   const PATH_INSTAGRAM =
     'https://instagram.com/hoydonamos.uy?utm_medium=copy_link';
-  const SUBJECT_MAIL = 'Asunto';
   const MAIL = 'hoydonamos@gmail.com';
 
   return (
@@ -18,19 +15,25 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.copyright}>
           <div className={styles.logo}>
-            <Logo className="h-10 w-10" />
+            <Logo />
             <h1 className={styles.title}>Che, ¿hoy donamos?</h1>
           </div>
-          <p>2022 Copyright &copy; Todos los derechos reservados.</p>
+          <p>2022 &copy; Todos los derechos reservados.</p>
         </div>
-        <div className={styles.find__in}>
-          <p>Encontranos en </p>
-          <a href={PATH_INSTAGRAM} target="_blank" rel="noreferrer">
-            <InstagramIcon />
-          </a>
-          <Link to={{ pathname: 'www.gmail.com' }} target="_blank">
-            <GmailIcon />
-          </Link>
+        <div className={styles.contact__us}>
+          <p className={styles.contact__us__title}>Puedes contactarnos en:</p>
+          <div>
+            <div className={styles.contact__us__item}>
+              <a href={PATH_INSTAGRAM} target="_blank" rel="noreferrer">
+                <InstagramIcon />
+                <p>@hoydonamos.uy</p>
+              </a>
+            </div>
+            <div className={styles.contact__us__item}>
+              <GmailIcon />
+              <p>{MAIL}</p>
+            </div>
+          </div>
         </div>
         <div className={styles.powered}>
           <p>Powered by </p>
