@@ -21,7 +21,6 @@ const Footer = () => {
           <p>2022 &copy; Todos los derechos reservados.</p>
         </div>
         <div className={styles.contact__us}>
-          <p className={styles.contact__us__title}>Puedes contactarnos en:</p>
           <div>
             <div className={styles.contact__us__item}>
               <a href={PATH_INSTAGRAM} target="_blank" rel="noreferrer">
