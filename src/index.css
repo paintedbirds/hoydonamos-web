@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
 #root {
-  @apply bg-white w-full;
-
+  background-color: #fff;
+  width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   display: flex;
