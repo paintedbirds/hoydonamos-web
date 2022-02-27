@@ -1,5 +1,4 @@
-/* eslint-disable no-nested-ternary */
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import { ReactComponent as ArrowDown } from 'assets/arrow_down.svg';
@@ -14,6 +13,41 @@ const SubNav = ({ title, type }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
+  const dropdownTypes = useMemo(
+    () => ({
+      donations: 'donation',
+      requests: 'request',
+      user: 'user',
+    }),
+    []
+  );
+
+  const dropdownLinks = useMemo(
+    () => ({
+      [dropdownTypes.donations]: (
+        <>
+          <NavLink to="/donaciones">Ver donaciones</NavLink>
+          <NavLink to="/crear-donacion">Crear donación</NavLink>
+        </>
+      ),
+      [dropdownTypes.requests]: (
+        <>
+          <NavLink to="/solicitudes">Ver solicitudes</NavLink>
+          <NavLink to="/crear-solicitud">Crear solicitud</NavLink>
+        </>
+      ),
+      [dropdownTypes.user]: (
+        <>
+          <NavLink to="/mi-cuenta">
+            Mi cuenta <Account />
+          </NavLink>
+          <SignOutLink />
+        </>
+      ),
+    }),
+    [dropdownTypes]
+  );
+
   const onMenuClick = () => setIsOpen((previousState) => !previousState);
 
   useClickAway(dropdownRef, () => setIsOpen(false));
@@ -21,30 +55,13 @@ const SubNav = ({ title, type }) => {
   return (
     <div className={styles['sub-nav']} ref={dropdownRef}>
       <button onClick={onMenuClick} type="button">
-        <h1 className={styles['title']}>
-          {title} <ArrowDown />
-        </h1>
+        <span className={styles.title}>
+          {title} <ArrowDown className={isOpen && styles['icon--active']} />
+        </span>
       </button>
       {isOpen && (
-        <div className={`${styles['nav__dropdown']} ${styles[type]} `}>
-          {title === 'Donaciones' ? (
-            <>
-              <NavLink to="/donaciones">Ver donaciones</NavLink>
-              <NavLink to="/crear-donacion">Crear donación</NavLink>
-            </>
-          ) : title === 'Solicitudes' ? (
-            <>
-              <NavLink to="/solicitudes">Ver solicitudes</NavLink>
-              <NavLink to="/crear-solicitud">Crear solicitud</NavLink>
-            </>
-          ) : (
-            <>
-              <NavLink to="/mi-cuenta">
-                Mi cuenta <Account />
-              </NavLink>
-              <SignOutLink />
-            </>
-          )}
+        <div className={`${styles['nav__dropdown']} ${styles[type]}`}>
+          {dropdownLinks[type]}
         </div>
       )}
     </div>

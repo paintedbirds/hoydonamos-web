@@ -26,7 +26,7 @@ const CreateDonationForm = ({ onSubmit, isLoading }) => {
     <Form
       methods={methods}
       onSubmit={onSubmitHandler}
-      className="flex flex-col md:flex-row gap-1 sm:my-16 mt-8"
+      className="flex flex-col md:flex-row gap-4 sm:my-16 mt-8"
     >
       <ImageUpload />
       <div className="sm:w-1/2 w-full lg:pl-10 lg:mt-0 mt-8">

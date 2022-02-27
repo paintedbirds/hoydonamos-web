@@ -1,7 +1,7 @@
 import { ComeBackButton, NotFound } from 'features/common';
 
 const NotMatch = () => (
-  <div>
+  <div className="m-auto">
     <NotFound />
     <ComeBackButton />
   </div>
