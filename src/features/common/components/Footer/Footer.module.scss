@@ -1,8 +1,8 @@
 @import 'sass/variables';
 
 .footer {
-  background-color: #353434;
-  color: #bcbcbc;
+  background-color: $footer-background;
+  color: $footer-text;
   font-size: $font-small;
   height: fit-content;
   padding: 2rem;
@@ -30,9 +30,9 @@
   align-items: center;
 
   svg {
-    width: 35px;
-    height: 35px;
-    margin: 5px;
+    width: 2rem;
+    height: 2rem;
+    margin: 0.3rem;
     margin-bottom: 0;
   }
 }
@@ -42,15 +42,15 @@
   display: flex;
   color: $white;
   font-size: $font-x-small;
-  margin-bottom: 7px;
+  margin-bottom: 0.4rem;
 
   svg path {
     fill: $white;
   }
 
   svg {
-    width: 25px;
-    height: 25px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 
@@ -59,7 +59,7 @@
 
   .contact__us__title {
     font-size: $font-small;
-    margin-right: 6px;
+    margin-right: 0.3rem;
   }
 }
 
@@ -74,8 +74,8 @@
   }
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
 
@@ -89,12 +89,12 @@
   .powered,
   .logo {
     display: flex;
-    margin: 20px 0;
+    margin: 1.25rem 0;
     justify-content: center;
     text-align: center;
   }
 
   .logo {
-    margin-bottom: 2px;
+    margin-bottom: 0.1rem;
   }
 }
