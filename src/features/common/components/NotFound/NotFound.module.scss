@@ -1,8 +1,9 @@
 @import '../../../../sass/variables';
 
 .container {
-  display: flex;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 
   .not-found {
     color: $primary;
@@ -16,8 +17,6 @@
   }
 
   @media (max-width: $breakpoint-mobile-large) {
-    flex-direction: column;
-
     .not-found {
       font-size: 8rem;
     }

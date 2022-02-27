@@ -52,7 +52,7 @@ const UserPetitions = ({ petitions }) => {
 UserPetitions.propTypes = {
   petitions: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
     })
   ).isRequired,
 };

@@ -1,25 +1,27 @@
+@import 'sass/variables';
+
 .footer {
-  width: 100%;
-  height: 150px;
   background-color: #353434;
   color: #bcbcbc;
-  font-size: 14px;
+  font-size: $font-small;
+  height: fit-content;
+  padding: 2rem;
+  width: 100%;
   z-index: 999;
 }
 
 .container {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  padding: 0px 70px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .copyright {
   flex-direction: column;
-  width: 200px;
-  font-size: 12px;
+  font-size: $font-x-small;
 }
 
 .contact__us,
@@ -36,14 +38,14 @@
 }
 
 .logo {
-  display: flex;
   align-items: center;
+  display: flex;
+  color: $white;
+  font-size: $font-x-small;
   margin-bottom: 7px;
-  color: #fff;
-  font-size: 12px;
 
   svg path {
-    fill: #fff;
+    fill: $white;
   }
 
   svg {
@@ -56,7 +58,7 @@
   align-items: center;
 
   .contact__us__title {
-    font-size: 14px;
+    font-size: $font-small;
     margin-right: 6px;
   }
 }
@@ -64,7 +66,7 @@
 .contact__us__item {
   display: flex;
   align-items: center;
-  font-size: 12px;
+  font-size: $font-x-small;
 
   a {
     display: flex;
@@ -77,11 +79,7 @@
   }
 }
 
-@media only screen and (max-width: 425px) {
-  .footer {
-    height: 300px;
-  }
-
+@media only screen and (max-width: $breakpoint-mobile-large) {
   .container {
     flex-direction: column;
   }
@@ -90,11 +88,10 @@
   .contact__us,
   .powered,
   .logo {
-    width: 200px;
-    text-align: center;
-    margin: 20px 0;
     display: flex;
+    margin: 20px 0;
     justify-content: center;
+    text-align: center;
   }
 
   .logo {

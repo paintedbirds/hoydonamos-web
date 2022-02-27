@@ -1,27 +1,26 @@
 @import 'sass/variables';
 
 .header {
-  height: 80px;
-  width: 100%;
+  align-items: center;
+  background-color: $white;
   box-shadow: 0px 4px 11px 0px #73b8b233;
+  display: flex;
+  height: $header-height;
+  justify-content: center;
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $white;
 
   .header_content,
   .header_logo a,
   .nav,
-  .nav_donation-request,
   .nav-account {
     display: flex;
     align-items: center;
 
     .avatar {
-      border-radius: 9999px;
+      border-radius: $radius-full;
       height: 3.5rem;
       object-fit: cover;
       width: 3.5rem;
@@ -33,29 +32,29 @@
     display: flex;
     max-width: $max-width;
     justify-content: space-between;
-    padding: 0 1rem 0 1rem;
+    padding: 0 1.6rem;
     width: 100%;
   }
 
   .nav_donation-request {
-    margin-right: 200px;
-  }
-
-  .header_logo {
-    width: 400px;
-  }
-
-  .nav_donation-request {
-    width: 250px;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    margin-right: 5rem;
+    max-width: 250px;
     justify-content: space-between;
   }
 
   .title {
-    display: flex;
     align-items: baseline;
-    font-size: 17px;
     color: $black;
-    font-weight: 600;
+    display: flex;
+    font-size: $font-large;
+    font-weight: $bold;
+
+    .icon--active {
+      transform: rotate(180deg);
+    }
   }
 
   img {
@@ -77,14 +76,14 @@ button {
 }
 
 .nav__dropdown {
-  position: absolute;
   background-color: $white;
   border-radius: 14px;
+  box-shadow: $shadow;
   flex-direction: column;
-  margin-top: 15px;
-  padding: 10px;
+  position: absolute;
+  margin-top: 1rem;
+  padding: 0.6rem;
   right: 0;
-  box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
@@ -170,17 +169,19 @@ button {
 
 @media only screen and (max-width: 768px) {
   .header {
-    @apply p-4 lg:p-7 bg-white;
+    @apply lg:p-7 bg-white;
 
     box-shadow: 0px 4px 11px 0px #73b8b233;
+    display: flex;
+    padding: 1rem 0.5rem;
     position: sticky;
     top: 0;
     z-index: 50;
-    display: flex;
 
     .header_content {
       display: flex;
       justify-content: space-between;
+      padding: 0 0.5rem;
       width: 100%;
     }
 

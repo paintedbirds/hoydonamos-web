@@ -10,3 +10,9 @@ export const SIGN_UP_PATH = '/registro';
 export const UPDATE_ACCOUNT_PATH = '/editar-cuenta';
 
 export const generateDonationPath = (id) => `${DONATIONS_PATH}/${id}`;
+
+export const INSTAGRAM_LINK =
+  'https://instagram.com/hoydonamos.uy?utm_medium=copy_link';
+export const SUPPORT_EMAIL = 'hoydonamos@gmail.com';
+export const PAINTED_BIRDS_LINK =
+  'https://www.linkedin.com/company/painted-birds/';
