@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
 import { UpdateAccountForm, useUserUpdate, useAuth } from 'features/auth';
+import { MainLayout } from 'features/common';
 import { handleErrors } from 'helpers/errors';
-import MainLayout from 'layouts/MainLayout';
 
 const UpdateAccountPage = () => {
   const { user } = useAuth();

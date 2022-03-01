@@ -20,15 +20,28 @@ $email: #d24538;
 $email--active: #d48179;
 $reddit: #f24100;
 $reddit--active: #f28259;
+$footer-background: #353434;
+$footer-text: #bcbcbc;
 
 // Shadows
 $shadow: 0px 4px 11px 0px #0000002e;
 
 // Breakpoints
-$breakpoint-tablet: 768px;
-$breakpoint-mobile-large: 425px;
-$breakpoint-mobile-small: 425px;
+$breakpoint-tablet: 48rem;
+$breakpoint-mobile-large: 26.56rem;
+$breakpoint-mobile-small: 26.56rem;
 
 // Utilities
-$header-height: 80px;
-$max-width: 1080px;
+$header-height: 5rem;
+$max-width: 67.5rem;
+
+// Radius
+$radius-full: 624.93rem;
+
+// Fonts
+$font-x-small: 0.75rem;
+$font-small: 0.87rem;
+$font-medium: 1rem;
+$font-large: 1.12rem;
+$font-x-large: 1.25rem;
+$bold: 600;

@@ -19,7 +19,7 @@ const SignUpForm = ({ onSubmit, isLoading }) => {
 
   const methods = useForm({ resolver: yupResolver(schema) });
 
-  const onSubmitHandler = onSubmit(methods.handleSubmit);
+  const onSubmitHandler = onSubmit(methods.setError);
 
   return (
     <Form onSubmit={onSubmitHandler} methods={methods}>

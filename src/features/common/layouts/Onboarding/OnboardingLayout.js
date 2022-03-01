@@ -27,4 +27,4 @@ OnboardingLayout.propTypes = {
   ]).isRequired,
 };
 
-export default OnboardingLayout;
+export { OnboardingLayout };

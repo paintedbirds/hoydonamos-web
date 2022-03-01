@@ -7,7 +7,7 @@ import MobileMenu from './MobileMenu';
 import styles from './Header.module.scss';
 
 const Header = () => (
-  <div className={styles.header}>
+  <header className={styles.header}>
     <div className={styles['header_content']}>
       <div className={styles['header_logo']}>
         <Link to="/">
@@ -20,7 +20,7 @@ const Header = () => (
       <Nav />
       <MobileMenu />
     </div>
-  </div>
+  </header>
 );
 
 export { Header };

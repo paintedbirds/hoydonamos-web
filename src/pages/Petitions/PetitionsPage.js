@@ -1,6 +1,5 @@
-import { UnderlinedTitle } from 'features/common';
+import { MainLayout, UnderlinedTitle } from 'features/common';
 import { Petitions, usePetitions } from 'features/petitions';
-import MainLayout from 'layouts/MainLayout';
 
 const PetitionsPage = () => {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, status } =

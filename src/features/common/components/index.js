@@ -11,3 +11,5 @@ export * from './ConfirmationModal';
 export * from './WelcomeModal';
 export * from './Header';
 export * from './Home';
+export * from './Footer';
+export * from './PageLoading';

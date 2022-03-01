@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 import { SignUpForm, useSignUp } from 'features/auth';
+import { OnboardingLayout } from 'features/common';
 import { handleErrors } from 'helpers/errors';
-import OnboardingLayout from 'layouts/OnboardingLayout';
 
 import styles from '../SignIn/SignInPage.module.scss';
 

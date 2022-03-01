@@ -1,7 +1,9 @@
 import { ComeBackButton, NotFound } from 'features/common';
 
+import styles from './NotMatch.module.scss';
+
 const NotMatch = () => (
-  <div>
+  <div className={styles.not__match}>
     <NotFound />
     <ComeBackButton />
   </div>

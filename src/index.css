@@ -3,5 +3,19 @@
 @tailwind utilities;
 
 #root {
-  @apply bg-white min-h-screen w-full flex justify-center items-center;
+  background-color: #fff;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+footer,
+header {
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 1;
 }

@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 
-import { Header, ShapesBackground } from 'features/common';
+import { Footer, Header, ShapesBackground } from 'features/common';
+
+import styles from './MainLayout.module.scss';
 
 const MainLayout = ({ children }) => (
-  <div className="w-full mx-auto min-h-screen min-w-full">
+  <>
     <ShapesBackground />
     <Header />
-    <div className="my-8 max-w-screen-lg mx-auto relative">{children}</div>
-  </div>
+    <main className={styles.main}>{children}</main>
+    <Footer />
+  </>
 );
 
 MainLayout.propTypes = {
@@ -17,4 +20,4 @@ MainLayout.propTypes = {
   ]).isRequired,
 };
 
-export default MainLayout;
+export { MainLayout };

@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
-import { Loading } from 'features/common';
+import { PageLoading } from 'features/common';
 import { useAuth } from 'features/auth';
 
 const Authenticated = lazy(() => import('routers/Authenticated'));
@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Suspense delayMs={500} fallback={<Loading />}>
+      <Suspense fallback={<PageLoading />}>
         {isAuthenticated ? <Authenticated /> : <Unauthenticated />}
       </Suspense>
       <Toaster />
