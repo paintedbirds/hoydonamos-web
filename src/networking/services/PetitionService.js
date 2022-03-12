@@ -11,6 +11,10 @@ export class PetitionService {
     };
   }
 
+  static getPetition({ id }) {
+    return httpClient.get(`/petition/${id}`);
+  }
+
   static createPetition({ petition }) {
     return httpClient.post('/petitions', petition);
   }
