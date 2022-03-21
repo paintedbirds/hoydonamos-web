@@ -25,7 +25,10 @@ const UpdateAccountForm = ({ onSubmit, isLoading }) => {
         name: string().required('Este campo es requerido'),
         aboutMe: string().nullable(),
         phone: string()
-          .nullable()
+          .nullable(true)
+          .transform((currentValue, originalValue) => {
+            return originalValue === '' ? null : currentValue;
+          })
           .matches(
             cellphonePattern,
             'Este campo debe ser un numero de contacto Ej. 093418251'
