@@ -27,7 +27,10 @@ const SignInPage = () => {
         <SignInForm onSubmit={onSubmit} isLoading={isLoading} />
         <p className="mt-8 text-center">
           ¿Aún no tienes una cuenta?{' '}
-          <Link to="/registro" className={styles.link}>
+          <Link
+            to={(location) => ({ ...location, pathname: '/registro' })}
+            className={styles.link}
+          >
             Registrarte
           </Link>
         </p>

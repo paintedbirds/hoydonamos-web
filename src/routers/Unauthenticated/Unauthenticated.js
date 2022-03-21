@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import { UnauthenticatedDonationRedirect } from 'features/donations';
 import { SIGN_IN_PATH, SIGN_UP_PATH, HOME_PATH } from 'utils/constants';
 
 const LandingPage = lazy(() => import('pages/Landing'));
@@ -18,6 +19,7 @@ const Unauthenticated = () => (
     <Route exact path={HOME_PATH}>
       <LandingPage />
     </Route>
+    <UnauthenticatedDonationRedirect />
   </Switch>
 );
 
