@@ -7,7 +7,12 @@ import {
 } from 'react';
 import PropTypes from 'prop-types';
 
-import { isStoredSession, getSession } from 'helpers/session';
+import { useSignOut } from 'features/auth';
+import {
+  isStoredSession,
+  getSession,
+  clearSession as clearStorage,
+} from 'helpers/session';
 import httpClient from 'networking/httpClient';
 import {
   applyInterceptors,
@@ -37,9 +42,15 @@ export const AuthProvider = ({ children }) => {
     loadState || initialState
   );
 
+  const { mutate: signOut } = useSignOut();
+
   const clearSession = useCallback(async () => {
+    await signOut();
+
     setState(initialState);
-  }, []);
+
+    clearStorage();
+  }, [signOut]);
 
   useEffect(() => {
     const interceptors = applyInterceptors(httpClient, token, clearSession);

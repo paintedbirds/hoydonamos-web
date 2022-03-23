@@ -1,5 +1,5 @@
 import { useMutation } from 'react-query';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 import { useAuth, initialState } from 'features/auth';
@@ -8,6 +8,7 @@ import { AuthService } from 'networking/services';
 
 export const useSignUp = () => {
   const history = useHistory();
+  const location = useLocation();
   const { setState } = useAuth();
 
   const mutation = useMutation((user) => AuthService.signUp(user), {
@@ -20,7 +21,7 @@ export const useSignUp = () => {
 
       persistSession(response.data);
 
-      history.push('/');
+      history.push('/', location.state?.from && { from: location.state.from });
 
       toast.success('Te has registrado correctamente', {
         duration: 3500,
@@ -37,6 +38,7 @@ export const useSignUp = () => {
 
 export const useSignIn = () => {
   const history = useHistory();
+  const location = useLocation();
   const { setState } = useAuth();
 
   const mutation = useMutation((user) => AuthService.signIn(user), {
@@ -49,7 +51,7 @@ export const useSignIn = () => {
 
       persistSession(response.data);
 
-      history.push('/');
+      history.push('/', location.state?.from && { from: location.state.from });
 
       toast.success('Has iniciado sesión correctamente', {
         duration: 3500,

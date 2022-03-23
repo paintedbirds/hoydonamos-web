@@ -2,6 +2,7 @@ import { lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { WelcomeModal } from 'features/common';
+import { UnauthenticatedDonationRedirect } from 'features/donations';
 import {
   ACCOUNT_PATH,
   CREATE_DONATION_PATH,
@@ -55,6 +56,7 @@ const Authenticated = () => (
       </Route>
     </Switch>
     <WelcomeModal />
+    <UnauthenticatedDonationRedirect />
   </>
 );
 

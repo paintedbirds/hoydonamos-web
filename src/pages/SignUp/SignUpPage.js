@@ -27,7 +27,10 @@ const SignUpPage = () => {
         <SignUpForm onSubmit={onSubmit} isLoading={isLoading} />
         <p className="mt-8 text-center">
           ¿Ya tienes una cuenta?{' '}
-          <Link to="/iniciar-sesion" className={styles.link}>
+          <Link
+            to={(location) => ({ ...location, pathname: '/iniciar-sesion' })}
+            className={styles.link}
+          >
             Iniciar sesión
           </Link>
         </p>
