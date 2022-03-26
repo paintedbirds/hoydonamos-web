@@ -46,6 +46,8 @@
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
+  -ms-overflow-style: none; /* NOTE: hide scrollbar on IE and Edge */
+  scrollbar-width: none; /*  NOTE: hide scrollbar on Firefox */
   padding: 0.5rem;
   margin-top: 1rem;
   display: grid;
@@ -53,6 +55,11 @@
   grid-template-columns: repeat(40, min(25rem));
   grid-auto-flow: column;
   width: 100%;
+
+  /*  NOTE: hide scrollbar on Chrome */
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   & > div {
     scroll-snap-align: center;
