@@ -18,7 +18,12 @@ const UpdateAccountPage = () => {
 
       formData.append('name', values.name);
       formData.append('about_me', values.aboutMe);
-      formData.append('phone', values.phone);
+
+      if (values.phone) {
+        formData.append('phone', values.phone);
+      } else {
+        formData.delete('phone');
+      }
 
       if (values.image.length > 0) {
         formData.append('image', values.image[0]);
