@@ -13,10 +13,12 @@
       @apply rounded-full;
 
       background-color: #fff;
+      border-radius: 50%;
       box-shadow: $shadow;
       height: 10rem;
       min-width: 10rem;
       object-fit: cover;
+      width: 10rem;
     }
   }
 
