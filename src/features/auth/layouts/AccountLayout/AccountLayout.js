@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const AccountLayout = ({ children }) => <div className="px-4">{children}</div>;
+const AccountLayout = ({ children }) => <div className="px-9">{children}</div>;
 
 AccountLayout.propTypes = {
   children: PropTypes.oneOfType([
