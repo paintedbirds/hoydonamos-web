@@ -19,3 +19,9 @@ header {
 main {
   flex-grow: 1;
 }
+
+
+.swiper {
+  overflow: visible !important;
+  padding: 0 0 4rem !important;
+}
