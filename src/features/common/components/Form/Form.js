@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import FormButton from './Button';
 import FromSecondaryButton from './SecondaryButton';
-import FormEditableField from './EditableField';
 import FormInput from './Input';
 import FormTextarea from './Textarea';
 
@@ -33,7 +32,6 @@ const Form = ({ children, onSubmit, methods, ...leftOverProps }) => {
 
 Form.Button = FormButton;
 Form.SecondaryButton = FromSecondaryButton;
-Form.EditableField = FormEditableField;
 Form.Input = FormInput;
 Form.Textarea = FormTextarea;
 
