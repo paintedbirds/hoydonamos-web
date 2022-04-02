@@ -16,7 +16,7 @@ const ImageUpload = () => {
   const hasImage = image ? Object.entries(image).length > 0 : image;
 
   return (
-    <div className={`sm:w-1/2 w-full md:h-auto h-54 ${styles['image-upload']}`}>
+    <div className={styles['image-upload']}>
       <img
         className={styles['image-upload__image']}
         src={!hasImage ? defaultImage : URL.createObjectURL(image[0])}

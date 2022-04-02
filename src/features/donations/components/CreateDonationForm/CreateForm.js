@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import { Form } from 'features/common';
 import ImageUpload from './ImageUpload';
 
+import styles from './CreateDonationForm.module.scss';
+
 const CreateDonationForm = ({ onSubmit, isLoading }) => {
   const schema = useMemo(
     () =>
@@ -23,29 +25,30 @@ const CreateDonationForm = ({ onSubmit, isLoading }) => {
   const onSubmitHandler = onSubmit(methods.setError);
 
   return (
-    <Form
-      methods={methods}
-      onSubmit={onSubmitHandler}
-      className="flex flex-col md:flex-row gap-4 sm:my-16 mt-8"
-    >
-      <ImageUpload />
-      <div className="sm:w-1/2 w-full lg:pl-10 lg:mt-0 mt-8">
-        <Form.EditableField
-          name="name"
-          type="title"
-          placeholder="Has click aquí, para agregarle un título a tu donación"
-        />
-        <Form.EditableField
-          name="description"
-          type="paragraph"
-          placeholder="¡Sube tu donación con un título que llame la atención! Trata de proveer al lector todos los datos necesarios para acceder a esta donación. Se lo mas claro posible."
-        />
-
-        <div className="flex">
+    <div className={styles.container}>
+      <Form methods={methods} onSubmit={onSubmitHandler}>
+        <div className={styles.inputs}>
+          <ImageUpload />
+          <div className={styles.info}>
+            <Form.Input
+              name="name"
+              type="title"
+              placeholder="Agregarle un título a tu donación"
+              label="Título"
+            />
+            <Form.Textarea
+              name="description"
+              type="paragraph"
+              placeholder="Trata de proveer al lector todos los datos necesarios para acceder a esta donación. Se lo mas claro posible."
+              label="Descripción"
+            />
+          </div>
+        </div>
+        <div className="flex w-full">
           <Form.Button>{isLoading ? 'Cargando...' : 'Subir'}</Form.Button>
         </div>
-      </div>
-    </Form>
+      </Form>
+    </div>
   );
 };
 

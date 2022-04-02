@@ -1,7 +1,32 @@
-@import '../../../../sass/variables';
+@import 'sass/variables';
+
+.container {
+  @apply sm:m-auto mx-4 rounded-lg;
+
+  box-shadow: $shadow;
+  background-color: $white;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  .inputs {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+
+    .info {
+      width: 60%;
+
+      textarea {
+        min-height: 7rem;
+      }
+    }
+  }
+}
 
 .image-upload {
   position: relative;
+  max-height: 15rem;
+  width: 40%;
 
   &__container {
     position: absolute;
@@ -13,7 +38,7 @@
   &__image {
     @apply w-full object-cover object-center rounded-2xl;
 
-    max-height: 380px;
+    max-height: 15rem;
   }
 
   &__button {
@@ -38,5 +63,23 @@
 
   .error {
     @apply text-red-600;
+  }
+}
+
+@media (max-width: $breakpoint-mobile-large) {
+  .container {
+    padding: 1rem;
+
+    .inputs {
+      flex-direction: column;
+
+      .info {
+       width: 100%;
+      }
+    }
+  }
+
+  .image-upload {
+    width: 100%;
   }
 }
