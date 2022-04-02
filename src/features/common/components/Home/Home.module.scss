@@ -42,38 +42,17 @@
   }
 }
 
-.scrollable-container {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -ms-overflow-style: none; /* NOTE: hide scrollbar on IE and Edge */
-  scrollbar-width: none; /*  NOTE: hide scrollbar on Firefox */
-  padding: 0.5rem;
-  margin-top: 1rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(40, min(25rem));
-  grid-auto-flow: column;
-  width: 100%;
-
-  /*  NOTE: hide scrollbar on Chrome */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  & > div {
-    scroll-snap-align: center;
-  }
+.container {
+  padding-inline: 0.5rem;
+  margin-top: 1.5rem;
+  overflow: hidden;
 }
 
 .petitions-container {
-  @extend .scrollable-container;
+  @extend .container;
 
-  margin-top: 1.5rem;
+  padding-inline: 2.5rem;
   padding-top: 2rem;
-  padding-left: 2rem;
-  gap: 2.5rem;
-  grid-template-columns: repeat(40, min(30rem));
 }
 
 .see-more {
@@ -94,3 +73,13 @@
     }
   }
 }
+
+
+.slider {
+  margin: 0 1rem;
+
+  .slide {
+    width: unset !important;
+  }
+}
+

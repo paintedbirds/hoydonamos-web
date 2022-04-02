@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import PropTypes from 'prop-types';
 
 import { ReactComponent as EmptyStateDonation } from 'assets/empty-state-donation.svg';
@@ -33,18 +34,26 @@ const Donations = ({ data, status }) => {
         </div>
       )}
       {status === 'success' && data.length > 0 && (
-        <section className={styles['scrollable-container']}>
-          {data?.map(({ id, name, description, image }) => (
-            <DonationCard
-              key={id}
-              donationId={id}
-              title={name}
-              description={description}
-              image={image}
-              onClick={onDonationClick(id)}
-              id={id}
-            />
-          ))}
+        <section className={styles.container}>
+          <Swiper
+            className={styles.slider}
+            spaceBetween={20}
+            slidesPerView="auto"
+          >
+            {data?.map(({ id, name, description, image }) => (
+              <SwiperSlide className={styles.slide} key={id}>
+                <DonationCard
+                  key={id}
+                  donationId={id}
+                  title={name}
+                  description={description}
+                  image={image}
+                  onClick={onDonationClick(id)}
+                  id={id}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </section>
       )}
       {status === 'error' && (

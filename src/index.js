@@ -7,6 +7,8 @@ import { AuthProvider } from 'features/auth';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
+import 'swiper/swiper.min.css';
+
 import './index.css';
 
 const queryClient = new QueryClient({

@@ -1,3 +1,4 @@
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import PropTypes from 'prop-types';
 
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
@@ -21,11 +22,20 @@ const Petitions = ({ data, status }) => (
         <Loading />
       </div>
     )}
+
     {status === 'success' && data.length > 0 && (
       <section className={styles['petitions-container']}>
-        {data?.map((petition) => (
-          <PetitionCard key={petition.id} petition={petition} />
-        ))}
+        <Swiper
+          className={styles.slider}
+          spaceBetween={55}
+          slidesPerView="auto"
+        >
+          {data?.map((petition) => (
+            <SwiperSlide className={styles.slide} key={petition.id}>
+              <PetitionCard key={petition.id} petition={petition} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
     )}
 
