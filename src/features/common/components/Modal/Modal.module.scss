@@ -26,14 +26,15 @@
   z-index: 99;
 
   .content {
-    @apply bg-white rounded-lg;
+    @apply bg-white;
 
     box-shadow: $shadow;
     height: fit-content;
     margin: auto;
-    min-width: 43.75rem;
+    min-width: 23.75rem;
     padding: 20px;
-    width: 50%;
+    width: 30%;
+    border-radius: 30px;
   }
 
   @media screen and (max-width: $breakpoint-tablet) {

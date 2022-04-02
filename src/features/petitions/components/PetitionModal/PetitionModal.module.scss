@@ -1,0 +1,115 @@
+@import "../../../../sass/variables";
+
+.modal__content,
+.user__info,
+.user__contact__info,
+.petition__info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-top: 10px;
+}
+
+.modal__content {
+    margin: 20px;
+    text-align: center;
+    color: #484242;
+}
+
+.user__info {
+    align-items: center;
+
+    img {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    p {
+        margin-top: 15px;
+        font-size: 24px;
+        font-weight: 700;
+    }
+}
+
+.petition__info {
+    margin-top: 15px;
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
+
+    .petition__subject {
+        width: 100%;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 24px;
+        text-align: start;
+    }
+
+    .petition__description {
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 16px;
+        max-width: 500px;
+        text-align: start;
+        line-height: 30px;
+        font-weight: 400;
+        max-height: 300px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        padding-left: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $request;
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-track:hover {
+        box-shadow: inset 0 0 2px grey;
+        border-radius: 10px;
+    }
+}
+
+.user__contact__info {
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: space-around;
+    width: 70%;
+
+    p {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        font-size: 16px;
+
+        svg {
+            margin-right: 5px;
+            height: 18px;
+            width: 18px;
+        }
+
+        .email__icon {
+            margin-left: 20px;
+        }
+    }
+}
+
+.close {
+    color: $primary;
+    margin-top: 30px;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+}

@@ -6,7 +6,8 @@
   box-shadow: $shadow;
   position: relative;
   max-width: 30rem;
-
+  cursor: pointer;
+  
   .options {
     display: flex;
     align-items: center;

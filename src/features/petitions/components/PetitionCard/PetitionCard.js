@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -8,7 +10,7 @@ import Status from './Status';
 
 import styles from './PetitionCard.module.scss';
 
-const PetitionCard = ({ petition, showOptions, onDelete }) => {
+const PetitionCard = ({ petition, showOptions, onDelete, onClickHandler }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const onDeleteClick = () => {
@@ -35,7 +37,7 @@ const PetitionCard = ({ petition, showOptions, onDelete }) => {
           onConfirm={onDeleteConfirm}
         />
       )}
-      <div className={styles.container}>
+      <div className={styles.container} onClick={onClickHandler}>
         {showOptions && (
           <div className={styles.options}>
             {<Status status={petition.state} />}
@@ -83,6 +85,7 @@ PetitionCard.propTypes = {
   }).isRequired,
   showOptions: PropTypes.bool,
   onDelete: PropTypes.func,
+  onClickHandler: PropTypes.func.isRequired,
 };
 
 export { PetitionCard };
