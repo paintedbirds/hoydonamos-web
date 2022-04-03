@@ -10,6 +10,8 @@ export const SIGN_UP_PATH = '/registro';
 export const UPDATE_ACCOUNT_PATH = '/editar-cuenta';
 
 export const generateDonationPath = (id) => `${DONATIONS_PATH}/${id}`;
+export const generatePetitionPath = (id) =>
+  `${PETITIONS_PATH}?petition_id=${id}`;
 
 export const INSTAGRAM_LINK =
   'https://instagram.com/hoydonamos.uy?utm_medium=copy_link';

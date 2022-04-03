@@ -1,9 +1,11 @@
 import { Fragment, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
 import { EmptyState, Loading, useIntersectionObserver } from 'features/common';
 import { PetitionCard } from 'features/petitions';
+import { generatePetitionPath } from 'utils/constants';
 
 import styles from 'features/donations/components/Donations/Donations.module.scss';
 
@@ -15,8 +17,13 @@ const Petitions = ({
   status,
 }) => {
   const loadMoreRef = useRef();
+  const history = useHistory();
 
   const handleLoadMore = () => fetchNextPage();
+
+  const showPetition = ({ id }) => {
+    history.push(generatePetitionPath(id));
+  };
 
   useIntersectionObserver({
     elementRef: loadMoreRef,
@@ -32,7 +39,11 @@ const Petitions = ({
             {data.pages.map((page) => (
               <Fragment key={page.currentPage}>
                 {page.data.map((petition) => (
-                  <PetitionCard key={petition.id} petition={petition} />
+                  <PetitionCard
+                    key={petition.id}
+                    petition={petition}
+                    onClickHandler={() => showPetition(petition)}
+                  />
                 ))}
               </Fragment>
             ))}
