@@ -15,7 +15,7 @@
 .modal__content {
     margin: 1.2rem;
     text-align: center;
-    color: #484242;
+    color: $black;
 }
 
 .user__info {
@@ -30,7 +30,7 @@
 
     span {
         margin-top: 1rem;
-        font-size: 1.5rem;
+        font-size: $font-x-large;
         font-weight: 700;
     }
 }
@@ -46,7 +46,7 @@
     .petition__subject {
         width: 100%;
         font-weight: 500;
-        font-size: 1.5rem;
+        font-size: $font-x-large;
         line-height: 2rem;
         text-align: start;
     }
@@ -54,7 +54,7 @@
     .petition__description {
         margin-top: 0.6rem;
         font-weight: 400;
-        font-size: 1rem;
+        font-size: $font-medium;
         max-width: 31rem;
         text-align: start;
         line-height: 2rem;
@@ -90,7 +90,7 @@
         display: flex;
         align-items: center;
         margin: auto;
-        font-size: 1rem;
+        font-size: $font-medium;
 
         svg {
             margin-right: 1rem;

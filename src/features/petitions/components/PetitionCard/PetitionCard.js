@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -37,7 +35,12 @@ const PetitionCard = ({ petition, showOptions, onDelete, onClickHandler }) => {
           onConfirm={onDeleteConfirm}
         />
       )}
-      <div className={styles.container} onClick={onClickHandler}>
+      <div
+        className={styles.container}
+        onClick={onClickHandler}
+        aria-hidden="true"
+        role="button"
+      >
         {showOptions && (
           <div className={styles.options}>
             {<Status status={petition.state} />}

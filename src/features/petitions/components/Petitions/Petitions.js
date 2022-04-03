@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
 import { EmptyState, Loading, useIntersectionObserver } from 'features/common';
 import { PetitionCard } from 'features/petitions';
+import { generatePetitionPath } from 'utils/constants';
 
 import styles from 'features/donations/components/Donations/Donations.module.scss';
 
@@ -21,7 +22,7 @@ const Petitions = ({
   const handleLoadMore = () => fetchNextPage();
 
   const showPetition = ({ id }) => {
-    history.push(`/solicitudes?petition_id=${id}`);
+    history.push(generatePetitionPath(id));
   };
 
   useIntersectionObserver({

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
@@ -6,6 +6,7 @@ import { Modal, Loading, useClickAway } from 'features/common';
 import { usePetition } from 'features/petitions/hooks';
 import { ReactComponent as PhoneIcon } from 'assets/phone.svg';
 import { ReactComponent as MailIcon } from 'assets/email.svg';
+import { PETITIONS_PATH } from 'utils/constants';
 
 import styles from './PetitionModal.module.scss';
 
@@ -14,10 +15,10 @@ const PetitionModal = ({ petitionId, onClose }) => {
   const history = useHistory();
   const modalRef = useRef();
 
-  const onCloseModal = () => {
+  const onCloseModal = useCallback(() => {
     onClose();
-    history.push('/solicitudes');
-  };
+    history.push(PETITIONS_PATH);
+  }, []);
 
   useClickAway(modalRef, onCloseModal);
 

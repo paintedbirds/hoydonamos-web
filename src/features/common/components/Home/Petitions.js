@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
 import { EmptyState, Loading, UnderlinedTitle } from 'features/common';
 import { PetitionCard } from 'features/petitions';
+import { generatePetitionPath } from 'utils/constants';
 import SeeMoreLink from './SeeMoreLink';
 
 import styles from './Home.module.scss';
@@ -16,7 +17,7 @@ const Petitions = ({ data, status }) => {
   const onPetitionClick = useCallback(
     ({ id }) => {
       return () => {
-        history.push(`/solicitudes?petition_id=${id}`);
+        history.push(generatePetitionPath(id));
       };
     },
     [history]
