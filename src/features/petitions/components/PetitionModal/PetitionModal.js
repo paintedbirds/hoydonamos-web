@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
@@ -12,26 +12,30 @@ import styles from './PetitionModal.module.scss';
 const PetitionModal = ({ petitionId, onClose }) => {
   const { data, status } = usePetition({ id: petitionId });
   const history = useHistory();
-  const [isOpen, setIsOpen] = useState(false);
-  const modalRef = useRef(null);
+  const modalRef = useRef();
 
-  useClickAway(modalRef, () => setIsOpen(false));
+  const onCloseModal = () => {
+    onClose();
+    history.push('/solicitudes');
+  };
+
+  useClickAway(modalRef, onCloseModal);
 
   return (
-    <Modal>
+    <Modal ref={modalRef}>
       {status === 'loading' && (
         <div className={styles.loading}>
           <Loading />
         </div>
       )}
-      {status === 'success' && isOpen && (
-        <div className={styles.modal__content} ref={modalRef}>
+      {status === 'success' && (
+        <div className={styles.modal__content}>
           <div className={styles.user__info}>
             <img src={data.data.user.image} alt="user" />
-            <p>{data.data.user.name}</p>
+            <span>{data.data.user.name}</span>
           </div>
           <div className={styles.petition__info}>
-            <p className={styles.petition__subject}>{data.data.subject}</p>
+            <h3 className={styles.petition__subject}>{data.data.subject}</h3>
             <div>
               <p className={styles.petition__description}>
                 {data.data.description}
@@ -40,22 +44,15 @@ const PetitionModal = ({ petitionId, onClose }) => {
           </div>
           <div className={styles.user__contact__info}>
             {data.data.user.phone && (
-              <p>
+              <span>
                 <PhoneIcon /> {data.data.user.phone}
-              </p>
+              </span>
             )}
-            <p>
+            <span>
               <MailIcon style={{ marginLeft: '10px' }} /> {data.data.user.email}
-            </p>
+            </span>
           </div>
-          <button
-            type="button"
-            className={styles.close}
-            onClick={() => {
-              history.goBack();
-              onClose();
-            }}
-          >
+          <button type="button" className={styles.close} onClick={onCloseModal}>
             Cerrar
           </button>
         </div>
