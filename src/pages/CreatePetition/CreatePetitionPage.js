@@ -1,12 +1,10 @@
 import { useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { MainLayout, UnderlinedTitle } from 'features/common';
 import { CreatePetitionForm, useCreatePetition } from 'features/petitions';
 import { handleErrors } from 'helpers/errors';
 
 const CreatePetitionPage = () => {
-  const history = useHistory();
   const { mutate, isLoading } = useCreatePetition();
 
   const onSubmit = useCallback(
@@ -17,10 +15,6 @@ const CreatePetitionPage = () => {
     [mutate]
   );
 
-  const onCancel = useCallback(() => {
-    history.push('/solicitudes');
-  }, [history]);
-
   return (
     <MainLayout>
       <section>
@@ -30,11 +24,7 @@ const CreatePetitionPage = () => {
               <h3>Crear solicitud</h3>
             </UnderlinedTitle>
           </div>
-          <CreatePetitionForm
-            isLoading={isLoading}
-            onCancel={onCancel}
-            onSubmit={onSubmit}
-          />
+          <CreatePetitionForm isLoading={isLoading} onSubmit={onSubmit} />
         </div>
       </section>
     </MainLayout>

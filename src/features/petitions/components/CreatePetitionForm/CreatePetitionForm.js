@@ -8,7 +8,7 @@ import { Form } from 'features/common';
 
 import styles from './CreatePetitionForm.module.scss';
 
-const CreatePetitionForm = ({ onSubmit, onCancel, isLoading }) => {
+const CreatePetitionForm = ({ onSubmit, isLoading }) => {
   const schema = useMemo(
     () =>
       object().shape({
@@ -44,7 +44,6 @@ const CreatePetitionForm = ({ onSubmit, onCancel, isLoading }) => {
 };
 
 CreatePetitionForm.propTypes = {
-  onCancel: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
 };
