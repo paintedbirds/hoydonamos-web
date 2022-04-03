@@ -18,7 +18,7 @@ const PetitionModal = ({ petitionId, onClose }) => {
   const onCloseModal = useCallback(() => {
     onClose();
     history.push(PETITIONS_PATH);
-  }, []);
+  }, [history, onClose]);
 
   useClickAway(modalRef, onCloseModal);
 
