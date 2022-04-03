@@ -1,4 +1,4 @@
-@import '../../../../sass/variables';
+@import 'sass/variables';
 
 .container {
   @apply p-6 rounded-lg bg-white;
@@ -16,7 +16,7 @@
     right: 1rem;
 
     .status {
-      background-color: #fff;
+      background-color: $white;
       border-radius: 0.5rem;
       box-shadow: $shadow;
       font-size: 0.8rem;
@@ -64,9 +64,9 @@
     .see-more {
       align-self: flex-end;
       align-items: center;
-      background-color: #ea3e66;
+      background-color: $primary;
       border-radius: 8px;
-      color: #fff;
+      color: $white;
       display: flex;
       gap: 0.5rem;
       padding: 0.4rem 1.8rem;

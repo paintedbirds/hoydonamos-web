@@ -1,13 +1,23 @@
 @import 'sass/variables';
 
+.image-shadow {
+  border-radius: 15px;
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+}
+
 .container {
-  padding-inline: 2rem;
+  padding-inline: 1rem;
+
+  @media (max-width: $breakpoint-tablet) {  
+    padding-inline: 2rem;
+  }
 }
 
 .cta-section {
   align-items: center;
   display: flex;
-  height: 60vh;
+  height: 90vh;
+  gap: 1rem;
 
   .caption {
     width: 60%;
@@ -15,24 +25,26 @@
 
   .title {
     color: $primary;
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 50px;
   }
 
   .description {
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 300;
     margin-top: 1rem;
   }
 
   .image {
-    width: 40%;
+    width: 40.5rem;
+
+    img {
+      @extend .image-shadow;
+    }
   }
 
-  @media (max-width: $breakpoint-mobile-large) {
-    height: 80vh;
-
+  @media (max-width: $breakpoint-tablet) {
     .caption {
       width: 100%;
     }
@@ -43,9 +55,10 @@
   }
 
   .cta-button-container {
-    width: 12rem;
+    width: 18rem;
 
     button {
+      font-weight: 700;
       text-transform: uppercase;
       margin-top: 2rem;
     }

@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 
-import IPadTabletMock from 'assets/ipad-tablet-mock.png';
-import IMackDesktopMock from 'assets/imac-desktop-mock.png';
-import MacDesktopMock from 'assets/mac-desktop-mock.png';
-import SamsungMobileMock from 'assets/samsung-mobile-mock.png';
-import { Form, MainLayout } from 'features/common';
+import DonationsSection from 'assets/donations-section.png';
+import HomeSection from 'assets/home-section.png';
+import PetitionsSection from 'assets/petitions-section.png';
+import ProfileSection from 'assets/profile-section.png';
+import { Form, LandingLayout } from 'features/common';
 import { SIGN_UP_PATH } from 'utils/constants';
 
 import styles from './Landing.module.scss';
 
 const LandingPage = () => (
-  <MainLayout>
+  <LandingLayout>
     <div className={styles.container}>
       <section className={styles['cta-section']}>
         <div className={styles.caption}>
@@ -28,7 +28,7 @@ const LandingPage = () => (
           </div>
         </div>
         <div className={styles.image}>
-          <img src={MacDesktopMock} alt="Vista Desktop Web" />
+          <img src={HomeSection} alt="Vista Desktop Web" />
         </div>
       </section>
       <section className={styles.banner}>
@@ -36,7 +36,11 @@ const LandingPage = () => (
       </section>
       <section className={styles.section}>
         <div>
-          <img src={IMackDesktopMock} alt="Vista Desktop Web" />
+          <img
+            src={DonationsSection}
+            alt="Vista Desktop Web"
+            className={styles['image-shadow']}
+          />
         </div>
         <p className={styles.description}>
           <span className={styles.bold}>
@@ -52,7 +56,12 @@ const LandingPage = () => (
       </section>
       <section className={[styles.section, styles.reverse].join(' ')}>
         <div>
-          <img src={SamsungMobileMock} alt="Vista Desktop Web" />
+          <img
+            src={PetitionsSection}
+            alt="Vista Desktop Web"
+            className={styles['image-shadow']}
+            height={300}
+          />
         </div>
         <p className={styles.description}>
           Creamos el espacio de{' '}
@@ -69,7 +78,11 @@ const LandingPage = () => (
       </section>
       <section className={styles.section}>
         <div>
-          <img src={IPadTabletMock} alt="Vista Desktop Web" />
+          <img
+            src={ProfileSection}
+            alt="Vista Desktop Web"
+            className={styles['image-shadow']}
+          />
         </div>
         <p className={styles.description}>
           En la sección <span className={styles.highlight}>Mi Cuenta</span>{' '}
@@ -93,7 +106,7 @@ const LandingPage = () => (
         </div>
       </section>
     </div>
-  </MainLayout>
+  </LandingLayout>
 );
 
 export default LandingPage;
