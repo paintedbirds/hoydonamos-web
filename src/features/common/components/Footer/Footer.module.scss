@@ -2,12 +2,11 @@
 
 .footer {
   background-color: $footer-background;
-  color: $footer-text;
+  color: $grey-text;
   font-size: $font-small;
   height: fit-content;
   padding: 2rem;
   width: 100%;
-  z-index: 999;
 }
 
 .container {

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Donations, useDonations, Search } from 'features/donations';
-import { MainLayout, UnderlinedTitle } from 'features/common';
+import { MainLayout, UnderlinedTitle, Subtitle } from 'features/common';
 
 const DonationsPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -20,6 +20,11 @@ const DonationsPage = () => {
               <h3>Donaciones</h3>
             </UnderlinedTitle>
           </div>
+          <Subtitle>
+            Puedes postularte a cualquiera de estas donaciones realizadas por la
+            comunidad
+          </Subtitle>
+
           <Search query={searchQuery} setQuery={setSearchQuery} />
           <Donations
             data={data}

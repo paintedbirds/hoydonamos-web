@@ -36,9 +36,6 @@ const CreatePetitionForm = ({ onSubmit, onCancel, isLoading }) => {
           placeholder="Dejanos mas detalles sobre tu solicitud"
         />
         <div className="flex flex-col-reverse sm:flex-row gap-4">
-          <Form.SecondaryButton type="button" onClick={onCancel}>
-            Cancelar
-          </Form.SecondaryButton>
           <Form.Button>{isLoading ? 'Cargando...' : 'Guardar'}</Form.Button>
         </div>
       </Form>

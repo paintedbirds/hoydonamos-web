@@ -4,7 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import PropTypes from 'prop-types';
 
 import { ReactComponent as EmptyStateDonation } from 'assets/empty-state-donation.svg';
-import { EmptyState, Loading, UnderlinedTitle } from 'features/common';
+import {
+  EmptyState,
+  Loading,
+  UnderlinedTitle,
+  Subtitle,
+} from 'features/common';
 import { DonationCard } from 'features/donations';
 import { generateDonationPath } from 'utils/constants';
 import SeeMoreLink from './SeeMoreLink';
@@ -27,6 +32,10 @@ const Donations = ({ data, status }) => {
         </UnderlinedTitle>
         <SeeMoreLink to="/donaciones">Ver mas</SeeMoreLink>
       </div>
+      <Subtitle>
+        Puedes postularte a cualquiera de estas donaciones realizadas por la
+        comunidad
+      </Subtitle>
 
       {status === 'loading' && (
         <div className="my-11 w-full flex justify-center items-center">
