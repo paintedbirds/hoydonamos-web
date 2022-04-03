@@ -64,7 +64,7 @@ const DonationCard = ({
             load="lazy"
           />
         </div>
-        <h4 className={styles.title}>{title}</h4>
+        {title && <h4 className={styles.title}>{title}</h4>}
         <p className={styles.description}>{description}</p>
         {!showOptions && (
           <SeeMoreButton to={generateDonationPath(donationId)} />
@@ -79,11 +79,12 @@ DonationCard.defaultProps = {
   onDelete: () => {},
   showOptions: false,
   status: '',
+  title: '',
 };
 
 DonationCard.propTypes = {
   donationId: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   onClick: PropTypes.func,

@@ -3,6 +3,7 @@ import {
   AccountUserInfo,
   UserDonations,
   UserPetitions,
+  UserDonationRequests,
   useAuth,
   useAccount,
 } from 'features/auth';
@@ -25,6 +26,10 @@ const AccountPage = () => {
         {status === 'success' && <UserDonations donations={data.donations} />}
 
         {status === 'success' && <UserPetitions petitions={data.petitions} />}
+
+        {status === 'success' && (
+          <UserDonationRequests donationRequests={data.donationRequests} />
+        )}
       </AccountLayout>
     </MainLayout>
   );
