@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { MainLayout, UnderlinedTitle, useQueryParams } from 'features/common';
+import {
+  MainLayout,
+  UnderlinedTitle,
+  useQueryParams,
+  Subtitle,
+} from 'features/common';
 import { PetitionModal, Petitions, usePetitions } from 'features/petitions';
 
 const PetitionsPage = () => {
@@ -29,6 +34,10 @@ const PetitionsPage = () => {
             <h3>Solicitudes</h3>
           </UnderlinedTitle>
         </div>
+        <Subtitle>
+          En esta sección puedes encontrar las necesidades de los integrantes de
+          la comunidad
+        </Subtitle>
         <Petitions
           data={data}
           fetchNextPage={fetchNextPage}

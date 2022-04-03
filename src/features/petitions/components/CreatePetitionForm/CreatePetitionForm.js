@@ -8,7 +8,7 @@ import { Form } from 'features/common';
 
 import styles from './CreatePetitionForm.module.scss';
 
-const CreatePetitionForm = ({ onSubmit, onCancel, isLoading }) => {
+const CreatePetitionForm = ({ onSubmit, isLoading }) => {
   const schema = useMemo(
     () =>
       object().shape({
@@ -36,9 +36,6 @@ const CreatePetitionForm = ({ onSubmit, onCancel, isLoading }) => {
           placeholder="Dejanos mas detalles sobre tu solicitud"
         />
         <div className="flex flex-col-reverse sm:flex-row gap-4">
-          <Form.SecondaryButton type="button" onClick={onCancel}>
-            Cancelar
-          </Form.SecondaryButton>
           <Form.Button>{isLoading ? 'Cargando...' : 'Guardar'}</Form.Button>
         </div>
       </Form>
@@ -47,7 +44,6 @@ const CreatePetitionForm = ({ onSubmit, onCancel, isLoading }) => {
 };
 
 CreatePetitionForm.propTypes = {
-  onCancel: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
 };

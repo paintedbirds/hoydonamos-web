@@ -55,6 +55,10 @@ const DonationPage = () => {
                   <Close onClick={onCloseModal} />
                 </div>
                 <div className={styles['form-container']}>
+                  <p>
+                    Nuestros voluntatios analizarán tu solicitud y se
+                    contactaran contigo en los proximos días.
+                  </p>
                   <DonationRequestForm
                     onSubmit={onDonationRequestSubmit}
                     isLoading={isLoading}

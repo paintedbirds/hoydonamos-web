@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
 import { ReactComponent as EmptyStatePetition } from 'assets/empty-state-petition.svg';
-import { EmptyState, Loading, UnderlinedTitle } from 'features/common';
+import {
+  EmptyState,
+  Loading,
+  UnderlinedTitle,
+  Subtitle,
+} from 'features/common';
 import { PetitionCard } from 'features/petitions';
 import { generatePetitionPath } from 'utils/constants';
 import SeeMoreLink from './SeeMoreLink';
@@ -31,6 +36,10 @@ const Petitions = ({ data, status }) => {
         </UnderlinedTitle>
         <SeeMoreLink to="/solicitudes">Ver mas</SeeMoreLink>
       </div>
+      <Subtitle>
+        En esta sección puedes encontrar las necesidades de los integrantes de
+        la comunidad
+      </Subtitle>
 
       {status === 'loading' && (
         <div className="my-11 w-full flex justify-center items-center">
