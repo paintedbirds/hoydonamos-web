@@ -4,13 +4,17 @@ import styles from './EmptyState.module.scss';
 
 const EmptyState = ({ icon, text }) => (
   <div className={styles['empty-state']}>
-    {icon}
+    {icon && icon}
     <p>{text}</p>
   </div>
 );
 
+EmptyState.defaultProps = {
+  icon: null,
+};
+
 EmptyState.propTypes = {
-  icon: PropTypes.node.isRequired,
+  icon: PropTypes.node,
   text: PropTypes.string.isRequired,
 };
 
