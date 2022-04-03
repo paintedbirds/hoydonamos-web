@@ -4,13 +4,13 @@ import DonationsSection from 'assets/donations-section.png';
 import HomeSection from 'assets/home-section.png';
 import PetitionsSection from 'assets/petitions-section.png';
 import ProfileSection from 'assets/profile-section.png';
-import { Form, MainLayout } from 'features/common';
+import { Form, LandingLayout } from 'features/common';
 import { SIGN_UP_PATH } from 'utils/constants';
 
 import styles from './Landing.module.scss';
 
 const LandingPage = () => (
-  <MainLayout>
+  <LandingLayout>
     <div className={styles.container}>
       <section className={styles['cta-section']}>
         <div className={styles.caption}>
@@ -106,7 +106,7 @@ const LandingPage = () => (
         </div>
       </section>
     </div>
-  </MainLayout>
+  </LandingLayout>
 );
 
 export default LandingPage;
