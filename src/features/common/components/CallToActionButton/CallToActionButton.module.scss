@@ -1,0 +1,39 @@
+@import 'sass/variables';
+
+.button {
+    width: 12rem;
+    height: 2.3rem;
+    border-radius: 0.5rem;
+    font-size: $font-medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    cursor: pointer;
+
+    span {
+        padding-right: 0.2rem;
+    }
+}
+
+.donation {
+    background-color: $primary;
+}
+
+.request {
+    background-color: $secondary;
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+    .button{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100%;
+        font-size: $font-x-large;
+        font-weight: $bold;
+
+        span {
+            display: none;
+        }
+    }
+}

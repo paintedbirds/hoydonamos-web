@@ -10,6 +10,7 @@ import {
   UnderlinedTitle,
   Subtitle,
   Swiper,
+  CallToActionButton,
 } from 'features/common';
 import { DonationCard } from 'features/donations';
 import { generateDonationPath } from 'utils/constants';
@@ -28,11 +29,14 @@ const Donations = ({ data, status }) => {
 
   return (
     <>
-      <div className="mt-11 text-4xl flex gap-4 items-center">
-        <UnderlinedTitle>
-          <h3>Donaciones</h3>
-        </UnderlinedTitle>
-        <SeeMoreLink to="/donaciones">Ver mas</SeeMoreLink>
+      <div className="flex items-center justify-between mt-11">
+        <div className="text-4xl flex gap-4 items-center">
+          <UnderlinedTitle>
+            <h3>Donaciones</h3>
+          </UnderlinedTitle>
+          <SeeMoreLink to="/donaciones">Ver mas</SeeMoreLink>
+        </div>
+        <CallToActionButton type="donation" />
       </div>
       <Subtitle>
         Puedes postularte a cualquiera de estas donaciones realizadas por la

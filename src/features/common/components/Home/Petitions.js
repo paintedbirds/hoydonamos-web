@@ -10,6 +10,7 @@ import {
   UnderlinedTitle,
   Subtitle,
   Swiper,
+  CallToActionButton,
 } from 'features/common';
 import { PetitionCard } from 'features/petitions';
 import { generatePetitionPath } from 'utils/constants';
@@ -32,11 +33,14 @@ const Petitions = ({ data, status }) => {
 
   return (
     <>
-      <div className="mt-11 text-4xl flex gap-4 items-center">
-        <UnderlinedTitle>
-          <h3>Solicitudes</h3>
-        </UnderlinedTitle>
-        <SeeMoreLink to="/solicitudes">Ver mas</SeeMoreLink>
+      <div className="flex items-center justify-between mt-11">
+        <div className="text-4xl flex gap-4 items-center">
+          <UnderlinedTitle>
+            <h3>Solicitudes</h3>
+          </UnderlinedTitle>
+          <SeeMoreLink to="/solicitudes">Ver mas</SeeMoreLink>
+        </div>
+        <CallToActionButton type="request" />
       </div>
       <Subtitle>
         En esta sección puedes encontrar las necesidades de los integrantes de
