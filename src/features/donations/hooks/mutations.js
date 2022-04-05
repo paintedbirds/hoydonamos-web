@@ -83,3 +83,30 @@ export const useDeleteDonation = () => {
 
   return mutation;
 };
+
+export const useDeleteDonationRequest = () => {
+  const queryClient = useQueryClient();
+  const {
+    user: { id: userId },
+  } = useAuth();
+
+  const mutation = useMutation(
+    ({ donationRequestId }) =>
+      DonationService.deleteDonationRequest({ donationRequestId }),
+    {
+      onSuccess: async (response) => {
+        await queryClient.refetchQueries([USER_KEY, userId]);
+
+        toast.success('Tu solicitud de donación ha sido eliminada', {
+          duration: 3500,
+          icon: '👏',
+          style: {
+            minWidth: '250px',
+          },
+        });
+      },
+    }
+  );
+
+  return mutation;
+};

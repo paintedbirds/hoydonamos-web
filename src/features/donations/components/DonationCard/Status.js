@@ -6,6 +6,7 @@ const translatedStatus = {
   PUBLISHED: 'PUBLICADA',
   REJECTED: 'RECHAZADA',
   PENDING: 'PENDIENTE',
+  ACCEPTED: 'ACEPTADA',
 };
 
 const Status = ({ status }) => (
