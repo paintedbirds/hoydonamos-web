@@ -1,4 +1,4 @@
-@import '../../../../sass/variables';
+@import 'sass/variables';
 
 .overlay {
   align-items: center;
@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 98;
+  z-index: $z-8;
 }
 
 .container {
@@ -23,7 +23,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 99;
+  z-index: $z-9;
 
   .content {
     @apply bg-white;

@@ -10,7 +10,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 50;
+  z-index: $z-7;
 
   .header_content,
   .header_logo a,
@@ -176,7 +176,6 @@ button {
     padding: 1rem 0.5rem;
     position: sticky;
     top: 0;
-    z-index: 50;
 
     .header_content {
       display: flex;
