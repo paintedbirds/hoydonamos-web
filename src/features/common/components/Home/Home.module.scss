@@ -1,4 +1,4 @@
-@import '../../../../sass/variables';
+@import 'sass/variables';
 
 .user-info {
   @apply rounded-lg;
@@ -74,12 +74,6 @@
   }
 }
 
-
-.slider {
-  margin: 0 1rem;
-
-  .slide {
-    width: unset !important;
-  }
+.slide {
+  width: unset !important;
 }
-
