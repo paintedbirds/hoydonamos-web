@@ -31,4 +31,8 @@ export class DonationService {
   static deleteDonation({ donationId }) {
     return httpClient.delete(`/donations/${donationId}`);
   }
+
+  static deleteDonationRequest({ donationRequestId }) {
+    return httpClient.delete(`/donation-request/${donationRequestId}`);
+  }
 }

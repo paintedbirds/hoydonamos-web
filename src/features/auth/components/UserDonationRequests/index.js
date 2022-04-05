@@ -1,22 +1,17 @@
 import { useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { EmptyState } from 'features/common';
-import { DonationCard } from 'features/donations';
-import { generateDonationPath } from 'utils/constants';
+import { DonationCard, useDeleteDonationRequest } from 'features/donations';
 
 export const UserDonationRequests = ({ donationRequests }) => {
-  const history = useHistory();
+  const { mutate } = useDeleteDonationRequest();
 
-  // TODO: Add delete feature
-  const onDelete = useCallback((id) => {
-    return () => {};
-  }, []);
-
-  const onRequestClick = useCallback(
-    (id) => () => history.push(generateDonationPath(id)),
-    [history]
+  const onDelete = useCallback(
+    (id) => () => {
+      mutate({ donationRequestId: id });
+    },
+    [mutate]
   );
 
   return (
@@ -37,7 +32,6 @@ export const UserDonationRequests = ({ donationRequests }) => {
               key={request.id}
               showOptions
               onDelete={onDelete(request.id)}
-              onClick={onRequestClick(request.id)}
             />
           ))}
         </section>
