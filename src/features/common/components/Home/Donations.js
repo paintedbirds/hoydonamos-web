@@ -13,8 +13,7 @@ import {
   CallToActionButton,
 } from 'features/common';
 import { DonationCard } from 'features/donations';
-import { generateDonationPath } from 'utils/constants';
-
+import { generateDonationPath, CREATE_DONATION_PATH } from 'utils/constants';
 import SeeMoreLink from './SeeMoreLink';
 
 import styles from './Home.module.scss';
@@ -27,16 +26,20 @@ const Donations = ({ data, status }) => {
     [history]
   );
 
+  const onCTAClick = () => history.push(CREATE_DONATION_PATH);
+
   return (
     <>
-      <div className="flex items-center justify-between mt-11">
+      <div className="flex items-center justify-between mt-11 flex-wrap">
         <div className="text-4xl flex gap-4 items-center">
           <UnderlinedTitle>
             <h3>Donaciones</h3>
           </UnderlinedTitle>
           <SeeMoreLink to="/donaciones">Ver mas</SeeMoreLink>
         </div>
-        <CallToActionButton type="donation" />
+        <CallToActionButton type="donation" onClick={onCTAClick}>
+          Crear donación
+        </CallToActionButton>
       </div>
       <Subtitle>
         Puedes postularte a cualquiera de estas donaciones realizadas por la

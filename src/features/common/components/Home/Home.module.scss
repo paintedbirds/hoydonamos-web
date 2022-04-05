@@ -59,7 +59,7 @@
   color: $secondary;
   font-size: 1.5rem;
   height: 100%;
-  vertical-align: center;
+  vertical-align: centeßßr;
   text-decoration: underline;
 }
 
@@ -72,9 +72,16 @@
       text-align: center;
     }
   }
+
+  .see-more {
+    font-size: $font-x-large;
+  }
 }
 
-.slide {
-  height: auto !important;
-  width: unset !important;
+.slider {
+  margin: 0 1rem;
+
+  .slide {
+    width: unset !important;
+  }
 }

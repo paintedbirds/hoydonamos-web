@@ -13,8 +13,7 @@ import {
   CallToActionButton,
 } from 'features/common';
 import { PetitionCard } from 'features/petitions';
-import { generatePetitionPath } from 'utils/constants';
-
+import { generatePetitionPath, CREATE_PETITION_PATH } from 'utils/constants';
 import SeeMoreLink from './SeeMoreLink';
 
 import styles from './Home.module.scss';
@@ -31,16 +30,20 @@ const Petitions = ({ data, status }) => {
     [history]
   );
 
+  const onCTAClick = () => history.push(CREATE_PETITION_PATH);
+
   return (
     <>
-      <div className="flex items-center justify-between mt-11">
+      <div className="flex items-center justify-between mt-11 flex-wrap">
         <div className="text-4xl flex gap-4 items-center">
           <UnderlinedTitle>
             <h3>Solicitudes</h3>
           </UnderlinedTitle>
           <SeeMoreLink to="/solicitudes">Ver mas</SeeMoreLink>
         </div>
-        <CallToActionButton type="request" />
+        <CallToActionButton type="request" onClick={onCTAClick}>
+          Crear solicitud
+        </CallToActionButton>
       </div>
       <Subtitle>
         En esta sección puedes encontrar las necesidades de los integrantes de
