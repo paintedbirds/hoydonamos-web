@@ -18,3 +18,8 @@ export const INSTAGRAM_LINK =
 export const SUPPORT_EMAIL = 'hoydonamos@gmail.com';
 export const PAINTED_BIRDS_LINK =
   'https://www.linkedin.com/company/painted-birds/';
+
+export const BREAKPOINTS = {
+  mobile: 576,
+  tablet: 768,
+};
