@@ -51,7 +51,7 @@ const Petitions = ({ data, status }) => {
 
       {status === 'success' && data.length > 0 && (
         <section className={styles['petitions-container']}>
-          <Swiper>
+          <Swiper spaceBetween={55}>
             {data?.map((petition) => (
               <SwiperSlide className={styles.slide} key={petition.id}>
                 <PetitionCard

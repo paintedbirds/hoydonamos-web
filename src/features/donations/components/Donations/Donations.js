@@ -37,7 +37,7 @@ const Donations = ({
     <>
       {status === 'success' && (
         <>
-          <section className="my-11 grid grid-cols-1 sm:grid-cols-2 gap-5 justify-center">
+          <section className="my-11 grid grid-cols-1 sm:grid-cols-3 gap-5 justify-center">
             {data?.pages.map((page) => (
               <Fragment key={page.currentPage}>
                 {page.data.map(({ id, name, description, image }) => (
