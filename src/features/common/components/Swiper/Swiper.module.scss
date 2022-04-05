@@ -1,0 +1,38 @@
+@import 'sass/variables';
+
+.slider {
+  margin: 0 1rem;
+}
+
+.control {
+  align-items: center;
+  background-color: $white;
+  border-radius: 50%;
+  box-shadow: $shadow;
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  position: absolute;
+  top: 30%;
+  width: 3rem;
+  z-index: 2;
+
+  svg {
+    path {
+      stroke: $black;
+    }
+  }
+} 
+
+.next {
+  @extend .control;
+
+  right: 0;
+}
+
+.previous {
+  @extend .control;
+  
+  left: 0;
+  transform: rotate(-180deg);
+}

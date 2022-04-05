@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+import { SwiperSlide } from 'swiper/react/swiper-react';
 import PropTypes from 'prop-types';
 
 import { ReactComponent as EmptyStateDonation } from 'assets/empty-state-donation.svg';
@@ -9,9 +9,11 @@ import {
   Loading,
   UnderlinedTitle,
   Subtitle,
+  Swiper,
 } from 'features/common';
 import { DonationCard } from 'features/donations';
 import { generateDonationPath } from 'utils/constants';
+
 import SeeMoreLink from './SeeMoreLink';
 
 import styles from './Home.module.scss';
@@ -44,11 +46,7 @@ const Donations = ({ data, status }) => {
       )}
       {status === 'success' && data.length > 0 && (
         <section className={styles.container}>
-          <Swiper
-            className={styles.slider}
-            spaceBetween={20}
-            slidesPerView="auto"
-          >
+          <Swiper>
             {data?.map(({ id, name, description, image }) => (
               <SwiperSlide className={styles.slide} key={id}>
                 <DonationCard

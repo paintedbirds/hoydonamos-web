@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+import { SwiperSlide } from 'swiper/react/swiper-react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
@@ -9,9 +9,11 @@ import {
   Loading,
   UnderlinedTitle,
   Subtitle,
+  Swiper,
 } from 'features/common';
 import { PetitionCard } from 'features/petitions';
 import { generatePetitionPath } from 'utils/constants';
+
 import SeeMoreLink from './SeeMoreLink';
 
 import styles from './Home.module.scss';
@@ -49,11 +51,7 @@ const Petitions = ({ data, status }) => {
 
       {status === 'success' && data.length > 0 && (
         <section className={styles['petitions-container']}>
-          <Swiper
-            className={styles.slider}
-            spaceBetween={55}
-            slidesPerView="auto"
-          >
+          <Swiper>
             {data?.map((petition) => (
               <SwiperSlide className={styles.slide} key={petition.id}>
                 <PetitionCard
