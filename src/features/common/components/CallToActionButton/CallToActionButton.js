@@ -1,15 +1,12 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import styles from './CallToActionButton.module.scss';
 
-const CallToActionButton = ({ children, type, onClick }) => (
-  <button
-    className={`${styles[type]} ${styles.button}`}
-    type="button"
-    onClick={onClick}
-  >
+const CallToActionButton = ({ children, type, path }) => (
+  <Link className={`${styles[type]} ${styles.button}`} type="button" to={path}>
     <span>{children}</span> +
-  </button>
+  </Link>
 );
 
 CallToActionButton.propTypes = {
@@ -18,7 +15,7 @@ CallToActionButton.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  onClick: PropTypes.func.isRequired,
+  path: PropTypes.string.isRequired,
 };
 
 export { CallToActionButton };

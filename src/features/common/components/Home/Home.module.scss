@@ -78,10 +78,7 @@
   }
 }
 
-.slider {
-  margin: 0 1rem;
-
-  .slide {
-    width: unset !important;
-  }
+.slide {
+  height: unset !important;
+  width: unset !important;
 }

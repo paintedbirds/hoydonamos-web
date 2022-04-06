@@ -30,8 +30,6 @@ const Petitions = ({ data, status }) => {
     [history]
   );
 
-  const onCTAClick = () => history.push(CREATE_PETITION_PATH);
-
   return (
     <>
       <div className="flex items-center justify-between mt-11 flex-wrap">
@@ -41,7 +39,7 @@ const Petitions = ({ data, status }) => {
           </UnderlinedTitle>
           <SeeMoreLink to="/solicitudes">Ver mas</SeeMoreLink>
         </div>
-        <CallToActionButton type="request" onClick={onCTAClick}>
+        <CallToActionButton type="petition" path={CREATE_PETITION_PATH}>
           Crear solicitud
         </CallToActionButton>
       </div>

@@ -26,8 +26,6 @@ const Donations = ({ data, status }) => {
     [history]
   );
 
-  const onCTAClick = () => history.push(CREATE_DONATION_PATH);
-
   return (
     <>
       <div className="flex items-center justify-between mt-11 flex-wrap">
@@ -37,7 +35,7 @@ const Donations = ({ data, status }) => {
           </UnderlinedTitle>
           <SeeMoreLink to="/donaciones">Ver mas</SeeMoreLink>
         </div>
-        <CallToActionButton type="donation" onClick={onCTAClick}>
+        <CallToActionButton type="donation" path={CREATE_DONATION_PATH}>
           Crear donación
         </CallToActionButton>
       </div>
