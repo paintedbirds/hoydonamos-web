@@ -1,4 +1,4 @@
-@import '../../../../sass/variables';
+@import 'sass/variables';
 
 .container {
   position: fixed;
@@ -6,9 +6,8 @@
   width: 100%;
 
   .child {
-    @apply z-0;
-
     position: absolute;
+    z-index: $z-9;
   }
 
   .child:nth-of-type(1) {

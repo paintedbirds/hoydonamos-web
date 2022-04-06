@@ -15,7 +15,7 @@
   position: absolute;
   top: 30%;
   width: 3rem;
-  z-index: 2;
+  z-index: $z-1;
 
   svg {
     path {
