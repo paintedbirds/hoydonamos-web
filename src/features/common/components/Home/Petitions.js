@@ -10,10 +10,10 @@ import {
   UnderlinedTitle,
   Subtitle,
   Swiper,
+  CallToActionLink,
 } from 'features/common';
 import { PetitionCard } from 'features/petitions';
-import { generatePetitionPath } from 'utils/constants';
-
+import { generatePetitionPath, CREATE_PETITION_PATH } from 'utils/constants';
 import SeeMoreLink from './SeeMoreLink';
 
 import styles from './Home.module.scss';
@@ -32,11 +32,16 @@ const Petitions = ({ data, status }) => {
 
   return (
     <>
-      <div className="mt-11 text-4xl flex gap-4 items-center">
-        <UnderlinedTitle>
-          <h3>Solicitudes</h3>
-        </UnderlinedTitle>
-        <SeeMoreLink to="/solicitudes">Ver mas</SeeMoreLink>
+      <div className="flex items-center justify-between mt-11 flex-wrap">
+        <div className="text-4xl flex gap-4 items-center">
+          <UnderlinedTitle>
+            <h3>Solicitudes</h3>
+          </UnderlinedTitle>
+          <SeeMoreLink to="/solicitudes">Ver mas</SeeMoreLink>
+        </div>
+        <CallToActionLink type="petition" path={CREATE_PETITION_PATH}>
+          Crear solicitud
+        </CallToActionLink>
       </div>
       <Subtitle>
         En esta sección puedes encontrar las necesidades de los integrantes de
