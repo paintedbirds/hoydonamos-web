@@ -10,7 +10,7 @@ import {
   UnderlinedTitle,
   Subtitle,
   Swiper,
-  CallToActionButton,
+  CallToActionLink,
 } from 'features/common';
 import { DonationCard } from 'features/donations';
 import { generateDonationPath, CREATE_DONATION_PATH } from 'utils/constants';
@@ -35,9 +35,9 @@ const Donations = ({ data, status }) => {
           </UnderlinedTitle>
           <SeeMoreLink to="/donaciones">Ver mas</SeeMoreLink>
         </div>
-        <CallToActionButton type="donation" path={CREATE_DONATION_PATH}>
+        <CallToActionLink type="donation" path={CREATE_DONATION_PATH}>
           Crear donación
-        </CallToActionButton>
+        </CallToActionLink>
       </div>
       <Subtitle>
         Puedes postularte a cualquiera de estas donaciones realizadas por la

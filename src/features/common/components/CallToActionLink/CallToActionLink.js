@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import styles from './CallToActionButton.module.scss';
+import styles from './CallToActionLink.module.scss';
 
-const CallToActionButton = ({ children, type, path }) => (
-  <Link className={`${styles[type]} ${styles.button}`} type="button" to={path}>
+const CallToActionLink = ({ children, type, path }) => (
+  <Link className={`${styles[type]} ${styles.button}`} to={path}>
     <span>{children}</span> +
   </Link>
 );
 
-CallToActionButton.propTypes = {
+CallToActionLink.propTypes = {
   type: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -18,4 +18,4 @@ CallToActionButton.propTypes = {
   path: PropTypes.string.isRequired,
 };
 
-export { CallToActionButton };
+export { CallToActionLink };

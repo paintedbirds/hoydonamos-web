@@ -10,7 +10,7 @@ import {
   UnderlinedTitle,
   Subtitle,
   Swiper,
-  CallToActionButton,
+  CallToActionLink,
 } from 'features/common';
 import { PetitionCard } from 'features/petitions';
 import { generatePetitionPath, CREATE_PETITION_PATH } from 'utils/constants';
@@ -39,9 +39,9 @@ const Petitions = ({ data, status }) => {
           </UnderlinedTitle>
           <SeeMoreLink to="/solicitudes">Ver mas</SeeMoreLink>
         </div>
-        <CallToActionButton type="petition" path={CREATE_PETITION_PATH}>
+        <CallToActionLink type="petition" path={CREATE_PETITION_PATH}>
           Crear solicitud
-        </CallToActionButton>
+        </CallToActionLink>
       </div>
       <Subtitle>
         En esta sección puedes encontrar las necesidades de los integrantes de

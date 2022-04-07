@@ -15,4 +15,4 @@ export * from './Footer';
 export * from './PageLoading';
 export * from './Subtitle';
 export * from './Swiper';
-export * from './CallToActionButton';
+export * from './CallToActionLink';
