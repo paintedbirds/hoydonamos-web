@@ -8,11 +8,11 @@ const Home = () => {
   const { donationsStatus, donationsData, petitionsStatus, petitionsData } =
     useDonationsAndPetitions();
   const { user } = useAuth();
-  const missingUserInfo = !user.phone || !user.about_me;
+  const hasMissingInfo = !user.phone || !user.about_me;
 
   return (
     <div className="px-6 mt-11">
-      {missingUserInfo && <UserInfo />}
+      {hasMissingInfo && <UserInfo />}
       <Donations status={donationsStatus} data={donationsData} />
       <Petitions status={petitionsStatus} data={petitionsData} />
     </div>
