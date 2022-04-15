@@ -16,3 +16,4 @@ export * from './PageLoading';
 export * from './Subtitle';
 export * from './Swiper';
 export * from './CallToActionLink';
+export * from './ShareLinks';

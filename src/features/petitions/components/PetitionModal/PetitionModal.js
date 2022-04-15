@@ -2,7 +2,7 @@ import { useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
-import { Modal, Loading, useClickAway } from 'features/common';
+import { Modal, Loading, useClickAway, ShareLinks } from 'features/common';
 import { usePetition } from 'features/petitions/hooks';
 import { ReactComponent as PhoneIcon } from 'assets/phone.svg';
 import { ReactComponent as MailIcon } from 'assets/email.svg';
@@ -53,6 +53,7 @@ const PetitionModal = ({ petitionId, onClose }) => {
               <MailIcon style={{ marginLeft: '10px' }} /> {data.data.user.email}
             </span>
           </div>
+          <ShareLinks user={data.data.user.name} object={data.data.subject} />
           <button type="button" className={styles.close} onClick={onCloseModal}>
             Cerrar
           </button>
