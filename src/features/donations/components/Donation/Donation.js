@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { Form, UnderlinedTitle } from 'features/common';
-import ShareDonationLinks from '../ShareDonationLinks';
+import { Form, UnderlinedTitle, ShareLinks } from 'features/common';
 
 import styles from './Donation.module.scss';
 
@@ -15,7 +14,7 @@ const Donation = ({ data, onOpenModal }) => (
     <div className="flex flex-wrap sm:my-16 mt-8">
       <div className="md:w-1/2 w-full md:h-auto">
         <img alt="Donación" src={data.image} className={styles.image} />
-        <ShareDonationLinks />
+        <ShareLinks object={data.name} />
       </div>
       <div className="md:w-1/2 w-full lg:pl-10 lg:mt-0 mt-8">
         <h1 className={styles.title}>{data.name}</h1>

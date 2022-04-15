@@ -1,0 +1,117 @@
+@import 'sass/variables';
+
+.share-button {
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.share-button button {
+  width: 3.5rem;
+  height: 2.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-button__whatsapp {
+  &:hover {
+    svg path {
+      fill: $whatsapp;
+    }
+  }
+
+  &:active {
+    border: 1px solid $whatsapp;
+  }
+}
+
+.share-button__facebook {
+  &:hover {
+    svg path {
+      fill: $facebook;
+    }
+  }
+
+  &:active {
+    border: 1px solid $facebook--active;
+
+    svg path {
+      fill: $facebook--active;
+    }
+  }
+}
+
+.share-button__telegram {
+  &:hover {
+    svg path {
+      fill: $telegram;
+    }
+  }
+
+  &:active {
+    border: 1px solid $telegram--active;
+
+    svg path {
+      fill: $telegram--active;
+    }
+  }
+}
+
+.share-button__twitter {
+  &:hover {
+    svg path {
+      fill: $twitter;
+    }
+  }
+
+  &:active {
+    border: 1px solid $twitter--active;
+
+    svg path {
+      fill: $twitter--active;
+    }
+  }
+}
+
+.share-button__email {
+  &:hover {
+    svg path {
+      fill: $email;
+    }
+  }
+
+  &:active {
+    border: 1px solid $email--active;
+
+    svg path {
+      fill: $email--active;
+    }
+  }
+}
+
+.share-button__reddit {
+  &:hover {
+    svg path {
+      fill: $reddit;
+    }
+  }
+
+  &:active {
+    border: 1px solid $reddit--active;
+
+    svg path {
+      fill: $reddit--active;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .share-button {
+    margin-top: 10px;
+  }
+
+  .share-button button {
+    width: 2.5rem;
+    height: 1.5rem;
+  }
+}
